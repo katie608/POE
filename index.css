@@ -5,4 +5,19 @@ body {
 
 .title {
   font-size: 4em;
+  display: inline;
+}
+.header {
+  width: 100%;
+  background-color: #a6a6a6;
+  height: 6em;
+}
+.tab {
+  background-color: #787878;
+  display: inline;
+  float: right;
+  font-size: 2em;
+  padding: 0.5em;
+  padding-right: 1em;
+  height: 2em;
 }
