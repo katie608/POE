@@ -1,4 +1,6 @@
 
+#include "pitches.h"
+
 int timeAtInterrupt = millis();
 int counter = 0;
 bool buttonflag2 = false;
@@ -21,15 +23,15 @@ void loop() {
 //  Serial.print();
   if (digitalRead(2)==1) {
     Serial.println("Button 1 press");
-    // tone goes here
+    tone(8, NOTE_B4, 1000/16);
   }
     if (digitalRead(3)==1) {
     Serial.println("Button 2 press");
-    // tone
+    tone(8, NOTE_A4, 1000/16);
   }
     if (digitalRead(4)==1) {
     Serial.println("Button 3 press");
-    // tone
+    tone(8, NOTE_G4, 1000/16);
   }
   
   
