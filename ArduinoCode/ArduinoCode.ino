@@ -1,34 +1,32 @@
+// This is the code for our Principles of Engineering project
 
-#include "pitches.h"
-#include <Wire.h>
+// pitches is a file defining different pitches
+#include "pitches.h" 
 
+// wire is the library that allows communication with the accelerometer using I2C
+#include <Wire.h> 
 
-int timeAtInterrupt = millis();
-int counter = 0;
-bool buttonflag2 = false;
-bool buttonflag3 = false;
-bool buttonflag4 = false;
+// needed for communicating with this particular accelerometer
+#include "SparkFun_MMA8452Q.h" 
 
-int analogPin = A0;
-
-
-#include <Wire.h>                 // Must include Wire library for I2C
-#include "SparkFun_MMA8452Q.h"    // Click here to get the library: http://librarymanager/All#SparkFun_MMA8452Q
-MMA8452Q accel;                   // create instance of the MMA8452 class
+// create instance of the MMA8452 class for accelerometer
+MMA8452Q accel; 
 
 
-void setup() {
+void setup() { // this code runs once
   // initialize serial
   Serial.begin(9600);
   Serial.println("Setup");
 
+  // initialize pins for buttons
   pinMode(2, INPUT);
   pinMode(3, INPUT);
   pinMode(4, INPUT);
 
-  Serial.begin(9600);
+  // initialize wire library
   Wire.begin();
 
+  // check if accelerometer is connected
   if (accel.begin() == false) {
     Serial.println("Not Connected. Please check connections and read the hookup guide.");
     while (1);
@@ -38,7 +36,8 @@ void setup() {
 
 
 void loop() {
-  int button1Mode = digitalRead(2);
+
+  // button code
   if (digitalRead(2)==1) {
     Serial.print(" Button 1");
     tone(8, NOTE_B4, 1000/16);
@@ -53,32 +52,43 @@ void loop() {
   }
 
   // code for force sensitive resistor
-  if (analogRead(A0)>0) {
+  long force = analogRead(A0);
+  if (force>0) {
     Serial.print(" Force: ");
-    Serial.print(analogRead(A0));
-    if (analogRead(A0)>250) {
-      tone(8, NOTE_C4, 1000/16);
-    } else if (analogRead(A0)>400) {
-      tone(8, NOTE_D4, 1000/16);
-    }else {
-      tone(8, NOTE_E4, 1000/16);
+    Serial.print(force);
+
+    // currently the force sensor plays a tone dependent on how hard it is pushed
+    // eventually, this reading may control volume or some other aspect of sound
+    tone(8, force+100, 1000/16);
+  }
+
+  // accelerometer code
+  if (accel.available()) {  // Wait for new data from accelerometer
+    // Acceleration of x, y, and z directions in g units (between 0 and 1)
+    float ax = (accel.getCalculatedX());
+    float ay = (accel.getCalculatedY());
+    float az = (accel.getCalculatedZ());
+
+    // prints accelerometer values if accelerometer is not flat (in z direction)
+    if (abs(az) < 0.85) { 
+      Serial.print("");
+      Serial.print("a(x): ");
+      Serial.print(ax);
+      Serial.print("\t");
+      Serial.print("a(y): ");
+      Serial.print(ay);
+      Serial.print("\t");
+      Serial.print("a(z): ");
+      Serial.print(az);
+
+      // currently makes a tone whose pitch is dependent on the absolute value of 
+      // acceleration in the x direction, multipled by 700
+      // eventually all readings of the accelerometer will be involved and they
+      // will control different aspects of the sound
+      tone(8, abs(ax)*700, 1000/16);
     }
   }
-
-  // accelerometer printing code
-  if (accel.available()) {      // Wait for new data from accelerometer
-    // Acceleration of x, y, and z directions in g units
-    Serial.println("");
-    Serial.print("a(x): ");
-    Serial.print(accel.getCalculatedX(), 3);
-    Serial.print("\t");
-    Serial.print("a(y): ");
-    Serial.print(accel.getCalculatedY(), 3);
-    Serial.print("\t");
-    Serial.print("a(z): ");
-    Serial.print(accel.getCalculatedZ(), 3);
-  }
-
+Serial.println("");
     
 }
   
