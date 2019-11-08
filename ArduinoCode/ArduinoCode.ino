@@ -23,6 +23,8 @@ void setup() { // this code runs once
   pinMode(3, INPUT);
   pinMode(4, INPUT);
 
+  
+
   // initialize wire library
   Wire.begin();
 
@@ -53,7 +55,7 @@ void loop() {
 
   // code for force sensitive resistor
   long force = analogRead(A0);
-  if (force>0) {
+  if (force>5) {
     Serial.print(" Force: ");
     Serial.print(force);
 
@@ -61,6 +63,20 @@ void loop() {
     // eventually, this reading may control volume or some other aspect of sound
     tone(8, force+100, 1000/16);
   }
+
+  // flex sensor code
+  // Read the ADC, and calculate voltage and resistance from it
+  int flexADC = analogRead(A1);
+  if (flexADC < 500){
+    tone(8,NOTE_G3 ,0);
+    Serial.print("Flex");
+    Serial.print(flexADC);
+  }
+//  else{
+//    Serial.println(flexADC);
+//    noTone(8);
+//    Serial.println(noise);
+//  }
 
   // accelerometer code
   if (accel.available()) {  // Wait for new data from accelerometer
