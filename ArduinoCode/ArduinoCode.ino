@@ -95,7 +95,7 @@ void loop() {
       Serial.print(ay);
       Serial.print("\t");
       Serial.print("a(z): ");
-      Serial.print(az);
+      Serial.println(az);
 
       // currently makes a tone whose pitch is dependent on the absolute value of 
       // acceleration in the x direction, multipled by 700
