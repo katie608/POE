@@ -1,9 +1,11 @@
+// prints bluetooth data to 
+
 #include <SoftwareSerial.h>
 
 // set up bluetooth code
-int rx = 2;
-int tx = 3;
-SoftwareSerial mySerial(2, 3); // RX, TX
+int rx = 6;//2
+int tx = 7;//3
+SoftwareSerial mySerial(rx, tx); // RX, TX
 
 // wire is the library that allows communication with the accelerometer using I2C
 #include <Wire.h> 
@@ -18,7 +20,7 @@ void setup() {
   Serial.begin(9600);
   mySerial.begin(9600);
 
-    // check if accelerometer is connected
+  // check if accelerometer is connected
   if (accel.begin() == false) {
     Serial.println("Not Connected. Please check connections and read the hookup guide.");
     while (1);
@@ -26,22 +28,41 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
-  Serial.println("Printing over Serial"   );
-  mySerial.println("Printing over bluetooth");
+//  Serial.println("Printing over Serial"   );
+//  mySerial.println("Printing over bluetooth");
 
-//
-//    // accelerometer code
-//  if (accel.available()) {  // Wait for new data from accelerometer
-//    // Acceleration of x, y, and z directions in g units (between 0 and 1)
-//    Serial.print("a(x): ");
-//    Serial.print(accel.getCalculatedX());
-//    Serial.print("\t");
-//    Serial.print("a(y): ");
-//    Serial.print(accel.getCalculatedY());
-//    Serial.print("\t");
-//    Serial.print("a(z): ");
-//    Serial.println(accel.getCalculatedZ());
-//  }
+
+
+  // button code
+  // button 1
+  Serial.print(digitalRead(2));
+  Serial.print(" ");
+  // button 2
+  Serial.print(digitalRead(3));
+  Serial.print(" ");
+  // button 3
+  Serial.print(digitalRead(4));
+  Serial.print(" ");
+  
+
+  // code for force sensitive resistor
+  Serial.print(analogRead(A0));
+  Serial.print(" ");
+
+
+  // flex sensor code
+  mySerial.println(analogRead(A1));
+  Serial.print(" ");
+
+
+  // accelerometer code
+  if (accel.available()) {  // Wait for new data from accelerometer
+    // Acceleration of x, y, and z directions in g units (between 0 and 1)
+    Serial.print(accel.getCalculatedX());
+    Serial.print(" ");
+    Serial.print(accel.getCalculatedY());
+    Serial.print(" ");
+    Serial.println(accel.getCalculatedZ());
+  }
 
 }
