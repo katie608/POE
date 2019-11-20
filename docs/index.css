@@ -1,0 +1,42 @@
+body {
+  font-family: arial;
+  margin: 0;
+  background-color: #374880;
+}
+.header {
+  width: 100%;
+  background: linear-gradient(175deg, #86dbc4 30%, #f875af 90%);
+  height: 20em;
+}
+.header-logo {
+  height: 16em;
+  /* float: left; */
+  padding: 1em 0em 0em 2em;
+}
+.header-links {
+  display: inline;
+  float: right;
+  padding-right: 1em;
+}
+.header-link {
+  padding: 0.5em;
+  padding-right: 0.4em;
+  height: 2em;
+  font-size: 2em;
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.text {
+  color: white;
+  padding: 2em;
+}
+.slanted-img-container {
+  overflow: hidden;
+  padding: 2em;
+  float: left;
+}
+.slanted-img {
+  transform: rotate(-10deg);
+}
