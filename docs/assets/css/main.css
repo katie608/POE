@@ -2313,7 +2313,7 @@
 
 	ul {
 		list-style: disc;
-		margin: 0 0 2em 0;
+		/* margin: 0 0 2em 0; */
 		padding-left: 1em;
 	}
 
@@ -2999,7 +2999,7 @@
 		@media screen and (max-width: 1280px) {
 
 			#banner {
-				padding: 10em 2em 8em 2em;
+				/* padding: 10em 2em 8em 2em; */
 			}
 
 		}
@@ -3015,7 +3015,7 @@
 		@media screen and (max-width: 736px) {
 
 			#banner {
-				padding: 8em 1.5em 6em 1.5em;
+				padding: 4em 1.5em 2em 1.5em;
 			}
 
 				#banner h1 {
@@ -3031,7 +3031,7 @@
 		@media screen and (max-width: 480px) {
 
 			#banner {
-				padding: 6em 1.5em 4em 1.5em;
+				padding: 4em 1.5em 2em 1.5em;
 			}
 
 		}

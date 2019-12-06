@@ -30,7 +30,7 @@ void setup() { // this code runs once
 
   // check if accelerometer is connected
   if (accel.begin() == false) {
-    Serial.println("Not Connected. Please check connections and read the hookup guide.");
+    mySerial.println("Not Connected. Please check connections and read the hookup guide.");
     while (1);
   }
 
