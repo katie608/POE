@@ -35,6 +35,22 @@
 			<section id="three" class="wrapper">
 				<div class="inner">
 				<h2>Design</h2>
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/system-diagram.svg" alt="Pic 01" style="padding-top: 1em;" />
+						</div>
+					</div>
+					<div class="6u$ 12u$(small)">
+
+							<h4>Overview</h4>
+							<p>
+								Our project consists of a glove that has sensors on it. Those sensors send data to an Arduino, which then sends data over bluetooth to a serial port. Then, the data goes into a program called MAX, which generates the sound, which then plays over speakers that are connected to the laptop.
+							</p>
+
+					</div>
+				</div>
+
 
 <!-- What you need -->
 				<header class="align-center">
@@ -49,7 +65,7 @@
 						<li><a href="https://www.sparkfun.com/products/10264">SPARKFUN Flex Sensor 2.2</a>"</li>
 						<li><a href="https://www.sparkfun.com/products/97">Push Button</a></li>
 					</ul>
-					<li><a href="https://www.amazon.com/HiLetgo-Wireless-Bluetooth-Transceiver-Arduino/dp/B071YJG8DR/ref=as_li_ss_tl?ie=UTF8&qid=1533394818&sr=8-3&keywords=HC-05&linkCode=sl1&tag=howto045-20&linkId=86cdebbcfc701f763369f68487f8bbc9">Bluetooth Module</a></li>
+					<li><a href="https://www.amazon.com/HiLetgo-Wireless-Bluetooth-Transceiver-Arduino/dp/B071YJG8DR/ref=as_li_ss_tl?ie=UTF8&qid=1533394818&sr=8-3&keywords=HC-05&linkCode=sl1&tag=howto045-20&linkId=86cdebbcfc701f763369f68487f8bbc9">Bluetooth Module</a> x2</li>
 					<li><a href="https://www.amazon.com/Arduino-A000066-ARDUINO-UNO-R3/dp/B008GRTSV6">Arduino Uno</a></li>
 					<li>Resistors</li>
 					<ul>
@@ -58,20 +74,31 @@
 						<li>4x10kΩ</li>
 						<li>4x22.5kΩ</li>
 					</ul>
-					<li>Wires</li>
-					<li>Sodering Iron and Soder</li>
-					<li>Protoboard</li>
+					<li>Lots of multi-strand, flexible wires</li>
+					<li>Solder & Soldering Iron</li>
+					<li>Protoboard x2 (we used 10x15 holes)</li>
+					<li>Arduino Uno (x2) and USB cable</li>
+					<li>Heat shrink tubing</li>
+
 				</ul>
 				<h4>Software</h4>
 				<ul>
 					<li>A computer with <a href="https://www.arduino.cc/en/main/software">Arduino</a> installed</li>
+					<li>MAX license (or free trial)</li>
 				</ul>
 				<h4>Mechanical</h4>
 				<ul>
-					<li><a href="https://www.amazon.com/aegend-Lightweight-Running-Touchscreen-Compression/dp/B07WZKSQDK/ref=sr_1_21_sspa?keywords=running%2Bgloves&qid=1574097840&sr=8-21-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFWT0c0RFM4VFNOQlgmZW5jcnlwdGVkSWQ9QTA2MTkwODEzRVhFT09JUkJPOVNYJmVuY3J5cHRlZEFkSWQ9QTA4Nzg5MDkyMjNTQzI4Nlo4RDNTJndpZGdldE5hbWU9c3BfbXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&psc=1">Glove</a></li>
-					<li><a href="https://www.amazon.com/SAINSMART-Flexible-Printing-Filament-Dimensional/dp/B072JCXS4G/ref=sr_1_4?keywords=sainsmart%2Btpu&qid=1575389012&sr=8-4&th=1">Black TPU</a></li>
+					<li><a href="https://www.amazon.com/aegend-Lightweight-Running-Touchscreen-Compression/dp/B07WZKSQDK/ref=sr_1_21_sspa?keywords=running%2Bgloves&qid=1574097840&sr=8-21-spons&spLa=ZW5jcnlwdGVkUXVhbGlmaWVyPUFWT0c0RFM4VFNOQlgmZW5jcnlwdGVkSWQ9QTA2MTkwODEzRVhFT09JUkJPOVNYJmVuY3J5cHRlZEFkSWQ9QTA4Nzg5MDkyMjNTQzI4Nlo4RDNTJndpZGdldE5hbWU9c3BfbXRmJmFjdGlvbj1jbGlja1JlZGlyZWN0JmRvTm90TG9nQ2xpY2s9dHJ1ZQ&th=1&psc=1">A pair of thin gloves (a knit glove or glove liners should work fine)</a></li>
+					<li><a href="https://www.amazon.com/SAINSMART-Flexible-Printing-Filament-Dimensional/dp/B072JCXS4G/ref=sr_1_4?keywords=sainsmart%2Btpu&qid=1575389012&sr=8-4&th=1">3D printer filament (PLA and TPU) in colors of your choice</a></li>
 					<!-- <li><a href=""></a></li> -->
 					<li>Needle and Thread</li>
+					<li>8 1.5V coin cell batteries</li>
+					<li>5.5mm x 2.1mm plug (x2)</li>
+					<li>Sewing needle and thread (we used an upholstery thread because it is more sturdy)</li>
+					<li>2 sided Velcro</li>
+					<li>Superglue</li>
+					<li>¾” 4-40 bolts (x8)</li>
+
 				</ul>
 
 <!-- Electrical -->
@@ -84,7 +111,7 @@
 					<div class="6u 12u$(small)">
 						<h4>Overall Design</h4>
 						<p>
-							Just say where sensors go and that they are sodered together and some connect to protoboard
+							To make the electrical design, you will need to connect the sensors to the Arduino as shown in this diagram. You will probably find it helpful to go through this part sensor by sensor, and connect them according the the diagrams shown, making sure that each one prints over the Serial port, and using the datasheets to troubleshoot if necessary.
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -103,6 +130,8 @@
 					<div class="6u$ 12u$(small)">
 						<h4>Flex Sensor</h4>
 						<p>
+							There are 4 flex sensors, and they are located on the pointer finger and ring finger joints of both hands. The flex sensor returns a variable value based on how much it is bent. When the flex sensor returns a value past the threshold that determines that it is “bent,” a note is played. Based on how much it is bent, the volume of the note changes. The flex sensors have 2 pins, and as seen in the diagram, the flex sensors are connected to power, ground, and an analog pin on the arduino. It should be noted that caution should be exercised when soldering to the flex sensor. Due to its sensitivity, we soldered two wires onto the tabs on low heat and soldered any additional connections to those wires rather than directly to the tabs to prevent overheating.
+							<br><br><a href="https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/FLEX%20SENSOR%20DATA%20SHEET%202014.pdf">Datasheet</a>
 						</p>
 					</div>
 				</div>
@@ -112,6 +141,8 @@
 					<div class="6u 12u$(small)">
 						<h4>Force Sensitive Resistor</h4>
 						<p>
+							The force sensitive resistors are located on the fingertips of the left hand. The resistors return a value that varies based on the force applied to the resistor. The amount of pressure applied determines the frequency that is outputted. They have 2 pins, and as seen in the diagram, the force sensitive resistors are connected to power, ground, and an analog pin on the arduino.
+							<br><br><a href="https://cdn.sparkfun.com/assets/8/a/1/2/0/2010-10-26-DataSheet-FSR402-Layout2.pdf">Datasheet</a>
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -131,6 +162,8 @@
 					<div class="6u$ 12u$(small)">
 						<h4>Button</h4>
 						<p>
+							The four buttons are located on the fingertips of the right hand. The push buttons send back whether or not they have been pressed, which is good for sounds like drum beats or sounds that are played when the button is on. They have four pins, and as you can see in the diagram, the button is connected to power, ground, and a digital pin on the arduino. The buttons are placed within finger caps, which are further described in mechanical fabrication.
+							<br><br><a href="http://poe.olin.edu/resources/sw_lt_eng_5n_2r.pdf">Datasheet</a>
 						</p>
 					</div>
 				</div>
@@ -140,6 +173,9 @@
 					<div class="6u 12u$(small)">
 						<h4>Accelerometer</h4>
 						<p>
+							The accelerometer is located on the wrist. It works differently than the other sensors because it uses <a href=”https://learn.sparkfun.com/tutorials/i2c/all”>I2C protocol</a>, which is helpful because the accelerometer sends back a measurement of acceleration in 3 separate axes, which would not be possible using analog pins. This was tricky to get working, but we were able to find the library that made it easier.
+							<br><br><a href="https://www.velleman.eu/downloads/29/vma208_a4v02.pdf">Datasheet</a>
+							<br><a href="https://learn.sparkfun.com/tutorials/mma8452q-accelerometer-breakout-hookup-guide">Guide that was useful</a>
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
