@@ -195,7 +195,18 @@
 					<div class="6u$ 12u$(small)">
 						<h4>Bluetooth</h4>
 						<p>
+							To use the bluetooth module, first hook it up to the Arduino according to the diagram. The bluetooth module should have a red light on it that is quickly blinking.
 						</p>
+						<p>
+							Now, you need to connect to the bluetooth module with your computer. Go to settings, then click on Bluetooth and other devices, then turn on bluetooth and click on ‘add device.’  The device is named HC-05, and the PIN is 1234. You may need to remove and re-add the device each time it disconnects. You will know the bluetooth module is connected when the LED blinks 2 long blinks.
+						</p>
+						<p>
+							Now in order to see the bluetooth, go to Arduino and switch the port to the one that the bluetooth is on. It may take some experimenting to figure out the correct port. Make sure that your sketch includes the bluetooth code, which is the part of the code that initializes and uses mySerial instead of just using Serial. You may have some difficulty getting the accelerometer working with the bluetooth code. If you do, make sure everything is wired correctly. Also, good luck.
+						</p>
+						<p>
+							Once you have found the correct port, if you open the Serial Monitor, the sensor values will be printing out. You can now plug the arduino into a separate computer or power it with a battery, and it should still receive the values.
+						</p>
+						<br><a href="https://www.gme.cz/data/attachments/dsh.772-148.1.pdf">Datasheet</a>
 					</div>
 				</div>
 
@@ -208,7 +219,7 @@
 					</div>
 					<div class="6u$ 12u$(small)">
 						<div class="image fit">
-							<img src="images/design/e/accelerometer.png" alt="Pic 01" />
+							<img src="images/design/e/protoboard-diagram.svg" alt="Pic 01" />
 						</div>
 					</div>
 				</div>
@@ -222,7 +233,7 @@
 
 				<h4>Software Summary</h4>
 				<p>
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					Once you have soldered all the electrical components together, you can work on the software. The Arduino code is pretty simple, and works by reading in the sensor values and outputting them over bluetooth. The, those sensor values are read by MAX, which generates the sound.
 				</p>
 
 				<div class="row">
@@ -232,7 +243,7 @@
 							<a href="https://github.com/katie608/POE/blob/master/bluetooth/bluetooth.ino" class="icon fa-github"><span class="label">Github</span></a>
 						</h4>
 						<p>
-							Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.
+							Arduino code 
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
