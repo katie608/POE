@@ -2,117 +2,319 @@
 	"boxes" : [ 		{
 			"box" : 			{
 				"maxclass" : "comment",
-				"text" : "Force Sine Player",
-				"numinlets" : 1,
-				"id" : "obj-174",
+				"text" : "Movement activated sample playback",
 				"numoutlets" : 0,
-				"patching_rect" : [ 27.547485000000052, 622.839957999999569, 121.0, 20.0 ]
+				"id" : "obj-151",
+				"patching_rect" : [ 469.976806000000124, 424.627518000000009, 219.0, 20.0 ],
+				"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+				"numinlets" : 1
 			}
 
 		}
 , 		{
 			"box" : 			{
-				"maxclass" : "newobj",
-				"text" : "scale 0 0 0 0.5",
-				"numinlets" : 6,
-				"id" : "obj-170",
+				"maxclass" : "toggle",
 				"numoutlets" : 1,
-				"patching_rect" : [ 118.159301000000141, 647.839957999999569, 87.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"id" : "obj-136",
+				"outlettype" : [ "int" ],
+				"patching_rect" : [ 646.5, 544.546982000000071, 24.0, 24.0 ],
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
 , 		{
 			"box" : 			{
-				"maxclass" : "newobj",
-				"text" : "scale 0 0 0 0.5",
-				"numinlets" : 6,
-				"id" : "obj-169",
+				"maxclass" : "toggle",
 				"numoutlets" : 1,
-				"patching_rect" : [ 297.841796000000159, 647.839957999999569, 87.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"id" : "obj-131",
+				"outlettype" : [ "int" ],
+				"patching_rect" : [ 495.226806000000124, 546.627518000000009, 24.0, 24.0 ],
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "scale 0 0 0 0.5",
-				"numinlets" : 6,
-				"id" : "obj-168",
+				"text" : "change",
+				"numoutlets" : 3,
+				"id" : "obj-118",
+				"outlettype" : [ "", "int", "int" ],
+				"patching_rect" : [ 632.0, 511.627518000000009, 48.0, 22.0 ],
+				"numinlets" : 1
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "change",
+				"numoutlets" : 3,
+				"id" : "obj-115",
+				"outlettype" : [ "", "int", "int" ],
+				"patching_rect" : [ 480.726806000000124, 511.627518000000009, 48.0, 22.0 ],
+				"numinlets" : 1
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "abs",
 				"numoutlets" : 1,
-				"patching_rect" : [ 207.162475000000086, 647.839957999999569, 87.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"id" : "obj-111",
+				"outlettype" : [ "int" ],
+				"patching_rect" : [ 632.0, 446.627518000000009, 28.0, 22.0 ],
+				"numinlets" : 1
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "scale 0 0 0 0.5",
-				"numinlets" : 6,
-				"id" : "obj-167",
+				"text" : "abs",
 				"numoutlets" : 1,
-				"patching_rect" : [ 27.547485000000052, 647.839957999999569, 87.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"id" : "obj-84",
+				"outlettype" : [ "int" ],
+				"patching_rect" : [ 480.726806000000124, 446.627518000000009, 28.0, 22.0 ],
+				"numinlets" : 1
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "message",
+				"text" : "open",
+				"numoutlets" : 1,
+				"id" : "obj-81",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 695.5, 550.627518000000009, 35.0, 22.0 ],
+				"numinlets" : 2
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "message",
+				"text" : "open",
+				"numoutlets" : 1,
+				"id" : "obj-61",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 551.976806000000124, 575.942954999999984, 35.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "*~",
+				"text" : "sfplay~",
+				"numoutlets" : 2,
+				"id" : "obj-41",
+				"outlettype" : [ "signal", "bang" ],
+				"patching_rect" : [ 646.5, 582.5, 47.0, 22.0 ],
 				"numinlets" : 2,
-				"id" : "obj-166",
-				"numoutlets" : 1,
-				"patching_rect" : [ 49.229980000000069, 725.048011999999517, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"saved_object_attributes" : 				{
+					"basictuning" : 440,
+					"followglobaltempo" : 0,
+					"formantcorrection" : 0,
+					"mode" : "basic",
+					"originallength" : [ 0.0, "ticks" ],
+					"originaltempo" : 120.0,
+					"pitchcorrection" : 0,
+					"quality" : "basic",
+					"timestretch" : [ 0 ]
+				}
+
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "*~",
+				"text" : "sfplay~",
+				"numoutlets" : 2,
+				"id" : "obj-23",
+				"outlettype" : [ "signal", "bang" ],
+				"patching_rect" : [ 495.226806000000124, 586.627518000000009, 47.0, 22.0 ],
 				"numinlets" : 2,
-				"id" : "obj-165",
+				"saved_object_attributes" : 				{
+					"basictuning" : 440,
+					"followglobaltempo" : 0,
+					"formantcorrection" : 0,
+					"mode" : "basic",
+					"originallength" : [ 0.0, "ticks" ],
+					"originaltempo" : 120.0,
+					"pitchcorrection" : 0,
+					"quality" : "basic",
+					"timestretch" : [ 0 ]
+				}
+
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "message",
+				"text" : "stop",
 				"numoutlets" : 1,
-				"patching_rect" : [ 262.37554850000015, 725.048011999999517, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-133",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 583.297485000000052, 711.570473000000106, 31.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "*~",
-				"numinlets" : 2,
-				"id" : "obj-164",
+				"text" : "if $f1>=0.75 then 1 else 0",
 				"numoutlets" : 1,
-				"patching_rect" : [ 123.618163999999979, 725.048011999999517, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-128",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 632.0, 479.546982000000071, 144.0, 22.0 ],
+				"numinlets" : 1
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "*~",
-				"numinlets" : 2,
-				"id" : "obj-163",
+				"text" : "if $f1>=0.75 then 1 else 0",
 				"numoutlets" : 1,
-				"patching_rect" : [ 190.479980000000069, 725.048011999999517, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-127",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 480.726806000000124, 479.546982000000071, 144.0, 22.0 ],
+				"numinlets" : 1
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "ezdac~",
-				"numinlets" : 2,
-				"id" : "obj-160",
 				"numoutlets" : 0,
-				"patching_rect" : [ 149.162475000000086, 759.548011999999517, 45.0, 45.0 ]
+				"id" : "obj-126",
+				"patching_rect" : [ 567.476806000000124, 511.627518000000009, 45.0, 45.0 ],
+				"numinlets" : 2
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "comment",
+				"text" : "Force Sine Player",
+				"numoutlets" : 0,
+				"id" : "obj-174",
+				"patching_rect" : [ 27.547485000000052, 647.410430999999676, 121.0, 20.0 ],
+				"numinlets" : 1
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "scale 0 0 0 0.5",
+				"numoutlets" : 1,
+				"id" : "obj-170",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 118.159301000000141, 672.410430999999676, 87.0, 22.0 ],
+				"numinlets" : 6
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "scale 0 0 0 0.5",
+				"numoutlets" : 1,
+				"id" : "obj-169",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 297.841796000000159, 672.410430999999676, 87.0, 22.0 ],
+				"numinlets" : 6
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "scale 0 0 0 0.5",
+				"numoutlets" : 1,
+				"id" : "obj-168",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 207.162475000000086, 672.410430999999676, 87.0, 22.0 ],
+				"numinlets" : 6
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "scale 0 0 0 0.5",
+				"numoutlets" : 1,
+				"id" : "obj-167",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 27.547485000000052, 672.410430999999676, 87.0, 22.0 ],
+				"numinlets" : 6
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "*~",
+				"numoutlets" : 1,
+				"id" : "obj-166",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 49.229980000000069, 749.618484999999623, 29.5, 22.0 ],
+				"numinlets" : 2
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "*~",
+				"numoutlets" : 1,
+				"id" : "obj-165",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 262.37554850000015, 749.618484999999623, 29.5, 22.0 ],
+				"numinlets" : 2
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "*~",
+				"numoutlets" : 1,
+				"id" : "obj-164",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 123.618163999999979, 749.618484999999623, 29.5, 22.0 ],
+				"numinlets" : 2
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "newobj",
+				"text" : "*~",
+				"numoutlets" : 1,
+				"id" : "obj-163",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 190.479980000000069, 749.618484999999623, 29.5, 22.0 ],
+				"numinlets" : 2
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "ezdac~",
+				"numoutlets" : 0,
+				"id" : "obj-160",
+				"patching_rect" : [ 149.162475000000086, 784.118484999999623, 45.0, 45.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -120,10 +322,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "B3",
-				"numinlets" : 1,
-				"id" : "obj-150",
 				"numoutlets" : 0,
-				"patching_rect" : [ 49.229980000000069, 675.839957999999569, 25.364990000000034, 20.0 ]
+				"id" : "obj-150",
+				"patching_rect" : [ 49.229980000000069, 700.410430999999676, 25.364990000000034, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -131,10 +333,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "A4",
-				"numinlets" : 1,
-				"id" : "obj-145",
 				"numoutlets" : 0,
-				"patching_rect" : [ 264.490538500000184, 675.839957999999569, 28.0, 20.0 ]
+				"id" : "obj-145",
+				"patching_rect" : [ 264.490538500000184, 700.410430999999676, 28.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -142,10 +344,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "E4",
-				"numinlets" : 1,
-				"id" : "obj-143",
 				"numoutlets" : 0,
-				"patching_rect" : [ 190.479980000000069, 675.839957999999569, 28.0, 20.0 ]
+				"id" : "obj-143",
+				"patching_rect" : [ 190.479980000000069, 700.410430999999676, 28.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -153,10 +355,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "C#4",
-				"numinlets" : 1,
-				"id" : "obj-141",
 				"numoutlets" : 0,
-				"patching_rect" : [ 120.868163999999979, 675.839957999999569, 35.0, 20.0 ]
+				"id" : "obj-141",
+				"patching_rect" : [ 120.868163999999979, 700.410430999999676, 35.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -164,11 +366,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "cycle~ 247",
-				"numinlets" : 2,
-				"id" : "obj-139",
 				"numoutlets" : 1,
-				"patching_rect" : [ 49.229980000000069, 697.839957999999569, 66.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-139",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 49.229980000000069, 722.410430999999676, 66.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -176,11 +378,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "cycle~ 440",
-				"numinlets" : 2,
-				"id" : "obj-138",
 				"numoutlets" : 1,
-				"patching_rect" : [ 262.37554850000015, 697.839957999999569, 66.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-138",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 262.37554850000015, 722.410430999999676, 66.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -188,11 +390,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "cycle~ 330",
-				"numinlets" : 2,
-				"id" : "obj-137",
 				"numoutlets" : 1,
-				"patching_rect" : [ 190.479980000000069, 697.839957999999569, 66.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-137",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 190.479980000000069, 722.410430999999676, 66.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -200,11 +402,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "cycle~ 277",
-				"numinlets" : 2,
-				"id" : "obj-134",
 				"numoutlets" : 1,
-				"patching_rect" : [ 120.868163999999979, 697.839957999999569, 66.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-134",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 120.868163999999979, 722.410430999999676, 66.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -212,11 +414,11 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "Other instruments, add-ons, etc.",
-				"numinlets" : 1,
-				"id" : "obj-132",
 				"numoutlets" : 0,
-				"patching_rect" : [ 11.75, 382.0, 200.0, 20.0 ],
-				"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
+				"id" : "obj-132",
+				"patching_rect" : [ 11.75, 406.570473000000106, 200.0, 20.0 ],
+				"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -224,10 +426,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "Other Sawtooth Note Preset",
-				"numinlets" : 1,
-				"id" : "obj-129",
 				"numoutlets" : 0,
-				"patching_rect" : [ 257.0, 424.419464000000062, 165.0, 20.0 ]
+				"id" : "obj-129",
+				"patching_rect" : [ 257.0, 448.989937000000168, 165.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -235,10 +437,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "B3",
-				"numinlets" : 1,
-				"id" : "obj-125",
 				"numoutlets" : 0,
-				"patching_rect" : [ 761.976806000000124, 269.27533300000016, 30.0, 20.0 ]
+				"id" : "obj-125",
+				"patching_rect" : [ 761.976806000000124, 269.27533300000016, 30.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -246,23 +448,23 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "Data from Serial",
-				"numinlets" : 1,
-				"id" : "obj-119",
 				"numoutlets" : 0,
-				"patching_rect" : [ 528.864990000000034, 36.0, 95.0, 20.0 ]
+				"id" : "obj-119",
+				"patching_rect" : [ 528.864990000000034, 36.0, 95.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "flonum",
-				"parameter_enable" : 0,
-				"format" : 6,
-				"numinlets" : 1,
-				"id" : "obj-116",
 				"numoutlets" : 2,
+				"id" : "obj-116",
+				"format" : 6,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 990.476806000000124, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -270,10 +472,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "Bluetooth and Serial",
-				"numinlets" : 1,
-				"id" : "obj-112",
 				"numoutlets" : 0,
-				"patching_rect" : [ 12.0, 33.0, 121.0, 20.0 ]
+				"id" : "obj-112",
+				"patching_rect" : [ 12.0, 33.0, 121.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -281,10 +483,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "Sawtooth Generator",
-				"numinlets" : 1,
-				"id" : "obj-103",
 				"numoutlets" : 0,
-				"patching_rect" : [ 754.476806000000124, 181.335056000000236, 120.0, 20.0 ]
+				"id" : "obj-103",
+				"patching_rect" : [ 754.476806000000124, 181.335056000000236, 120.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -292,11 +494,11 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "Sample Playback",
-				"numinlets" : 1,
-				"id" : "obj-92",
 				"numoutlets" : 0,
+				"id" : "obj-92",
 				"patching_rect" : [ 518.114990000000034, 180.37548800000036, 106.0, 20.0 ],
-				"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ]
+				"textcolor" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -304,10 +506,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "Sine Generator",
-				"numinlets" : 1,
-				"id" : "obj-74",
 				"numoutlets" : 0,
-				"patching_rect" : [ 26.114990000000034, 424.5, 91.0, 20.0 ]
+				"id" : "obj-74",
+				"patching_rect" : [ 26.114990000000034, 449.070473000000106, 91.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -315,11 +517,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "scale -1 1 0 0.5",
-				"numinlets" : 6,
-				"id" : "obj-67",
 				"numoutlets" : 1,
-				"patching_rect" : [ 142.72680600000001, 446.5, 91.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"id" : "obj-67",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 142.72680600000001, 471.070473000000106, 91.0, 22.0 ],
+				"numinlets" : 6
 			}
 
 		}
@@ -327,11 +529,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "scale -0.5 1 0 1000",
-				"numinlets" : 6,
-				"id" : "obj-65",
 				"numoutlets" : 1,
-				"patching_rect" : [ 26.114990000000034, 446.5, 111.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"id" : "obj-65",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 26.114990000000034, 471.070473000000106, 111.0, 22.0 ],
+				"numinlets" : 6
 			}
 
 		}
@@ -339,11 +541,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "cycle~ 1000.",
-				"numinlets" : 2,
-				"id" : "obj-24",
 				"numoutlets" : 1,
-				"patching_rect" : [ 54.114990000000034, 538.5, 76.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-24",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 54.114990000000034, 563.070473000000106, 76.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -352,11 +554,11 @@
 				"maxclass" : "comment",
 				"text" : "Amplitude",
 				"presentation_rect" : [ 1215.5, 203.234900999999979, 77.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-26",
-				"numoutlets" : 0,
-				"patching_rect" : [ 135.114990000000034, 475.919464000000062, 77.0, 20.0 ]
+				"patching_rect" : [ 135.114990000000034, 500.489937000000168, 77.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -365,11 +567,11 @@
 				"maxclass" : "comment",
 				"text" : "Frequency",
 				"presentation_rect" : [ 1134.5, 203.234900999999979, 79.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-32",
-				"numoutlets" : 0,
-				"patching_rect" : [ 54.114990000000034, 475.919464000000062, 79.0, 20.0 ]
+				"patching_rect" : [ 54.114990000000034, 500.489937000000168, 79.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -377,19 +579,19 @@
 			"box" : 			{
 				"maxclass" : "flonum",
 				"presentation_rect" : [ 1220.0, 232.630873999999949, 68.0, 22.0 ],
-				"minimum" : 0.0,
-				"parameter_enable" : 0,
-				"style" : "numberGold",
-				"maximum" : 1.0,
-				"format" : 6,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-33",
-				"numoutlets" : 2,
-				"patching_rect" : [ 139.614990000000034, 505.315436999999974, 68.0, 22.0 ],
+				"format" : 6,
 				"outlettype" : [ "", "bang" ],
+				"triscale" : 0.9,
+				"patching_rect" : [ 139.614990000000034, 529.885910000000081, 68.0, 22.0 ],
+				"minimum" : 0.0,
+				"maximum" : 1.0,
+				"numinlets" : 1,
 				"tricolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ],
-				"triscale" : 0.9
+				"parameter_enable" : 0,
+				"style" : "numberGold"
 			}
 
 		}
@@ -397,17 +599,17 @@
 			"box" : 			{
 				"maxclass" : "flonum",
 				"presentation_rect" : [ 1134.5, 232.630873999999949, 69.0, 22.0 ],
-				"parameter_enable" : 0,
-				"style" : "numberGold",
-				"format" : 6,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-37",
-				"numoutlets" : 2,
-				"patching_rect" : [ 54.114990000000034, 505.315436999999974, 69.0, 22.0 ],
+				"format" : 6,
 				"outlettype" : [ "", "bang" ],
+				"triscale" : 0.9,
+				"patching_rect" : [ 54.114990000000034, 529.885910000000081, 69.0, 22.0 ],
+				"numinlets" : 1,
 				"tricolor" : [ 0.764706, 0.592157, 0.101961, 1.0 ],
-				"triscale" : 0.9
+				"parameter_enable" : 0,
+				"style" : "numberGold"
 			}
 
 		}
@@ -415,12 +617,12 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "*~",
-				"style" : "newobjYellow",
-				"numinlets" : 2,
-				"id" : "obj-35",
 				"numoutlets" : 1,
-				"patching_rect" : [ 73.114990000000034, 569.372481999999991, 38.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"id" : "obj-35",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 73.114990000000034, 593.942955000000097, 38.0, 22.0 ],
+				"numinlets" : 2,
+				"style" : "newobjYellow"
 			}
 
 		}
@@ -429,38 +631,38 @@
 				"maxclass" : "ezdac~",
 				"prototypename" : "helpfile",
 				"presentation_rect" : [ 1134.5, 437.922827999999924, 44.0, 44.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-40",
-				"numoutlets" : 0,
-				"patching_rect" : [ 151.614990000000034, 538.5, 44.0, 44.0 ],
-				"local" : 1
+				"patching_rect" : [ 151.614990000000034, 563.070473000000106, 44.0, 44.0 ],
+				"local" : 1,
+				"numinlets" : 2
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "flonum",
-				"parameter_enable" : 0,
-				"format" : 6,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"id" : "obj-109",
-				"numoutlets" : 2,
+				"format" : 6,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 933.476806000000124, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "flonum",
-				"parameter_enable" : 0,
-				"format" : 6,
-				"numinlets" : 1,
-				"id" : "obj-104",
 				"numoutlets" : 2,
+				"id" : "obj-104",
+				"format" : 6,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 877.476806000000124, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -469,11 +671,11 @@
 				"maxclass" : "comment",
 				"text" : "accel z",
 				"presentation_rect" : [ 1005.5, 133.309723000000076, 53.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-106",
-				"numoutlets" : 0,
-				"patching_rect" : [ 988.976806000000124, 130.059723000000076, 53.0, 20.0 ]
+				"patching_rect" : [ 988.976806000000124, 130.059723000000076, 53.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -482,11 +684,11 @@
 				"maxclass" : "comment",
 				"text" : "accel y",
 				"presentation_rect" : [ 950.0, 133.309723000000076, 48.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-102",
-				"numoutlets" : 0,
-				"patching_rect" : [ 933.476806000000124, 130.059723000000076, 48.0, 20.0 ]
+				"patching_rect" : [ 933.476806000000124, 130.059723000000076, 48.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -495,11 +697,11 @@
 				"maxclass" : "comment",
 				"text" : "accel x",
 				"presentation_rect" : [ 902.0, 133.309723000000076, 48.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-98",
-				"numoutlets" : 0,
-				"patching_rect" : [ 885.476806000000124, 130.059723000000076, 48.0, 20.0 ]
+				"patching_rect" : [ 885.476806000000124, 130.059723000000076, 48.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -507,10 +709,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "pinky",
-				"numinlets" : 1,
-				"id" : "obj-71",
 				"numoutlets" : 0,
-				"patching_rect" : [ 695.297485000000052, 130.309723000000076, 43.932495000000017, 20.0 ]
+				"id" : "obj-71",
+				"patching_rect" : [ 695.297485000000052, 130.309723000000076, 43.932495000000017, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -518,10 +720,10 @@
 			"box" : 			{
 				"maxclass" : "comment",
 				"text" : "ring",
-				"numinlets" : 1,
-				"id" : "obj-66",
 				"numoutlets" : 0,
-				"patching_rect" : [ 643.297485000000052, 130.309723000000076, 33.0, 20.0 ]
+				"id" : "obj-66",
+				"patching_rect" : [ 643.297485000000052, 130.309723000000076, 33.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -529,11 +731,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "if $f1>= 0. then $f1 else 0",
-				"numinlets" : 1,
-				"id" : "obj-64",
 				"numoutlets" : 1,
+				"id" : "obj-64",
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 892.976806000000124, 237.444797000000165, 144.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -541,35 +743,35 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "if $f1>=0. then $f1 else 0",
-				"numinlets" : 1,
+				"numoutlets" : 1,
 				"id" : "obj-43",
-				"numoutlets" : 1,
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 749.976806000000124, 237.444797000000165, 141.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 1
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "scale 220 125 0 0.5",
-				"numinlets" : 6,
+				"text" : "scale 210 125 0 0.5",
+				"numoutlets" : 1,
 				"id" : "obj-114",
-				"numoutlets" : 1,
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 890.476806000000124, 205.840770000000134, 113.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 6
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "scale 350 450 0. 0.5",
-				"numinlets" : 6,
-				"id" : "obj-113",
+				"text" : "scale 400 450 0. 0.5",
 				"numoutlets" : 1,
+				"id" : "obj-113",
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 761.976806000000124, 205.840770000000134, 117.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 6
 			}
 
 		}
@@ -577,13 +779,13 @@
 			"box" : 			{
 				"maxclass" : "number",
 				"presentation_rect" : [ 830.5, 103.75, 50.0, 22.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-108",
-				"numoutlets" : 2,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 817.864990000000034, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -591,13 +793,13 @@
 			"box" : 			{
 				"maxclass" : "number",
 				"presentation_rect" : [ 773.5, 103.75, 50.0, 22.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-107",
-				"numoutlets" : 2,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 760.864990000000034, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -608,11 +810,11 @@
 				"linecount" : 2,
 				"presentation_linecount" : 2,
 				"presentation_rect" : [ 843.0, 133.309723000000076, 54.0, 34.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-94",
-				"numoutlets" : 0,
-				"patching_rect" : [ 830.364990000000034, 130.309723000000076, 54.0, 34.0 ]
+				"patching_rect" : [ 830.364990000000034, 130.309723000000076, 54.0, 34.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -621,11 +823,11 @@
 				"maxclass" : "comment",
 				"text" : "flex thumb",
 				"presentation_rect" : [ 770.0, 133.309723000000076, 71.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-88",
-				"numoutlets" : 0,
-				"patching_rect" : [ 757.364990000000034, 130.309723000000076, 71.0, 20.0 ]
+				"patching_rect" : [ 757.364990000000034, 130.309723000000076, 71.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -634,11 +836,11 @@
 				"maxclass" : "comment",
 				"text" : "middle",
 				"presentation_rect" : [ 534.5, 130.75, 49.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-101",
-				"numoutlets" : 0,
-				"patching_rect" : [ 583.297485000000052, 130.309723000000076, 49.0, 20.0 ]
+				"patching_rect" : [ 583.297485000000052, 130.309723000000076, 49.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -647,11 +849,11 @@
 				"maxclass" : "comment",
 				"text" : "pointer",
 				"presentation_rect" : [ 587.932495000000017, 130.75, 54.5, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-99",
-				"numoutlets" : 0,
-				"patching_rect" : [ 521.864990000000034, 130.309723000000076, 54.5, 20.0 ]
+				"patching_rect" : [ 521.864990000000034, 130.309723000000076, 54.5, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -659,11 +861,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "change",
-				"numinlets" : 1,
-				"id" : "obj-39",
 				"numoutlets" : 3,
+				"id" : "obj-39",
+				"outlettype" : [ "", "int", "int" ],
 				"patching_rect" : [ 690.081237500000043, 202.37548800000036, 48.0, 22.0 ],
-				"outlettype" : [ "", "int", "int" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -671,13 +873,13 @@
 			"box" : 			{
 				"maxclass" : "number",
 				"presentation_rect" : [ 713.932495000000017, 103.75, 50.0, 22.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-46",
-				"numoutlets" : 2,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 701.297485000000052, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -686,12 +888,12 @@
 				"maxclass" : "message",
 				"text" : "open",
 				"presentation_rect" : [ 726.932495000000017, 240.25, 35.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-49",
-				"numoutlets" : 1,
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 711.114990000000034, 256.62548800000036, 35.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -700,19 +902,19 @@
 				"maxclass" : "newobj",
 				"text" : "sfplay~",
 				"presentation_rect" : [ 709.932495000000017, 270.440276999999924, 47.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-57",
-				"numoutlets" : 2,
-				"patching_rect" : [ 694.114990000000034, 286.815765000000283, 47.0, 22.0 ],
 				"outlettype" : [ "signal", "bang" ],
+				"patching_rect" : [ 694.114990000000034, 286.815765000000283, 47.0, 22.0 ],
+				"numinlets" : 2,
 				"saved_object_attributes" : 				{
 					"basictuning" : 440,
 					"followglobaltempo" : 0,
 					"formantcorrection" : 0,
 					"mode" : "basic",
-					"originallength" : [ 1440.021768707483034, "ticks" ],
-					"originaltempo" : 120.0,
+					"originallength" : [ 1054.9551020408162, "ticks" ],
+					"originaltempo" : 119.999999999999986,
 					"pitchcorrection" : 0,
 					"quality" : "basic",
 					"timestretch" : [ 0 ]
@@ -725,13 +927,13 @@
 			"box" : 			{
 				"maxclass" : "toggle",
 				"presentation_rect" : [ 709.932495000000017, 215.419464000000005, 21.0, 21.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-60",
-				"numoutlets" : 1,
+				"outlettype" : [ "int" ],
 				"patching_rect" : [ 694.114990000000034, 231.794952000000364, 21.0, 21.0 ],
-				"outlettype" : [ "int" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -740,12 +942,12 @@
 				"maxclass" : "newobj",
 				"text" : "*~",
 				"presentation_rect" : [ 961.0, 525.580535999999938, 29.5, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-83",
-				"numoutlets" : 1,
-				"patching_rect" : [ 385.0, 516.0, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 385.0, 540.570473000000106, 29.5, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -754,11 +956,11 @@
 				"maxclass" : "comment",
 				"text" : "A4",
 				"presentation_rect" : [ 961.0, 460.580535999999938, 29.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-86",
-				"numoutlets" : 0,
-				"patching_rect" : [ 385.0, 451.0, 29.0, 20.0 ]
+				"patching_rect" : [ 385.0, 475.570473000000106, 29.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -767,12 +969,12 @@
 				"maxclass" : "newobj",
 				"text" : "saw~ 440",
 				"presentation_rect" : [ 961.0, 485.580535999999938, 60.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-87",
-				"numoutlets" : 1,
-				"patching_rect" : [ 385.0, 476.0, 60.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 385.0, 500.570473000000106, 60.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -781,12 +983,12 @@
 				"maxclass" : "newobj",
 				"text" : "*~",
 				"presentation_rect" : [ 860.0, 525.580535999999938, 29.5, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-82",
-				"numoutlets" : 1,
-				"patching_rect" : [ 284.0, 516.0, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 284.0, 540.570473000000106, 29.5, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -795,12 +997,12 @@
 				"maxclass" : "newobj",
 				"text" : "*~",
 				"presentation_rect" : [ 968.0, 306.580535999999938, 29.5, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-72",
-				"numoutlets" : 1,
+				"outlettype" : [ "signal" ],
 				"patching_rect" : [ 923.976806000000124, 292.27533300000016, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -809,12 +1011,12 @@
 				"maxclass" : "newobj",
 				"text" : "*~",
 				"presentation_rect" : [ 816.5, 310.440276999999924, 29.5, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-59",
-				"numoutlets" : 1,
+				"outlettype" : [ "signal" ],
 				"patching_rect" : [ 805.726806000000124, 301.27533300000016, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -823,11 +1025,11 @@
 				"maxclass" : "comment",
 				"text" : "E4",
 				"presentation_rect" : [ 860.0, 460.580535999999938, 29.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-50",
-				"numoutlets" : 0,
-				"patching_rect" : [ 284.0, 451.0, 29.0, 20.0 ]
+				"patching_rect" : [ 284.0, 475.570473000000106, 29.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -835,11 +1037,11 @@
 			"box" : 			{
 				"maxclass" : "ezdac~",
 				"presentation_rect" : [ 894.0, 297.815436999999918, 45.0, 45.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-58",
-				"numoutlets" : 0,
-				"patching_rect" : [ 866.976806000000124, 269.27533300000016, 45.0, 45.0 ]
+				"patching_rect" : [ 866.976806000000124, 269.27533300000016, 45.0, 45.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -848,12 +1050,12 @@
 				"maxclass" : "newobj",
 				"text" : "saw~ 330",
 				"presentation_rect" : [ 856.0, 485.580535999999938, 60.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-38",
-				"numoutlets" : 1,
-				"patching_rect" : [ 280.0, 476.0, 60.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 280.0, 500.570473000000106, 60.0, 22.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -862,11 +1064,11 @@
 				"maxclass" : "comment",
 				"text" : "C#4",
 				"presentation_rect" : [ 960.0, 241.580535999999938, 41.0, 20.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-47",
-				"numoutlets" : 0,
-				"patching_rect" : [ 988.976806000000124, 269.27533300000016, 41.0, 20.0 ]
+				"patching_rect" : [ 988.976806000000124, 269.27533300000016, 41.0, 20.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -875,12 +1077,12 @@
 				"maxclass" : "newobj",
 				"text" : "saw~ 277",
 				"presentation_rect" : [ 960.0, 266.580535999999938, 60.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-36",
-				"numoutlets" : 1,
+				"outlettype" : [ "signal" ],
 				"patching_rect" : [ 923.976806000000124, 264.27533300000016, 60.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -889,12 +1091,12 @@
 				"maxclass" : "newobj",
 				"text" : "saw~ 247",
 				"presentation_rect" : [ 816.5, 270.440276999999924, 60.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-1",
-				"numoutlets" : 1,
+				"outlettype" : [ "signal" ],
 				"patching_rect" : [ 796.476806000000124, 269.27533300000016, 60.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -902,11 +1104,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "change",
-				"numinlets" : 1,
+				"numoutlets" : 3,
 				"id" : "obj-79",
-				"numoutlets" : 3,
+				"outlettype" : [ "", "int", "int" ],
 				"patching_rect" : [ 631.794310999999993, 202.37548800000036, 48.0, 22.0 ],
-				"outlettype" : [ "", "int", "int" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -914,11 +1116,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "change",
-				"numinlets" : 1,
+				"numoutlets" : 3,
 				"id" : "obj-77",
-				"numoutlets" : 3,
+				"outlettype" : [ "", "int", "int" ],
 				"patching_rect" : [ 577.114990000000034, 202.37548800000036, 48.0, 22.0 ],
-				"outlettype" : [ "", "int", "int" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -926,11 +1128,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "change",
-				"numinlets" : 1,
-				"id" : "obj-76",
 				"numoutlets" : 3,
+				"id" : "obj-76",
+				"outlettype" : [ "", "int", "int" ],
 				"patching_rect" : [ 518.682495000000017, 202.37548800000036, 48.0, 22.0 ],
-				"outlettype" : [ "", "int", "int" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -940,14 +1142,14 @@
 				"text" : "Start Polling Serial Port",
 				"linecount" : 2,
 				"presentation_rect" : [ 66.0, 87.0, 133.0, 20.0 ],
-				"fontname" : "Arial",
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-9",
-				"numoutlets" : 0,
 				"patching_rect" : [ 410.0, 59.494286000000102, 90.0, 34.0 ],
 				"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-				"fontsize" : 12.0
+				"fontsize" : 12.0,
+				"numinlets" : 1,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -955,14 +1157,14 @@
 			"box" : 			{
 				"maxclass" : "toggle",
 				"presentation_rect" : [ 198.897003000000012, 85.0, 24.0, 24.0 ],
-				"parameter_enable" : 0,
-				"bgcolor" : [ 0.501961, 0.662745, 0.67451, 1.0 ],
-				"numinlets" : 1,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-8",
-				"numoutlets" : 1,
+				"outlettype" : [ "int" ],
+				"bgcolor" : [ 0.501961, 0.662745, 0.67451, 1.0 ],
 				"patching_rect" : [ 428.0, 92.244286000000102, 24.0, 24.0 ],
-				"outlettype" : [ "int" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -971,24 +1173,24 @@
 				"maxclass" : "umenu",
 				"varname" : "umenu",
 				"presentation_rect" : [ 162.897003000000012, 61.0, 60.0, 22.0 ],
-				"parameter_enable" : 1,
-				"labelclick" : 1,
-				"items" : [ 1200, ",", 2400, ",", 4800, ",", 9600, ",", 19200, ",", 38400 ],
-				"numinlets" : 1,
+				"numoutlets" : 3,
 				"presentation" : 1,
 				"id" : "obj-25",
-				"numoutlets" : 3,
-				"patching_rect" : [ 308.0, 92.244286000000102, 100.0, 22.0 ],
 				"outlettype" : [ "int", "", "" ],
+				"patching_rect" : [ 308.0, 92.244286000000102, 100.0, 22.0 ],
+				"labelclick" : 1,
+				"numinlets" : 1,
+				"parameter_enable" : 1,
+				"items" : [ 1200, ",", 2400, ",", 4800, ",", 9600, ",", 19200, ",", 38400 ],
 				"saved_attribute_attributes" : 				{
 					"valueof" : 					{
-						"parameter_invisible" : 1,
-						"parameter_mmax" : 5.0,
 						"parameter_initial" : [ 3 ],
 						"parameter_shortname" : "umenu",
 						"parameter_type" : 3,
 						"parameter_longname" : "umenu",
-						"parameter_initial_enable" : 1
+						"parameter_initial_enable" : 1,
+						"parameter_invisible" : 1,
+						"parameter_mmax" : 5.0
 					}
 
 				}
@@ -1008,20 +1210,20 @@
 			"box" : 			{
 				"maxclass" : "textbutton",
 				"presentation_rect" : [ 15.0, 15.0, 110.0, 20.0 ],
-				"parameter_enable" : 0,
-				"bgcolor" : [ 0.501961, 0.662745, 0.67451, 1.0 ],
-				"numinlets" : 1,
-				"presentation" : 1,
-				"usebgoncolor" : 1,
-				"texton" : "In",
-				"id" : "obj-6",
 				"numoutlets" : 3,
-				"bgoncolor" : [ 0.921569, 0.219608, 0.164706, 1.0 ],
+				"presentation" : 1,
+				"id" : "obj-6",
+				"outlettype" : [ "", "", "int" ],
+				"bgcolor" : [ 0.501961, 0.662745, 0.67451, 1.0 ],
 				"rounded" : 5.0,
 				"patching_rect" : [ 15.75, 59.494286000000102, 107.0, 22.0 ],
-				"textoncolor" : [ 0.996078, 0.996078, 0.996078, 1.0 ],
-				"outlettype" : [ "", "", "int" ],
-				"text" : "Reload Port Menu"
+				"texton" : "In",
+				"usebgoncolor" : 1,
+				"bgoncolor" : [ 0.921569, 0.219608, 0.164706, 1.0 ],
+				"numinlets" : 1,
+				"parameter_enable" : 0,
+				"text" : "Reload Port Menu",
+				"textoncolor" : [ 0.996078, 0.996078, 0.996078, 1.0 ]
 			}
 
 		}
@@ -1029,13 +1231,13 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "r portMenu",
-				"fontname" : "Arial",
-				"numinlets" : 0,
-				"id" : "obj-7",
 				"numoutlets" : 1,
-				"patching_rect" : [ 152.25, 59.494286000000102, 69.0, 22.0 ],
+				"id" : "obj-7",
 				"outlettype" : [ "" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 152.25, 59.494286000000102, 69.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 0,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1044,14 +1246,14 @@
 				"maxclass" : "comment",
 				"text" : "Baud Rate",
 				"presentation_rect" : [ 99.0, 62.0, 67.0, 20.0 ],
-				"fontname" : "Arial",
-				"numinlets" : 1,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-44",
-				"numoutlets" : 0,
 				"patching_rect" : [ 308.0, 67.494286000000102, 90.0, 20.0 ],
 				"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-				"fontsize" : 12.0
+				"fontsize" : 12.0,
+				"numinlets" : 1,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1061,23 +1263,23 @@
 				"varname" : "umenu[1]",
 				"prototypename" : "Orch_umenu",
 				"presentation_rect" : [ 15.0, 37.0, 207.897003000000012, 22.0 ],
-				"parameter_enable" : 1,
-				"items" : [ "COM7", ",", "COM8" ],
-				"numinlets" : 1,
+				"numoutlets" : 3,
 				"presentation" : 1,
 				"id" : "obj-45",
-				"numoutlets" : 3,
-				"patching_rect" : [ 106.25, 92.244286000000102, 185.0, 22.0 ],
-				"allowdrag" : 0,
-				"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 				"outlettype" : [ "int", "", "" ],
+				"patching_rect" : [ 106.25, 92.244286000000102, 185.0, 22.0 ],
+				"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ],
+				"numinlets" : 1,
+				"parameter_enable" : 1,
+				"items" : [ "COM7", ",", "COM8", ",", 2048, ",", 1962, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 45, ",", 47, ",", 44, ",", 27, ",", 55, ",", 47, ",", 43, ",", 39, ",", 47, ",", 45, ",", 46, ",", 35, ",", 36, ",", 56, ",", 45, ",", 37, ",", 46, ",", 47, ",", 45, ",", 36, ",", 45, ",", 45, ",", 41, ",", 43, ",", 46, ",", 27, ",", 63, ",", 38, ",", 45, ",", 45, ",", 47, ",", 36, ",", 46, ",", 46, ",", 46, ",", 36, ",", 46, ",", 129, ",", 44, ",", 83, ",", 27, ",", 47, ",", 37, ",", 44, ",", 45, ",", 47, ",", 35, ",", 49, ",", 28, ",", 52, ",", 48, ",", 44, ",", 44, ",", 46, ",", 47, ",", 36, ",", 46, ",", 46, ",", 36, ",", 46, ",", 44, ",", 19, ",", 75, ",", 36, ",", 43, ",", 48, ",", 46, ",", 38, ",", 44, ",", 45, ",", 47, ",", 36, ",", 45, ",", 47, ",", 45, ",", 38, ",", 45, ",", 47, ",", 35, ",", 46, ",", 44, ",", 47, ",", 37, ",", 83, ",", 45, ",", 46, ",", 35, ",", 56, ",", 28, ",", 55, ",", 45, ",", 37, ",", 46, ",", 36, ",", 56, ",", 44, ",", 28, ",", 55, ",", 46, ",", 36, ",", 45, ",", 37, ",", 53, ",", 48, ",", 36, ",", 44, ",", 46, ",", 48, ",", 37, ",", 45, ",", 45, ",", 28, ",", 55, ",", 45, ",", 46, ",", 37, ",", 47, ",", 44, ",", 46, ",", 37, ",", 45, ",", 45, ",", 44, ",", 38, ",", 38, ",", 36, ",", 37, ",", 17, ",", 36, ",", 29, ",", 37, ",", 116, ",", 39, ",", 35, ",", 11, ",", 91, ",", 28, ",", 29, ",", 26, ",", 35, ",", 36, ",", 29, ",", 37, ",", 36, ",", 37, ",", 36, ",", 28, ",", 36, ",", 38, ",", 35, ",", 36, ",", 54, ",", 110, ",", 47, ",", 37, ",", 90, ",", 48, ",", 45, ",", 36, ",", 37, ",", 35, ",", 29, ",", 36, ",", 100, ",", 39, ",", 36, ",", 36, ",", 36, ",", 28, ",", 17, ",", 36, ",", 28, ",", 38, ",", 36, ",", 36, ",", 118, ",", 11, ",", 36, ",", 118, ",", 29, ",", 36, ",", 36, ",", 36, ",", 29, ",", 35, ",", 37, ",", 109, ",", 29, ",", 36, ",", 10, ",", 26, ",", 36, ",", 36, ",", 39, ",", 19, ",", 36, ",", 36, ",", 29, ",", 146, ",", 27, ",", 36, ",", 37, ",", 36, ",", 28, ",", 36, ",", 28, ",", 99, ",", 45, ",", 48, ",", 36, ",", 102, ",", 43, ",", 29, ",", 36, ",", 10, ",", 36, ",", 36, ",", 19, ",", 37, ",", 36, ",", 28, ",", 35, ",", 29, ",", 18, ",", 65, ",", 81, ",", 118, ",", 91, ",", 57, ",", 45, ",", 47, ",", 46, ",", 44, ",", 37, ",", 44, ",", 48, ",", 37, ",", 36, ",", 45, ",", 55, ",", 27, ",", 58, ",", 35, ",", 54, ",", 36, ",", 46, ",", 36, ",", 55, ",", 39, ",", 44, ",", 44, ",", 46, ",", 38, ",", 48, ",", 43, ",", 46, ",", 36, ",", 45, ",", 46, ",", 36, ",", 56, ",", 37, ",", 44, ",", 39, ",", 46, ",", 46, ",", 44, ",", 45, ",", 47, ",", 36, ",", 47, ",", 64, ",", 81, ",", 20, ",", 44, ",", 44, ",", 36, ",", 50, ",", 46, ",", 44, ",", 36, ",", 46, ",", 46, ",", 44, ",", 20, ",", 64, ",", 45, ",", 46, ",", 28, ",", 54, ",", 47, ",", 36, ",", 43, ",", 47, ",", 48, ",", 44, ",", 36, ",", 47, ",", 46, ",", 45, ",", 36, ",", 46, ",", 47, ",", 45, ",", 35, ",", 47, ",", 47, ",", 45, ",", 35, ",", 46, ",", 47, ",", 44, ",", 39, ",", 45, ",", 46, ",", 37, ",", 45, ",", 46, ",", 45, ",", 37, ",", 46, ",", 44, ",", 38, ",", 55, ",", 37, ",", 44, ",", 46, ",", 48, ",", 35, ",", 44, ",", 46, ",", 40, ",", 45, ",", 45, ",", 46, ",", 26, ",", 55, ",", 38, ",", 54, ",", 36, ",", 47, ",", 45, ",", 46, ",", 45, ",", 37, ",", 45, ",", 46, ",", 46, ",", 18, ",", 65, ",", 36, ",", 47, ",", 53, ",", 72, ",", 48, ",", 45, ",", 36, ",", 46, ",", 45, ",", 47, ",", 36, ",", 47, ",", 45, ",", 47, ",", 26, ",", 55, ",", 45, ",", 45, ",", 45, ",", 37, ",", 46, ",", 47, ",", 46, ",", 36, ",", 46, ",", 47, ",", 44, ",", 37, ",", 44, ",", 37, ",", 47, ",", 46, ",", 36, ",", 56, ",", 37, ",", 43, ",", 47, ",", 36, ",", 55, ",", 83, ",", 65, ",", 27, ",", 45, ",", 44, ",", 36, ",", 48, ",", 46, ",", 27, ",", 55, ",", 46, ",", 46, ",", 44, ",", 36, ",", 46, ",", 39, ",", 52, ",", 37, ",", 49, ",", 44, ",", 44, ",", 20, ",", 63, ",", 45, ",", 39, ",", 37, ",", 53, ",", 46, ",", 46, ",", 36, ",", 46, ",", 46, ",", 46, ",", 37, ",", 45, ",", 48, ",", 37, ",", 43, ",", 44, ",", 46, ",", 38, ",", 45, ",", 47, ",", 45, ",", 46, ",", 27, ",", 54, ",", 45, ",", 48, ",", 37, ",", 43, ",", 48, ",", 46, ",", 36, ",", 45, ",", 45, ",", 36, ",", 48, ",", 44, ",", 47, ",", 37, ",", 46, ",", 45, ",", 44, ",", 46, ",", 38, ",", 46, ",", 47, ",", 44, ",", 36, ",", 46, ",", 44, ",", 36, ",", 48, ",", 47, ",", 44, ",", 39, ",", 45, ",", 45, ",", 91, ",", 46, ",", 36, ",", 45, ",", 47, ",", 19, ",", 54, ",", 55, ",", 46, ",", 44, ",", 38, ",", 45, ",", 46, ",", 37, ",", 45, ",", 45, ",", 37, ",", 48, ",", 44, ",", 46, ",", 44, ",", 47, ",", 16, ",", 68, ",", 43, ",", 40, ",", 46, ",", 43, ",", 45, ",", 47, ",", 36, ",", 47, ",", 45, ",", 37, ",", 45, ",", 46, ",", 43, ",", 41, ",", 45, ",", 46, ",", 44, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 44, ",", 38, ",", 46, ",", 46, ",", 45, ",", 35, ",", 47, ",", 47, ",", 26, ",", 55, ",", 46, ",", 74, ",", 45, ",", 45, ",", 37, ",", 46, ",", 46, ",", 46, ",", 35, ",", 49, ",", 35, ",", 55, ",", 36, ",", 45, ",", 46, ",", 46, ",", 37, ",", 45, ",", 47, ",", 45, ",", 44, ",", 37, ",", 47, ",", 25, ",", 65, ",", 38, ",", 47, ",", 45, ",", 44, ",", 37, ",", 45, ",", 47, ",", 37, ",", 46, ",", 46, ",", 46, ",", 24, ",", 56, ",", 46, ",", 48, ",", 26, ",", 55, ",", 46, ",", 37, ",", 54, ",", 36, ",", 45, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 38, ",", 45, ",", 44, ",", 46, ",", 38, ",", 47, ",", 44, ",", 46, ",", 65, ",", 18, ",", 44, ",", 47, ",", 45, ",", 37, ",", 45, ",", 45, ",", 40, ",", 46, ",", 43, ",", 45, ",", 47, ",", 36, ",", 38, ",", 54, ",", 38, ",", 44, ",", 45, ",", 47, ",", 36, ",", 46, ",", 46, ",", 46, ",", 36, ",", 45, ",", 48, ",", 26, ",", 63, ",", 37, ",", 46, ",", 37, ",", 54, ",", 37, ",", 45, ",", 47, ",", 34, ",", 45, ",", 47, ",", 46, ",", 28, ",", 56, ",", 46, ",", 45, ",", 45, ",", 37, ",", 46, ",", 44, ",", 37, ",", 47, ",", 46, ",", 45, ",", 37, ",", 81, ",", 56, ",", 28, ",", 37, ",", 54, ",", 36, ",", 46, ",", 47, ",", 45, ",", 37, ",", 45, ",", 45, ",", 36, ",", 47, ",", 47, ",", 45, ",", 36, ",", 45, ",", 46, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 35, ",", 45, ",", 48, ",", 46, ",", 20, ",", 54, ",", 56, ",", 35, ",", 46, ",", 44, ",", 47, ",", 43, ",", 38, ",", 47, ",", 46, ",", 37, ",", 45, ",", 46, ",", 44, ",", 38, ",", 47, ",", 44, ",", 46, ",", 46, ",", 35, ",", 36, ",", 59, ",", 42, ",", 38, ",", 44, ",", 46, ",", 40, ",", 45, ",", 44, ",", 46, ",", 46, ",", 38, ",", 44, ",", 28, ",", 64, ",", 38, ",", 44, ",", 47, ",", 46, ",", 36, ",", 44, ",", 46, ",", 46, ",", 37, ",", 45, ",", 46, ",", 19, ",", 62, ",", 65, ",", 27, ",", 26, ",", 58, ",", 43, ",", 47, ",", 39, ",", 45, ",", 44, ",", 45, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 38, ",", 45, ",", 44, ",", 48, ",", 45, ",", 36, ",", 46, ",", 46, ",", 36, ",", 47, ",", 45, ",", 47, ",", 35, ",", 46, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 45, ",", 37, ",", 36, ",", 55, ",", 47, ",", 36, ",", 46, ",", 46, ",", 46, ",", 36, ",", 46, ",", 44, ",", 46, ",", 38, ",", 46, ",", 28, ",", 61, ",", 37, ",", 47, ",", 37, ",", 53, ",", 39, ",", 45, ",", 45, ",", 47, ",", 35, ",", 47, ",", 46, ",", 36, ",", 44, ",", 46, ",", 49, ",", 44, ",", 36, ",", 45, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 37, ",", 47, ",", 45, ",", 45, ",", 36, ",", 46, ",", 46, ",", 73, ",", 46, ",", 46, ",", 45, ",", 37, ",", 45, ",", 46, ",", 46, ",", 37, ",", 46, ",", 45, ",", 37, ",", 44, ",", 38, ",", 46, ",", 55, ",", 36, ",", 47, ",", 43, ",", 46, ",", 47, ",", 36, ",", 44, ",", 48, ",", 37, ",", 46, ",", 45, ",", 46, ",", 45, ",", 37, ",", 36, ",", 54, ",", 39, ",", 54, ",", 36, ",", 37, ",", 55, ",", 37, ",", 44, ",", 46, ",", 37, ",", 46, ",", 46, ",", 27, ",", 56, ",", 45, ",", 45, ",", 37, ",", 46, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 44, ",", 44, ",", 46, ",", 38, ",", 46, ",", 45, ",", 37, ",", 45, ",", 46, ",", 37, ",", 53, ",", 39, ",", 46, ",", 38, ",", 43, ",", 46, ",", 47, ",", 43, ",", 37, ",", 46, ",", 46, ",", 67, ",", 51, ",", 38, ",", 45, ",", 46, ",", 44, ",", 37, ",", 47, ",", 47, ",", 44, ",", 38, ",", 46, ",", 46, ",", 44, ",", 36, ",", 46, ",", 46, ",", 37, ",", 46, ",", 35, ",", 57, ",", 38, ",", 45, ",", 35, ",", 55, ",", 37, ",", 45, ",", 46, ",", 91, ",", 64, ",", 17, ",", 46, ",", 38, ",", 52, ",", 39, ",", 46, ",", 46, ",", 46, ",", 45, ",", 36, ",", 47, ",", 45, ",", 35, ",", 39, ",", 56, ",", 44, ",", 43, ",", 37, ",", 48, ",", 46, ",", 45, ",", 37, ",", 47, ",", 45, ",", 44, ",", 45, ",", 19, ",", 65, ",", 46, ",", 35, ",", 47, ",", 46, ",", 44, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 47, ",", 45, ",", 46, ",", 36, ",", 45, ",", 28, ",", 64, ",", 28, ",", 55, ",", 46, ",", 37, ",", 45, ",", 45, ",", 45, ",", 38, ",", 45, ",", 45, ",", 47, ",", 46, ",", 36, ",", 47, ",", 46, ",", 44, ",", 73, ",", 45, ",", 38, ",", 46, ",", 47, ",", 43, ",", 36, ",", 56, ",", 38, ",", 44, ",", 37, ",", 46, ",", 47, ",", 44, ",", 36, ",", 45, ",", 48, ",", 45, ",", 37, ",", 45, ",", 47, ",", 37, ",", 45, ",", 44, ",", 47, ",", 45, ",", 36, ",", 47, ",", 36, ",", 55, ",", 37, ",", 35, ",", 55, ",", 47, ",", 27, ",", 56, ",", 45, ",", 45, ",", 45, ",", 38, ",", 46, ",", 26, ",", 63, ",", 36, ",", 47, ",", 39, ",", 46, ",", 45, ",", 45, ",", 46, ",", 45, ",", 36, ",", 47, ",", 46, ",", 37, ",", 45, ",", 46, ",", 46, ",", 27, ",", 52, ",", 48, ",", 47, ",", 35, ",", 45, ",", 47, ",", 47, ",", 44, ",", 36, ",", 45, ",", 48, ",", 36, ",", 45, ",", 46, ",", 48, ",", 44, ",", 37, ",", 45, ",", 46, ",", 45, ",", 28, ",", 55, ",", 44, ",", 38, ",", 46, ",", 36, ",", 53, ",", 39, ",", 46, ",", 44, ",", 38, ",", 49, ",", 44, ",", 35, ",", 54, ",", 46, ",", 37, ",", 43, ",", 50, ",", 36, ",", 46, ",", 45, ",", 44, ",", 37, ",", 48, ",", 45, ",", 29, ",", 61, ",", 37, ",", 46, ",", 36, ",", 55, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 47, ",", 44, ",", 36, ",", 46, ",", 46, ",", 44, ",", 46, ",", 39, ",", 45, ",", 46, ",", 46, ",", 28, ",", 52, ",", 46, ",", 37, ",", 46, ",", 37, ",", 55, ",", 37, ",", 35, ",", 55, ",", 46, ",", 46, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 44, ",", 47, ",", 45, ",", 37, ",", 47, ",", 46, ",", 36, ",", 45, ",", 47, ",", 44, ",", 46, ",", 37, ",", 36, ",", 56, ",", 45, ",", 38, ",", 43, ",", 48, ",", 44, ",", 36, ",", 47, ",", 46, ",", 45, ",", 37, ",", 47, ",", 25, ",", 64, ",", 44, ",", 37, ",", 39, ",", 54, ",", 29, ",", 54, ",", 45, ",", 37, ",", 46, ",", 46, ",", 46, ",", 37, ",", 46, ",", 44, ",", 47, ",", 28, ",", 53, ",", 46, ",", 47, ",", 46, ",", 36, ",", 45, ",", 45, ",", 39, ",", 44, ",", 45, ",", 46, ",", 47, ",", 36, ",", 45, ",", 46, ",", 46, ",", 37, ",", 44, ",", 46, ",", 45, ",", 38, ",", 44, ",", 47, ",", 46, ",", 37, ",", 44, ",", 46, ",", 47, ",", 45, ",", 37, ",", 46, ",", 47, ",", 37, ",", 35, ",", 53, ",", 46, ",", 38, ",", 45, ",", 46, ",", 37, ",", 45, ",", 46, ",", 44, ",", 47, ",", 45, ",", 38, ",", 28, ",", 63, ",", 37, ",", 47, ",", 35, ",", 55, ",", 46, ",", 36, ",", 45, ",", 47, ",", 36, ",", 46, ",", 44, ",", 38, ",", 56, ",", 37, ",", 44, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 45, ",", 46, ",", 45, ",", 36, ",", 47, ",", 46, ",", 45, ",", 35, ",", 47, ",", 47, ",", 44, ",", 47, ",", 37, ",", 46, ",", 45, ",", 36, ",", 36, ",", 47, ",", 46, ",", 44, ",", 47, ",", 46, ",", 44, ",", 38, ",", 45, ",", 46, ",", 45, ",", 46, ",", 28, ",", 56, ",", 45, ",", 45, ",", 38, ",", 45, ",", 46, ",", 44, ",", 36, ",", 49, ",", 46, ",", 36, ",", 44, ",", 27, ",", 65, ",", 45, ",", 45, ",", 38, ",", 47, ",", 43, ",", 38, ",", 47, ",", 46, ",", 43, ",", 45, ",", 37, ",", 47, ",", 38, ",", 44, ",", 47, ",", 28, ",", 61, ",", 38, ",", 45, ",", 47, ",", 38, ",", 44, ",", 45, ",", 37, ",", 55, ",", 44, ",", 37, ",", 47, ",", 36, ",", 47, ",", 45, ",", 45, ",", 47, ",", 36, ",", 44, ",", 46, ",", 39, ",", 44, ",", 45, ",", 47, ",", 45, ",", 38, ",", 45, ",", 46, ",", 45, ",", 37, ",", 44, ",", 49, ",", 45, ",", 27, ",", 54, ",", 46, ",", 46, ",", 36, ",", 45, ",", 46, ",", 47, ",", 36, ",", 46, ",", 44, ",", 46, ",", 47, ",", 16, ",", 65, ",", 38, ",", 47, ",", 37, ",", 52, ",", 36, ",", 46, ",", 48, ",", 37, ",", 54, ",", 36, ",", 46, ",", 45, ",", 35, ",", 57, ",", 35, ",", 46, ",", 47, ",", 37, ",", 45, ",", 36, ",", 56, ",", 36, ",", 46, ",", 44, ",", 75, ",", 47, ",", 45, ",", 27, ",", 54, ",", 56, ",", 36, ",", 36, ",", 45, ",", 47, ",", 46, ",", 36, ",", 65, ",", 29, ",", 42, ",", 38, ",", 45, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 38, ",", 43, ",", 47, ",", 45, ",", 45, ",", 48, ",", 26, ",", 47, ",", 55, ",", 45, ",", 36, ",", 45, ",", 35, ",", 49, ",", 47, ",", 38, ",", 52, ",", 45, ",", 37, ",", 45, ",", 45, ",", 38, ",", 46, ",", 45, ",", 46, ",", 46, ",", 36, ",", 45, ",", 27, ",", 58, ",", 71, ",", 46, ",", 36, ",", 46, ",", 45, ",", 47, ",", 44, ",", 65, ",", 19, ",", 39, ",", 44, ",", 45, ",", 45, ",", 46, ",", 37, ",", 45, ",", 73, ",", 45, ",", 38, ",", 46, ",", 44, ",", 45, ",", 37, ",", 47, ",", 45, ",", 36, ",", 47, ",", 46, ",", 37, ",", 53, ",", 38, ",", 46, ",", 46, ",", 36, ",", 47, ",", 36, ",", 55, ",", 44, ",", 37, ",", 46, ",", 46, ",", 36, ",", 46, ",", 46, ",", 45, ",", 39, ",", 43, ",", 47, ",", 26, ",", 64, ",", 48, ",", 36, ",", 36, ",", 47, ",", 45, ",", 45, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 28, ",", 53, ",", 49, ",", 43, ",", 47, ",", 36, ",", 46, ",", 73, ",", 46, ",", 36, ",", 45, ",", 45, ",", 27, ",", 66, ",", 45, ",", 38, ",", 35, ",", 39, ",", 61, ",", 37, ",", 46, ",", 38, ",", 46, ",", 46, ",", 45, ",", 38, ",", 44, ",", 45, ",", 46, ",", 46, ",", 37, ",", 44, ",", 48, ",", 46, ",", 36, ",", 45, ",", 45, ",", 47, ",", 44, ",", 38, ",", 46, ",", 46, ",", 44, ",", 38, ",", 46, ",", 45, ",", 46, ",", 35, ",", 46, ",", 47, ",", 37, ",", 45, ",", 47, ",", 45, ",", 37, ",", 45, ",", 44, ",", 47, ",", 54, ",", 28, ",", 38, ",", 47, ",", 53, ",", 16, ",", 65, ",", 37, ",", 55, ",", 37, ",", 45, ",", 45, ",", 46, ",", 38, ",", 44, ",", 47, ",", 46, ",", 38, ",", 27, ",", 63, ",", 37, ",", 45, ",", 45, ",", 45, ",", 38, ",", 46, ",", 45, ",", 47, ",", 36, ",", 55, ",", 37, ",", 35, ",", 53, ",", 40, ",", 47, ",", 16, ",", 65, ",", 45, ",", 46, ",", 45, ",", 38, ",", 45, ",", 46, ",", 44, ",", 38, ",", 46, ",", 47, ",", 43, ",", 37, ",", 45, ",", 38, ",", 53, ",", 39, ",", 45, ",", 47, ",", 37, ",", 43, ",", 45, ",", 48, ",", 45, ",", 35, ",", 46, ",", 49, ",", 36, ",", 52, ",", 37, ",", 47, ",", 46, ",", 45, ",", 28, ",", 54, ",", 47, ",", 44, ",", 46, ",", 37, ",", 46, ",", 43, ",", 38, ",", 47, ",", 47, ",", 38, ",", 42, ",", 29, ",", 81, ",", 19, ",", 44, ",", 39, ",", 54, ",", 38, ",", 44, ",", 45, ",", 48, ",", 43, ",", 37, ",", 47, ",", 46, ",", 27, ",", 55, ",", 45, ",", 46, ",", 47, ",", 35, ",", 46, ",", 37, ",", 47, ",", 45, ",", 45, ",", 47, ",", 37, ",", 44, ",", 45, ",", 48, ",", 35, ",", 45, ",", 49, ",", 43, ",", 46, ",", 44, ",", 36, ",", 48, ",", 38, ",", 53, ",", 37, ",", 46, ",", 45, ",", 45, ",", 36, ",", 47, ",", 46, ",", 45, ",", 38, ",", 46, ",", 46, ",", 26, ",", 54, ",", 44, ",", 47, ",", 38, ",", 46, ",", 45, ",", 46, ",", 46, ",", 36, ",", 45, ",", 83, ",", 28, ",", 55, ",", 45, ",", 37, ",", 55, ",", 43, ",", 38, ",", 47, ",", 47, ",", 45, ",", 36, ",", 46, ",", 46, ",", 17, ",", 74, ",", 36, ",", 46, ",", 28, ",", 62, ",", 38, ",", 47, ",", 44, ",", 36, ",", 46, ",", 47, ",", 45, ",", 35, ",", 46, ",", 48, ",", 46, ",", 43, ",", 37, ",", 47, ",", 46, ",", 37, ",", 45, ",", 46, ",", 37, ",", 45, ",", 46, ",", 45, ",", 46, ",", 37, ",", 46, ",", 100, ",", 81, ",", 64, ",", 47, ",", 46, ",", 36, ",", 55, ",", 37, ",", 47, ",", 42, ",", 45, ",", 48, ",", 80, ",", 49, ",", 47, ",", 37, ",", 36, ",", 52, ",", 47, ",", 45, ",", 37, ",", 46, ",", 46, ",", 46, ",", 36, ",", 44, ",", 47, ",", 37, ",", 53, ",", 21, ",", 63, ",", 36, ",", 47, ",", 45, ",", 47, ",", 44, ",", 37, ",", 44, ",", 48, ",", 46, ",", 36, ",", 46, ",", 44, ",", 47, ",", 36, ",", 45, ",", 28, ",", 64, ",", 38, ",", 45, ",", 46, ",", 35, ",", 35, ",", 56, ",", 46, ",", 38, ",", 47, ",", 45, ",", 45, ",", 38, ",", 43, ",", 47, ",", 44, ",", 47, ",", 37, ",", 46, ",", 46, ",", 36, ",", 47, ",", 44, ",", 45, ",", 47, ",", 36, ",", 47, ",", 45, ",", 46, ",", 35, ",", 47, ",", 44, ",", 46, ",", 26, ",", 57, ",", 46, ",", 46, ",", 36, ",", 47, ",", 44, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 46, ",", 36, ",", 54, ",", 47, ",", 26, ",", 57, ",", 36, ",", 45, ",", 46, ",", 46, ",", 44, ",", 38, ",", 46, ",", 45, ",", 46, ",", 38, ",", 47, ",", 46, ",", 41, ",", 47, ",", 36, ",", 48, ",", 43, ",", 37, ",", 48, ",", 46, ",", 36, ",", 44, ",", 46, ",", 46, ",", 37, ",", 43, ",", 48, ",", 47, ",", 45, ",", 44, ",", 37, ",", 36, ",", 57, ",", 36, ",", 46, ",", 46, ",", 46, ",", 44, ",", 35, ",", 49, ",", 36, ",", 47, ",", 43, ",", 38, ",", 54, ",", 31, ",", 43, ",", 54, ",", 46, ",", 37, ",", 46, ",", 45, ",", 48, ",", 36, ",", 44, ",", 47, ",", 46, ",", 43, ",", 21, ",", 63, ",", 47, ",", 36, ",", 45, ",", 45, ",", 46, ",", 46, ",", 36, ",", 48, ",", 46, ",", 35, ",", 46, ",", 45, ",", 48, ",", 42, ",", 38, ",", 27, ",", 66, ",", 44, ",", 36, ",", 46, ",", 46, ",", 46, ",", 43, ",", 40, ",", 45, ",", 46, ",", 38, ",", 44, ",", 46, ",", 45, ",", 37, ",", 36, ",", 46, ",", 46, ",", 36, ",", 55, ",", 37, ",", 45, ",", 55, ",", 28, ",", 54, ",", 37, ",", 48, ",", 44, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 28, ",", 54, ",", 46, ",", 46, ",", 44, ",", 40, ",", 36, ",", 53, ",", 45, ",", 38, ",", 45, ",", 45, ",", 39, ",", 28, ",", 64, ",", 42, ",", 47, ",", 26, ",", 57, ",", 44, ",", 38, ",", 46, ",", 46, ",", 44, ",", 38, ",", 47, ",", 44, ",", 46, ",", 46, ",", 36, ",", 48, ",", 44, ",", 46, ",", 35, ",", 47, ",", 46, ",", 44, ",", 38, ",", 36, ",", 47, ",", 53, ",", 45, ",", 37, ",", 47, ",", 44, ",", 38, ",", 47, ",", 46, ",", 45, ",", 35, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 46, ",", 45, ",", 37, ",", 44, ",", 46, ",", 46, ",", 35, ",", 48, ",", 46, ",", 37, ",", 44, ",", 48, ",", 43, ",", 38, ",", 46, ",", 45, ",", 46, ",", 46, ",", 37, ",", 45, ",", 45, ",", 47, ",", 17, ",", 63, ",", 38, ",", 55, ",", 36, ",", 45, ",", 46, ",", 37, ",", 47, ",", 37, ",", 54, ",", 45, ",", 37, ",", 46, ",", 47, ",", 44, ",", 37, ",", 26, ",", 65, ",", 47, ",", 36, ",", 45, ",", 46, ",", 46, ",", 45, ",", 37, ",", 44, ",", 49, ",", 36, ",", 46, ",", 35, ",", 57, ",", 44, ",", 36, ",", 45, ",", 47, ",", 36, ",", 48, ",", 44, ",", 47, ",", 35, ",", 46, ",", 45, ",", 36, ",", 47, ",", 47, ",", 43, ",", 38, ",", 46, ",", 46, ",", 36, ",", 37, ",", 63, ",", 37, ",", 44, ",", 38, ",", 56, ",", 37, ",", 43, ",", 46, ",", 47, ",", 39, ",", 43, ",", 46, ",", 19, ",", 63, ",", 46, ",", 37, ",", 44, ",", 47, ",", 46, ",", 44, ",", 38, ",", 47, ",", 45, ",", 44, ",", 46, ",", 46, ",", 38, ",", 45, ",", 45, ",", 37, ",", 46, ",", 44, ",", 45, ",", 48, ",", 36, ",", 45, ",", 47, ",", 37, ",", 46, ",", 38, ",", 43, ",", 45, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 47, ",", 35, ",", 45, ",", 47, ",", 26, ",", 63, ",", 37, ",", 47, ",", 37, ",", 48, ",", 42, ",", 45, ",", 47, ",", 44, ",", 36, ",", 51, ",", 36, ",", 46, ",", 43, ",", 46, ",", 46, ",", 43, ",", 39, ",", 46, ",", 46, ",", 45, ",", 37, ",", 45, ",", 47, ",", 17, ",", 63, ",", 46, ",", 49, ",", 36, ",", 45, ",", 45, ",", 47, ",", 35, ",", 46, ",", 45, ",", 47, ",", 46, ",", 37, ",", 43, ",", 49, ",", 45, ",", 17, ",", 55, ",", 53, ",", 47, ",", 28, ",", 55, ",", 46, ",", 35, ",", 47, ",", 36, ",", 57, ",", 44, ",", 38, ",", 44, ",", 46, ",", 47, ",", 36, ",", 44, ",", 46, ",", 46, ",", 37, ",", 45, ",", 45, ",", 48, ",", 46, ",", 36, ",", 43, ",", 48, ",", 46, ",", 38, ",", 44, ",", 45, ",", 39, ",", 44, ",", 36, ",", 55, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 47, ",", 43, ",", 46, ",", 37, ",", 48, ",", 43, ",", 29, ",", 54, ",", 45, ",", 37, ",", 44, ",", 47, ",", 47, ",", 44, ",", 45, ",", 39, ",", 46, ",", 45, ",", 44, ",", 37, ",", 47, ",", 47, ",", 44, ",", 37, ",", 46, ",", 46, ",", 36, ",", 54, ",", 37, ",", 46, ",", 43, ",", 39, ",", 47, ",", 46, ",", 43, ",", 37, ",", 45, ",", 47, ",", 45, ",", 47, ",", 35, ",", 48, ",", 45, ",", 38, ",", 42, ",", 45, ",", 47, ",", 37, ",", 47, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 47, ",", 44, ",", 36, ",", 38, ",", 56, ",", 36, ",", 45, ",", 36, ",", 55, ",", 37, ",", 45, ",", 47, ",", 46, ",", 45, ",", 37, ",", 44, ",", 26, ",", 64, ",", 38, ",", 47, ",", 47, ",", 37, ",", 44, ",", 46, ",", 45, ",", 45, ",", 37, ",", 46, ",", 46, ",", 37, ",", 46, ",", 46, ",", 45, ",", 16, ",", 65, ",", 44, ",", 50, ",", 45, ",", 36, ",", 46, ",", 46, ",", 45, ",", 36, ",", 44, ",", 36, ",", 56, ",", 39, ",", 45, ",", 47, ",", 36, ",", 35, ",", 54, ",", 48, ",", 36, ",", 46, ",", 36, ",", 47, ",", 46, ",", 45, ",", 43, ",", 46, ",", 47, ",", 37, ",", 44, ",", 47, ",", 37, ",", 47, ",", 35, ",", 55, ",", 37, ",", 45, ",", 46, ",", 46, ",", 47, ",", 36, ",", 46, ",", 43, ",", 37, ",", 47, ",", 45, ",", 19, ",", 64, ",", 46, ",", 45, ",", 37, ",", 55, ",", 36, ",", 46, ",", 45, ",", 46, ",", 38, ",", 37, ",", 53, ",", 36, ",", 46, ",", 45, ",", 48, ",", 45, ",", 38, ",", 44, ",", 46, ",", 37, ",", 44, ",", 47, ",", 44, ",", 38, ",", 46, ",", 46, ",", 46, ",", 45, ",", 45, ",", 36, ",", 48, ",", 45, ",", 36, ",", 46, ",", 45, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 47, ",", 44, ",", 36, ",", 45, ",", 47, ",", 45, ",", 37, ",", 36, ",", 55, ",", 45, ",", 38, ",", 45, ",", 46, ",", 45, ",", 45, ",", 39, ",", 45, ",", 46, ",", 36, ",", 46, ",", 28, ",", 64, ",", 36, ",", 36, ",", 54, ",", 39, ",", 46, ",", 43, ",", 29, ",", 64, ",", 44, ",", 38, ",", 46, ",", 45, ",", 39, ",", 44, ",", 46, ",", 28, ",", 62, ",", 36, ",", 46, ",", 38, ",", 47, ",", 44, ",", 46, ",", 46, ",", 44, ",", 38, ",", 46, ",", 45, ",", 37, ",", 44, ",", 48, ",", 46, ",", 36, ",", 45, ",", 47, ",", 45, ",", 37, ",", 45, ",", 46, ",", 45, ",", 39, ",", 44, ",", 43, ",", 46, ",", 40, ",", 44, ",", 46, ",", 48, ",", 36, ",", 36, ",", 53, ",", 45, ",", 37, ",", 47, ",", 44, ",", 46, ",", 38, ",", 48, ",", 43, ",", 47, ",", 37, ",", 45, ",", 25, ",", 66, ",", 45, ",", 38, ",", 38, ",", 52, ",", 37, ",", 46, ",", 46, ",", 43, ",", 39, ",", 46, ",", 47, ",", 35, ",", 54, ",", 37, ",", 46, ",", 44, ",", 39, ",", 45, ",", 46, ",", 46, ",", 44, ",", 36, ",", 47, ",", 45, ",", 37, ",", 45, ",", 50, ",", 43, ",", 46, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 45, ",", 48, ",", 36, ",", 47, ",", 43, ",", 37, ",", 53, ",", 38, ",", 46, ",", 46, ",", 45, ",", 37, ",", 45, ",", 46, ",", 45, ",", 28, ",", 55, ",", 47, ",", 37, ",", 46, ",", 45, ",", 45, ",", 44, ",", 37, ",", 47, ",", 45, ",", 37, ",", 46, ",", 28, ",", 63, ",", 44, ",", 37, ",", 45, ",", 49, ",", 37, ",", 44, ",", 46, ",", 48, ",", 43, ",", 35, ",", 46, ",", 38, ",", 46, ",", 46, ",", 45, ",", 28, ",", 56, ",", 45, ",", 35, ",", 56, ",", 45, ",", 38, ",", 45, ",", 37, ",", 46, ",", 45, ",", 44, ",", 46, ",", 39, ",", 46, ",", 44, ",", 47, ",", 44, ",", 40, ",", 42, ",", 46, ",", 47, ",", 36, ",", 46, ",", 46, ",", 46, ",", 45, ",", 35, ",", 46, ",", 35, ",", 50, ",", 43, ",", 47, ",", 48, ",", 25, ",", 55, ",", 46, ",", 44, ",", 38, ",", 46, ",", 45, ",", 37, ",", 45, ",", 47, ",", 43, ",", 45, ",", 49, ",", 16, ",", 64, ",", 38, ",", 47, ",", 27, ",", 64, ",", 45, ",", 36, ",", 46, ",", 47, ",", 45, ",", 37, ",", 46, ",", 45, ",", 36, ",", 45, ",", 47, ",", 44, ",", 46, ",", 47, ",", 36, ",", 46, ",", 46, ",", 37, ",", 46, ",", 45, ",", 43, ",", 39, ",", 47, ",", 45, ",", 37, ",", 45, ",", 48, ",", 43, ",", 45, ",", 36, ",", 48, ",", 45, ",", 43, ",", 38, ",", 47, ",", 46, ",", 36, ",", 54, ",", 38, ",", 47, ",", 43, ",", 38, ",", 46, ",", 45, ",", 45, ",", 29, ",", 44, ",", 56, ",", 45, ",", 36, ",", 47, ",", 36, ",", 54, ",", 37, ",", 45, ",", 47, ",", 46, ",", 36, ",", 28, ",", 64, ",", 46, ",", 36, ",", 46, ",", 47, ",", 46, ",", 43, ",", 38, ",", 46, ",", 47, ",", 43, ",", 37, ",", 46, ",", 47, ",", 44, ",", 37, ",", 29, ",", 63, ",", 37, ",", 43, ",", 46, ",", 48, ",", 44, ",", 37, ",", 47, ",", 46, ",", 36, ",", 45, ",", 46, ",", 46, ",", 46, ",", 36, ",", 46, ",", 45, ",", 40, ",", 43, ",", 43, ",", 47, ",", 38, ",", 46, ",", 37, ",", 54, ",", 36, ",", 47, ",", 45, ",", 45, ",", 46, ",", 37, ",", 44, ",", 47, ",", 28, ",", 55, ",", 45, ",", 45, ",", 45, ",", 46, ",", 39, ",", 45, ",", 46, ",", 37, ",", 45, ",", 47, ",", 43, ",", 26, ",", 57, ",", 45, ",", 48, ",", 27, ",", 54, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 45, ",", 37, ",", 47, ",", 45, ",", 46, ",", 26, ",", 56, ",", 46, ",", 37, ",", 54, ",", 37, ",", 44, ",", 45, ",", 36, ",", 57, ",", 36, ",", 38, ",", 47, ",", 44, ",", 45, ",", 46, ",", 37, ",", 46, ",", 46, ",", 46, ",", 36, ",", 46, ",", 45, ",", 46, ",", 36, ",", 47, ",", 47, ",", 44, ",", 45, ",", 37, ",", 46, ",", 27, ",", 55, ",", 46, ",", 45, ",", 46, ",", 37, ",", 45, ",", 48, ",", 42, ",", 47, ",", 37, ",", 46, ",", 44, ",", 20, ",", 66, ",", 45, ",", 43, ",", 29, ",", 52, ",", 49, ",", 45, ",", 35, ",", 37, ",", 56, ",", 38, ",", 52, ",", 37, ",", 47, ",", 45, ",", 38, ",", 28, ",", 62, ",", 47, ",", 37, ",", 43, ",", 46, ",", 48, ",", 43, ",", 37, ",", 48, ",", 47, ",", 35, ",", 44, ",", 45, ",", 47, ",", 39, ",", 45, ",", 46, ",", 46, ",", 36, ",", 44, ",", 45, ",", 47, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 46, ",", 44, ",", 39, ",", 45, ",", 45, ",", 37, ",", 35, ",", 57, ",", 44, ",", 46, ",", 45, ",", 38, ",", 44, ",", 47, ",", 28, ",", 55, ",", 46, ",", 45, ",", 26, ",", 55, ",", 45, ",", 46, ",", 29, ",", 55, ",", 36, ",", 55, ",", 45, ",", 38, ",", 45, ",", 47, ",", 37, ",", 46, ",", 43, ",", 38, ",", 47, ",", 45, ",", 45, ",", 45, ",", 46, ",", 38, ",", 44, ",", 47, ",", 45, ",", 37, ",", 46, ",", 44, ",", 47, ",", 37, ",", 46, ",", 43, ",", 39, ",", 47, ",", 44, ",", 45, ",", 36, ",", 47, ",", 45, ",", 38, ",", 55, ",", 36, ",", 46, ",", 43, ",", 36, ",", 46, ",", 49, ",", 43, ",", 37, ",", 47, ",", 47, ",", 35, ",", 55, ",", 36, ",", 45, ",", 48, ",", 45, ",", 36, ",", 47, ",", 45, ",", 44, ",", 36, ",", 48, ",", 45, ",", 28, ",", 55, ",", 45, ",", 47, ",", 44, ",", 36, ",", 46, ",", 47, ",", 43, ",", 40, ",", 47, ",", 46, ",", 43, ",", 36, ",", 46, ",", 47, ",", 44, ",", 28, ",", 56, ",", 47, ",", 36, ",", 45, ",", 43, ",", 45, ",", 40, ",", 44, ",", 36, ",", 56, ",", 40, ",", 43, ",", 45, ",", 45, ",", 38, ",", 54, ",", 37, ",", 46, ",", 46, ",", 37, ",", 45, ",", 47, ",", 45, ",", 36, ",", 45, ",", 46, ",", 46, ",", 36, ",", 48, ",", 43, ",", 36, ",", 55, ",", 38, ",", 35, ",", 58, ",", 36, ",", 45, ",", 48, ",", 44, ",", 37, ",", 43, ",", 48, ",", 45, ",", 37, ",", 45, ",", 46, ",", 27, ",", 56, ",", 46, ",", 44, ",", 36, ",", 38, ",", 54, ",", 46, ",", 37, ",", 46, ",", 46, ",", 45, ",", 46, ",", 18, ",", 65, ",", 45, ",", 46, ",", 36, ",", 46, ",", 45, ",", 45, ",", 38, ",", 46, ",", 44, ",", 38, ",", 46, ",", 44, ",", 46, ",", 47, ",", 37, ",", 45, ",", 45, ",", 37, ",", 48, ",", 46, ",", 44, ",", 44, ",", 37, ",", 46, ",", 46, ",", 46, ",", 36, ",", 47, ",", 46, ",", 44, ",", 35, ",", 48, ",", 47, ",", 43, ",", 38, ",", 46, ",", 37, ",", 54, ",", 36, ",", 36, ",", 56, ",", 43, ",", 38, ",", 49, ",", 45, ",", 44, ",", 36, ",", 46, ",", 45, ",", 29, ",", 54, ",", 47, ",", 45, ",", 46, ",", 45, ",", 36, ",", 47, ",", 46, ",", 43, ",", 39, ",", 45, ",", 49, ",", 41, ",", 45, ",", 39, ",", 46, ",", 26, ",", 56, ",", 46, ",", 46, ",", 45, ",", 36, ",", 45, ",", 48, ",", 44, ",", 36, ",", 50, ",", 43, ",", 38, ",", 44, ",", 46, ",", 46, ",", 36, ",", 45, ",", 47, ",", 46, ",", 45, ",", 28, ",", 45, ",", 55, ",", 37, ",", 45, ",", 36, ",", 47, ",", 45, ",", 47, ",", 45, ",", 46, ",", 45, ",", 37, ",", 36, ",", 56, ",", 46, ",", 37, ",", 44, ",", 48, ",", 44, ",", 37, ",", 45, ",", 46, ",", 46, ",", 37, ",", 45, ",", 28, ",", 63, ",", 37, ",", 46, ",", 35, ",", 57, ",", 36, ",", 45, ",", 47, ",", 39, ",", 42, ",", 45, ",", 46, ",", 46, ",", 37, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 43, ",", 48, ",", 35, ",", 48, ",", 45, ",", 27, ",", 55, ",", 46, ",", 45, ",", 45, ",", 27, ",", 57, ",", 45, ",", 38, ",", 47, ",", 45, ",", 42, ",", 46, ",", 37, ",", 47, ",", 44, ",", 46, ",", 39, ",", 46, ",", 43, ",", 45, ",", 48, ",", 37, ",", 45, ",", 36, ",", 46, ",", 37, ",", 55, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 45, ",", 48, ",", 44, ",", 38, ",", 45, ",", 28, ",", 61, ",", 38, ",", 46, ",", 45, ",", 39, ",", 44, ",", 45, ",", 45, ",", 38, ",", 45, ",", 48, ",", 45, ",", 45, ",", 45, ",", 36, ",", 47, ",", 26, ",", 64, ",", 38, ",", 47, ",", 45, ",", 36, ",", 45, ",", 46, ",", 47, ",", 36, ",", 45, ",", 46, ",", 45, ",", 46, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 46, ",", 36, ",", 45, ",", 45, ",", 47, ",", 43, ",", 30, ",", 53, ",", 50, ",", 35, ",", 45, ",", 46, ",", 45, ",", 45, ",", 27, ",", 56, ",", 46, ",", 37, ",", 44, ",", 47, ",", 37, ",", 46, ",", 45, ",", 44, ",", 46, ",", 47, ",", 36, ",", 28, ",", 65, ",", 45, ",", 37, ",", 37, ",", 55, ",", 46, ",", 37, ",", 44, ",", 46, ",", 36, ",", 46, ",", 44, ",", 37, ",", 56, ",", 36, ",", 47, ",", 45, ",", 46, ",", 36, ",", 45, ",", 46, ",", 47, ",", 37, ",", 45, ",", 45, ",", 37, ",", 47, ",", 44, ",", 45, ",", 47, ",", 38, ",", 45, ",", 45, ",", 45, ",", 39, ",", 44, ",", 45, ",", 27, ",", 45, ",", 56, ",", 46, ",", 46, ",", 36, ",", 46, ",", 46, ",", 36, ",", 45, ",", 47, ",", 44, ",", 47, ",", 28, ",", 57, ",", 43, ",", 46, ",", 36, ",", 46, ",", 45, ",", 47, ",", 37, ",", 46, ",", 45, ",", 46, ",", 34, ",", 28, ",", 66, ",", 44, ",", 38, ",", 45, ",", 47, ",", 45, ",", 37, ",", 45, ",", 46, ",", 44, ",", 36, ",", 48, ",", 38, ",", 46, ",", 42, ",", 47, ",", 27, ",", 64, ",", 36, ",", 49, ",", 45, ",", 45, ",", 36, ",", 46, ",", 46, ",", 43, ",", 39, ",", 46, ",", 46, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 44, ",", 47, ",", 46, ",", 46, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 46, ",", 36, ",", 45, ",", 48, ",", 45, ",", 27, ",", 54, ",", 46, ",", 39, ",", 45, ",", 45, ",", 47, ",", 46, ",", 35, ",", 44, ",", 46, ",", 48, ",", 36, ",", 28, ",", 64, ",", 46, ",", 44, ",", 29, ",", 55, ",", 36, ",", 46, ",", 44, ",", 37, ",", 55, ",", 37, ",", 46, ",", 44, ",", 45, ",", 40, ",", 44, ",", 43, ",", 50, ",", 36, ",", 46, ",", 44, ",", 46, ",", 37, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 44, ",", 45, ",", 48, ",", 36, ",", 43, ",", 39, ",", 46, ",", 48, ",", 43, ",", 45, ",", 37, ",", 46, ",", 45, ",", 47, ",", 45, ",", 37, ",", 46, ",", 45, ",", 38, ",", 46, ",", 45, ",", 45, ",", 27, ",", 56, ",", 47, ",", 35, ",", 44, ",", 46, ",", 38, ",", 54, ",", 46, ",", 37, ",", 46, ",", 38, ",", 51, ",", 19, ",", 66, ",", 44, ",", 37, ",", 47, ",", 45, ",", 44, ",", 38, ",", 46, ",", 46, ",", 44, ",", 36, ",", 48, ",", 45, ",", 46, ",", 37, ",", 45, ",", 27, ",", 65, ",", 44, ",", 38, ",", 46, ",", 47, ",", 44, ",", 37, ",", 45, ",", 45, ",", 46, ",", 36, ",", 48, ",", 47, ",", 44, ",", 36, ",", 45, ",", 46, ",", 45, ",", 38, ",", 46, ",", 46, ",", 36, ",", 46, ",", 45, ",", 45, ",", 38, ",", 44, ",", 47, ",", 46, ",", 37, ",", 45, ",", 46, ",", 46, ",", 26, ",", 56, ",", 47, ",", 46, ",", 44, ",", 37, ",", 45, ",", 47, ",", 45, ",", 36, ",", 45, ",", 47, ",", 45, ",", 19, ",", 64, ",", 47, ",", 37, ",", 37, ",", 50, ",", 46, ",", 39, ",", 48, ",", 44, ",", 45, ",", 37, ",", 46, ",", 44, ",", 46, ",", 45, ",", 38, ",", 45, ",", 47, ",", 46, ",", 36, ",", 45, ",", 46, ",", 27, ",", 56, ",", 45, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 45, ",", 46, ",", 37, ",", 47, ",", 44, ",", 45, ",", 45, ",", 38, ",", 46, ",", 44, ",", 39, ",", 46, ",", 46, ",", 45, ",", 45, ",", 37, ",", 46, ",", 44, ",", 37, ",", 46, ",", 37, ",", 45, ",", 56, ",", 45, ",", 37, ",", 45, ",", 46, ",", 46, ",", 37, ",", 46, ",", 36, ",", 45, ",", 46, ",", 46, ",", 45, ",", 46, ",", 37, ",", 47, ",", 37, ",", 43, ",", 46, ",", 46, ",", 45, ",", 36, ",", 46, ",", 47, ",", 43, ",", 41, ",", 43, ",", 47, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 44, ",", 46, ",", 44, ",", 38, ",", 48, ",", 44, ",", 38, ",", 45, ",", 47, ",", 44, ",", 45, ",", 36, ",", 48, ",", 45, ",", 37, ",", 45, ",", 47, ",", 37, ",", 44, ",", 45, ",", 47, ",", 45, ",", 38, ",", 45, ",", 46, ",", 27, ",", 55, ",", 45, ",", 45, ",", 38, ",", 45, ",", 45, ",", 47, ",", 45, ",", 45, ",", 37, ",", 45, ",", 39, ",", 26, ",", 64, ",", 47, ",", 46, ",", 36, ",", 44, ",", 45, ",", 48, ",", 37, ",", 46, ",", 45, ",", 45, ",", 46, ",", 37, ",", 44, ",", 47, ",", 37, ",", 45, ",", 46, ",", 47, ",", 46, ",", 36, ",", 43, ",", 46, ",", 37, ",", 47, ",", 45, ",", 46, ",", 46, ",", 36, ",", 37, ",", 55, ",", 46, ",", 36, ",", 44, ",", 46, ",", 40, ",", 45, ",", 45, ",", 36, ",", 54, ",", 38, ",", 37, ",", 54, ",", 37, ",", 45, ",", 47, ",", 36, ",", 52, ",", 40, ",", 46, ",", 36, ",", 45, ",", 47, ",", 45, ",", 45, ",", 36, ",", 44, ",", 48, ",", 45, ",", 47, ",", 45, ",", 29, ",", 54, ",", 28, ",", 54, ",", 47, ",", 44, ",", 46, ",", 37, ",", 46, ",", 45, ",", 46, ",", 36, ",", 46, ",", 46, ",", 47, ",", 36, ",", 46, ",", 46, ",", 36, ",", 29, ",", 63, ",", 46, ",", 44, ",", 37, ",", 46, ",", 36, ",", 45, ",", 46, ",", 37, ",", 55, ",", 43, ",", 46, ",", 39, ",", 38, ",", 52, ",", 38, ",", 46, ",", 45, ",", 45, ",", 36, ",", 46, ",", 47, ",", 45, ",", 37, ",", 47, ",", 45, ",", 45, ",", 45, ",", 36, ",", 46, ",", 40, ",", 44, ",", 46, ",", 36, ",", 55, ",", 44, ",", 37, ",", 47, ",", 46, ",", 37, ",", 45, ",", 46, ",", 37, ",", 45, ",", 46, ",", 46, ",", 18, ",", 63, ",", 45, ",", 48, ",", 36, ",", 46, ",", 44, ",", 47, ",", 34, ",", 40, ",", 47, ",", 51, ",", 39, ",", 36, ",", 54, ",", 46, ",", 46, ",", 45, ",", 36, ",", 47, ",", 46, ",", 46, ",", 36, ",", 43, ",", 48, ",", 37, ",", 45, ",", 47, ",", 45, ",", 36, ",", 46, ",", 46, ",", 46, ",", 45, ",", 37, ",", 43, ",", 47, ",", 40, ",", 45, ",", 44, ",", 46, ",", 46, ",", 36, ",", 45, ",", 36, ",", 47, ",", 46, ",", 46, ",", 46, ",", 36, ",", 46, ",", 37, ",", 55, ",", 36, ",", 47, ",", 36, ",", 45, ",", 54, ",", 37, ",", 46, ",", 44, ",", 38, ",", 47, ",", 45, ",", 18, ",", 64, ",", 48, ",", 43, ",", 45, ",", 37, ",", 45, ",", 47, ",", 46, ",", 37, ",", 44, ",", 47, ",", 44, ",", 37, ",", 48, ",", 45, ",", 44, ",", 29, ",", 56, ",", 45, ",", 44, ",", 45, ",", 38, ",", 47, ",", 44, ",", 47, ",", 36, ",", 46, ",", 46, ",", 36, ",", 48, ",", 43, ",", 48, ",", 44, ",", 36, ",", 46, ",", 46, ",", 37, ",", 44, ",", 47, ",", 37, ",", 54, ",", 37, ",", 46, ",", 47, ",", 35, ",", 45, ",", 45, ",", 49, ",", 43, ",", 36, ",", 38, ",", 55, ",", 44, ",", 38, ",", 46, ",", 45, ",", 45, ",", 35, ",", 50, ",", 45, ",", 45, ",", 35, ",", 46, ",", 27, ",", 65, ",", 37, ",", 46, ",", 36, ",", 57, ",", 35, ",", 43, ",", 48, ",", 46, ",", 36, ",", 45, ",", 38, ",", 55, ",", 37, ",", 45, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 38, ",", 44, ",", 36, ",", 56, ",", 36, ",", 38, ",", 54, ",", 37, ",", 45, ",", 46, ",", 35, ",", 57, ",", 36, ",", 45, ",", 46, ",", 46, ",", 37, ",", 46, ",", 45, ",", 47, ",", 36, ",", 45, ",", 45, ",", 47, ",", 37, ",", 45, ",", 45, ",", 46, ",", 46, ",", 27, ",", 55, ",", 46, ",", 36, ",", 47, ",", 45, ",", 37, ",", 53, ",", 38, ",", 46, ",", 45, ",", 37, ",", 45, ",", 28, ",", 65, ",", 37, ",", 45, ",", 44, ",", 46, ",", 37, ",", 47, ",", 45, ",", 45, ",", 37, ",", 47, ",", 45, ",", 36, ",", 44, ",", 48, ",", 36, ",", 36, ",", 65, ",", 37, ",", 45, ",", 45, ",", 36, ",", 47, ",", 45, ",", 45, ",", 38, ",", 46, ",", 46, ",", 44, ",", 36, ",", 47, ",", 46, ",", 44, ",", 38, ",", 46, ",", 48, ",", 42, ",", 37, ",", 45, ",", 48, ",", 45, ",", 46, ",", 36, ",", 46, ",", 46, ",", 44, ",", 36, ",", 48, ",", 47, ",", 36, ",", 35, ",", 55, ",", 46, ",", 37, ",", 45, ",", 46, ",", 47, ",", 44, ",", 35, ",", 50, ",", 46, ",", 36, ",", 43, ",", 29, ",", 63, ",", 46, ",", 38, ",", 35, ",", 55, ",", 36, ",", 47, ",", 43, ",", 48, ",", 36, ",", 44, ",", 48, ",", 36, ",", 56, ",", 36, ",", 46, ",", 45, ",", 47, ",", 36, ",", 44, ",", 39, ",", 46, ",", 45, ",", 43, ",", 46, ",", 37, ",", 47, ",", 44, ",", 48, ",", 36, ",", 46, ",", 45, ",", 45, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 38, ",", 45, ",", 45, ",", 37, ",", 46, ",", 45, ",", 46, ",", 46, ",", 36, ",", 45, ",", 47, ",", 45, ",", 28, ",", 55, ",", 44, ",", 37, ",", 48, ",", 45, ",", 44, ",", 38, ",", 45, ",", 47, ",", 45, ",", 46, ",", 45, ",", 20, ",", 63, ",", 46, ",", 37, ",", 46, ",", 46, ",", 44, ",", 37, ",", 47, ",", 44, ",", 37, ",", 46, ",", 45, ",", 45, ",", 38, ",", 45, ",", 46, ",", 26, ",", 56, ",", 46, ",", 48, ",", 43, ",", 45, ",", 36, ",", 38, ",", 56, ",", 35, ",", 37, ",", 56, ",", 36, ",", 52, ",", 38, ",", 47, ",", 45, ",", 39, ",", 44, ",", 45, ",", 47, ",", 36, ",", 45, ",", 46, ",", 46, ",", 45, ",", 36, ",", 48, ",", 45, ",", 45, ",", 35, ",", 45, ",", 47, ",", 46, ",", 28, ",", 55, ",", 46, ",", 46, ",", 36, ",", 45, ",", 47, ",", 45, ",", 36, ",", 48, ",", 46, ",", 46, ",", 35, ",", 27, ",", 64, ",", 46, ",", 45, ",", 28, ",", 56, ",", 45, ",", 37, ",", 44, ",", 46, ",", 47, ",", 27, ",", 54, ",", 38, ",", 56, ",", 35, ",", 45, ",", 46, ",", 46, ",", 44, ",", 36, ",", 45, ",", 50, ",", 36, ",", 45, ",", 45, ",", 36, ",", 47, ",", 44, ",", 46, ",", 47, ",", 38, ",", 44, ",", 37, ",", 55, ",", 45, ",", 37, ",", 44, ",", 47, ",", 39, ",", 46, ",", 43, ",", 46, ",", 37, ",", 46, ",", 44, ",", 47, ",", 37, ",", 45, ",", 46, ",", 35, ",", 37, ",", 56, ",", 44, ",", 46, ",", 38, ",", 45, ",", 47, ",", 45, ",", 36, ",", 45, ",", 38, ",", 53, ",", 46, ",", 17, ",", 66, ",", 47, ",", 36, ",", 47, ",", 45, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 44, ",", 45, ",", 46, ",", 37, ",", 26, ",", 64, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 38, ",", 45, ",", 46, ",", 37, ",", 46, ",", 46, ",", 44, ",", 36, ",", 46, ",", 46, ",", 45, ",", 47, ",", 35, ",", 49, ",", 44, ",", 45, ",", 36, ",", 47, ",", 46, ",", 27, ",", 55, ",", 45, ",", 47, ",", 36, ",", 43, ",", 51, ",", 43, ",", 36, ",", 46, ",", 46, ",", 47, ",", 44, ",", 45, ",", 36, ",", 46, ",", 46, ",", 37, ",", 46, ",", 47, ",", 37, ",", 26, ",", 64, ",", 46, ",", 44, ",", 29, ",", 53, ",", 49, ",", 44, ",", 37, ",", 45, ",", 45, ",", 47, ",", 36, ",", 45, ",", 38, ",", 55, ",", 37, ",", 45, ",", 46, ",", 45, ",", 38, ",", 44, ",", 47, ",", 37, ",", 46, ",", 28, ",", 61, ",", 36, ",", 46, ",", 47, ",", 28, ",", 63, ",", 39, ",", 44, ",", 45, ",", 47, ",", 36, ",", 44, ",", 46, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 36, ",", 46, ",", 46, ",", 47, ",", 37, ",", 45, ",", 46, ",", 27, ",", 56, ",", 45, ",", 44, ",", 47, ",", 37, ",", 45, ",", 46, ",", 46, ",", 36, ",", 46, ",", 45, ",", 45, ",", 27, ",", 56, ",", 46, ",", 47, ",", 37, ",", 46, ",", 42, ",", 45, ",", 40, ",", 45, ",", 44, ",", 47, ",", 37, ",", 46, ",", 44, ",", 45, ",", 36, ",", 28, ",", 66, ",", 46, ",", 36, ",", 47, ",", 46, ",", 44, ",", 45, ",", 38, ",", 47, ",", 45, ",", 45, ",", 37, ",", 46, ",", 44, ",", 47, ",", 35, ",", 47, ",", 45, ",", 46, ",", 37, ",", 46, ",", 46, ",", 35, ",", 46, ",", 46, ",", 45, ",", 45, ",", 37, ",", 50, ",", 43, ",", 36, ",", 45, ",", 47, ",", 28, ",", 53, ",", 47, ",", 46, ",", 46, ",", 36, ",", 36, ",", 55, ",", 38, ",", 45, ",", 45, ",", 47, ",", 45, ",", 18, ",", 63, ",", 45, ",", 48, ",", 37, ",", 44, ",", 47, ",", 45, ",", 37, ",", 47, ",", 44, ",", 46, ",", 36, ",", 38, ",", 52, ",", 48, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 44, ",", 47, ",", 46, ",", 45, ",", 36, ",", 48, ",", 46, ",", 45, ",", 36, ",", 44, ",", 47, ",", 47, ",", 36, ",", 45, ",", 47, ",", 37, ",", 44, ",", 45, ",", 48, ",", 37, ",", 45, ",", 45, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 45, ",", 28, ",", 54, ",", 53, ",", 36, ",", 46, ",", 38, ",", 47, ",", 44, ",", 47, ",", 46, ",", 37, ",", 44, ",", 46, ",", 19, ",", 63, ",", 47, ",", 46, ",", 46, ",", 36, ",", 45, ",", 44, ",", 47, ",", 37, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 45, ",", 46, ",", 26, ",", 57, ",", 44, ",", 38, ",", 46, ",", 47, ",", 44, ",", 46, ",", 36, ",", 46, ",", 45, ",", 35, ",", 48, ",", 47, ",", 27, ",", 63, ",", 45, ",", 39, ",", 45, ",", 37, ",", 45, ",", 48, ",", 44, ",", 44, ",", 45, ",", 37, ",", 38, ",", 54, ",", 46, ",", 37, ",", 46, ",", 38, ",", 43, ",", 46, ",", 37, ",", 46, ",", 46, ",", 45, ",", 47, ",", 45, ",", 36, ",", 45, ",", 47, ",", 43, ",", 37, ",", 48, ",", 46, ",", 27, ",", 55, ",", 45, ",", 46, ",", 37, ",", 44, ",", 47, ",", 47, ",", 37, ",", 45, ",", 36, ",", 56, ",", 46, ",", 42, ",", 36, ",", 38, ",", 49, ",", 46, ",", 42, ",", 47, ",", 46, ",", 37, ",", 44, ",", 47, ",", 39, ",", 45, ",", 44, ",", 46, ",", 46, ",", 37, ",", 44, ",", 46, ",", 46, ",", 36, ",", 47, ",", 45, ",", 46, ",", 45, ",", 38, ",", 45, ",", 46, ",", 37, ",", 44, ",", 46, ",", 46, ",", 36, ",", 46, ",", 46, ",", 46, ",", 45, ",", 37, ",", 36, ",", 57, ",", 37, ",", 44, ",", 44, ",", 49, ",", 35, ",", 38, ",", 53, ",", 46, ",", 37, ",", 47, ",", 35, ",", 36, ",", 56, ",", 45, ",", 46, ",", 47, ",", 36, ",", 46, ",", 45, ",", 44, ",", 37, ",", 47, ",", 44, ",", 47, ",", 46, ",", 37, ",", 45, ",", 43, ",", 28, ",", 45, ",", 59, ",", 44, ",", 37, ",", 45, ",", 48, ",", 43, ",", 45, ",", 28, ",", 56, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 37, ",", 47, ",", 45, ",", 44, ",", 37, ",", 47, ",", 45, ",", 46, ",", 37, ",", 35, ",", 54, ",", 46, ",", 36, ",", 48, ",", 47, ",", 44, ",", 37, ",", 46, ",", 35, ",", 57, ",", 35, ",", 46, ",", 37, ",", 56, ",", 36, ",", 46, ",", 47, ",", 44, ",", 44, ",", 36, ",", 49, ",", 26, ",", 64, ",", 36, ",", 45, ",", 36, ",", 55, ",", 38, ",", 46, ",", 45, ",", 38, ",", 45, ",", 45, ",", 46, ",", 45, ",", 36, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 46, ",", 35, ",", 44, ",", 48, ",", 46, ",", 28, ",", 57, ",", 45, ",", 37, ",", 52, ",", 28, ",", 55, ",", 37, ",", 46, ",", 45, ",", 45, ",", 47, ",", 36, ",", 45, ",", 47, ",", 46, ",", 36, ",", 44, ",", 47, ",", 45, ",", 40, ",", 42, ",", 45, ",", 47, ",", 37, ",", 37, ",", 54, ",", 37, ",", 47, ",", 43, ",", 48, ",", 45, ",", 36, ",", 46, ",", 46, ",", 46, ",", 36, ",", 46, ",", 27, ",", 64, ",", 37, ",", 46, ",", 45, ",", 46, ",", 37, ",", 47, ",", 42, ",", 46, ",", 30, ",", 54, ",", 44, ",", 47, ",", 39, ",", 36, ",", 52, ",", 29, ",", 64, ",", 37, ",", 44, ",", 45, ",", 38, ",", 47, ",", 45, ",", 46, ",", 35, ",", 47, ",", 46, ",", 45, ",", 38, ",", 45, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 44, ",", 37, ",", 46, ",", 45, ",", 39, ",", 52, ",", 36, ",", 47, ",", 45, ",", 47, ",", 37, ",", 47, ",", 44, ",", 37, ",", 36, ",", 55, ",", 45, ",", 37, ",", 46, ",", 45, ",", 38, ",", 36, ",", 57, ",", 44, ",", 44, ",", 45, ",", 37, ",", 27, ",", 58, ",", 44, ",", 47, ",", 37, ",", 54, ",", 44, ",", 37, ",", 47, ",", 45, ",", 37, ",", 48, ",", 45, ",", 36, ",", 44, ",", 45, ",", 46, ",", 47, ",", 45, ",", 37, ",", 46, ",", 46, ",", 43, ",", 36, ",", 49, ",", 45, ",", 37, ",", 45, ",", 46, ",", 47, ",", 43, ",", 38, ",", 45, ",", 46, ",", 37, ",", 44, ",", 48, ",", 46, ",", 37, ",", 44, ",", 45, ",", 47, ",", 26, ",", 57, ",", 45, ",", 46, ",", 37, ",", 36, ",", 53, ",", 38, ",", 56, ",", 26, ",", 55, ",", 37, ",", 57, ",", 36, ",", 43, ",", 47, ",", 36, ",", 47, ",", 44, ",", 46, ",", 47, ",", 37, ",", 26, ",", 63, ",", 35, ",", 50, ",", 43, ",", 47, ",", 36, ",", 48, ",", 44, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 47, ",", 37, ",", 45, ",", 28, ",", 60, ",", 47, ",", 39, ",", 44, ",", 46, ",", 37, ",", 46, ",", 45, ",", 36, ",", 46, ",", 46, ",", 37, ",", 44, ",", 48, ",", 46, ",", 45, ",", 38, ",", 44, ",", 46, ",", 44, ",", 37, ",", 47, ",", 45, ",", 46, ",", 46, ",", 36, ",", 45, ",", 47, ",", 46, ",", 35, ",", 49, ",", 45, ",", 43, ",", 29, ",", 55, ",", 45, ",", 45, ",", 36, ",", 46, ",", 49, ",", 37, ",", 46, ",", 44, ",", 45, ",", 43, ",", 38, ",", 29, ",", 65, ",", 44, ",", 37, ",", 36, ",", 54, ",", 38, ",", 53, ",", 39, ",", 46, ",", 38, ",", 42, ",", 47, ",", 36, ",", 54, ",", 37, ",", 36, ",", 56, ",", 28, ",", 55, ",", 45, ",", 47, ",", 45, ",", 36, ",", 45, ",", 48, ",", 46, ",", 37, ",", 44, ",", 47, ",", 44, ",", 37, ",", 45, ",", 45, ",", 47, ",", 38, ",", 45, ",", 46, ",", 37, ",", 45, ",", 44, ",", 46, ",", 45, ",", 40, ",", 44, ",", 47, ",", 45, ",", 36, ",", 45, ",", 45, ",", 47, ",", 26, ",", 55, ",", 47, ",", 46, ",", 39, ",", 43, ",", 43, ",", 47, ",", 38, ",", 47, ",", 35, ",", 56, ",", 36, ",", 36, ",", 53, ",", 45, ",", 40, ",", 46, ",", 44, ",", 37, ",", 46, ",", 46, ",", 45, ",", 45, ",", 45, ",", 38, ",", 45, ",", 47, ",", 45, ",", 37, ",", 28, ",", 65, ",", 35, ",", 47, ",", 44, ",", 46, ",", 46, ",", 37, ",", 45, ",", 37, ",", 55, ",", 36, ",", 46, ",", 43, ",", 40, ",", 46, ",", 46, ",", 44, ",", 37, ",", 46, ",", 46, ",", 44, ",", 36, ",", 47, ",", 46, ",", 37, ",", 44, ",", 47, ",", 46, ",", 45, ",", 36, ",", 47, ",", 46, ",", 45, ",", 30, ",", 53, ",", 44, ",", 46, ",", 45, ",", 38, ",", 46, ",", 45, ",", 38, ",", 45, ",", 48, ",", 44, ",", 44, ",", 20, ",", 62, ",", 49, ",", 35, ",", 36, ",", 55, ",", 46, ",", 44, ",", 36, ",", 48, ",", 46, ",", 37, ",", 45, ",", 47, ",", 46, ",", 35, ",", 45, ",", 45, ",", 38, ",", 54, ",", 38, ",", 45, ",", 45, ",", 45, ",", 37, ",", 45, ",", 36, ",", 49, ",", 44, ",", 45, ",", 47, ",", 46, ",", 35, ",", 46, ",", 47, ",", 45, ",", 37, ",", 46, ",", 46, ",", 46, ",", 36, ",", 44, ",", 46, ",", 38, ",", 48, ",", 43, ",", 46, ",", 37, ",", 46, ",", 43, ",", 46, ",", 29, ",", 55, ",", 44, ",", 47, ",", 47, ",", 36, ",", 46, ",", 45, ",", 46, ",", 36, ",", 45, ",", 47, ",", 46, ",", 18, ",", 65, ",", 46, ",", 44, ",", 37, ",", 45, ",", 45, ",", 38, ",", 47, ",", 45, ",", 36, ",", 45, ",", 55, ",", 28, ",", 54, ",", 37, ",", 47, ",", 27, ",", 55, ",", 53, ",", 36, ",", 46, ",", 46, ",", 47, ",", 36, ",", 46, ",", 37, ",", 46, ",", 44, ",", 47, ",", 45, ",", 45, ",", 38, ",", 46, ",", 44, ",", 47, ",", 36, ",", 46, ",", 45, ",", 46, ",", 36, ",", 47, ",", 45, ",", 37, ",", 48, ",", 46, ",", 43, ",", 44, ",", 37, ",", 46, ",", 47, ",", 37, ",", 45, ",", 47, ",", 45, ",", 44, ",", 37, ",", 46, ",", 39, ",", 51, ",", 39, ",", 38, ",", 56, ",", 42, ",", 30, ",", 53, ",", 46, ",", 45, ",", 28, ",", 55, ",", 46, ",", 36, ",", 55, ",", 36, ",", 46, ",", 46, ",", 35, ",", 46, ",", 48, ",", 46, ",", 35, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 45, ",", 47, ",", 42, ",", 36, ",", 47, ",", 48, ",", 43, ",", 30, ",", 54, ",", 47, ",", 36, ",", 44, ",", 46, ",", 46, ",", 38, ",", 44, ",", 46, ",", 38, ",", 45, ",", 47, ",", 44, ",", 36, ",", 48, ",", 35, ",", 55, ",", 36, ",", 46, ",", 46, ",", 35, ",", 47, ",", 46, ",", 46, ",", 44, ",", 48, ",", 44, ",", 39, ",", 43, ",", 45, ",", 37, ",", 48, ",", 44, ",", 46, ",", 28, ",", 54, ",", 48, ",", 43, ",", 38, ",", 46, ",", 44, ",", 47, ",", 38, ",", 46, ",", 44, ",", 46, ",", 45, ",", 37, ",", 45, ",", 47, ",", 45, ",", 36, ",", 45, ",", 38, ",", 48, ",", 52, ",", 37, ",", 44, ",", 38, ",", 46, ",", 36, ",", 55, ",", 38, ",", 46, ",", 44, ",", 37, ",", 55, ",", 37, ",", 46, ",", 45, ",", 36, ",", 48, ",", 44, ",", 45, ",", 45, ",", 38, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 45, ",", 45, ",", 37, ",", 48, ",", 37, ",", 44, ",", 46, ",", 45, ",", 45, ",", 47, ",", 37, ",", 45, ",", 47, ",", 45, ",", 37, ",", 46, ",", 45, ",", 18, ",", 62, ",", 48, ",", 45, ",", 38, ",", 45, ",", 46, ",", 46, ",", 44, ",", 36, ",", 36, ",", 57, ",", 45, ",", 36, ",", 48, ",", 37, ",", 45, ",", 44, ",", 46, ",", 47, ",", 44, ",", 37, ",", 45, ",", 47, ",", 45, ",", 38, ",", 43, ",", 48, ",", 45, ",", 36, ",", 47, ",", 46, ",", 46, ",", 36, ",", 45, ",", 46, ",", 46, ",", 37, ",", 45, ",", 46, ",", 46, ",", 37, ",", 43, ",", 45, ",", 49, ",", 36, ",", 45, ",", 46, ",", 47, ",", 36, ",", 44, ",", 37, ",", 56, ",", 35, ",", 47, ",", 46, ",", 47, ",", 36, ",", 36, ",", 54, ",", 37, ",", 37, ",", 54, ",", 46, ",", 18, ",", 64, ",", 46, ",", 46, ",", 45, ",", 46, ",", 37, ",", 44, ",", 47, ",", 28, ",", 56, ",", 44, ",", 46, ",", 46, ",", 36, ",", 45, ",", 47, ",", 27, ",", 56, ",", 46, ",", 45, ",", 36, ",", 46, ",", 43, ",", 48, ",", 37, ",", 45, ",", 45, ",", 47, ",", 36, ",", 46, ",", 45, ",", 47, ",", 36, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 45, ",", 46, ",", 38, ",", 34, ",", 46, ",", 55, ",", 36, ",", 47, ",", 35, ",", 53, ",", 39, ",", 46, ",", 36, ",", 56, ",", 36, ",", 46, ",", 45, ",", 45, ",", 45, ",", 37, ",", 47, ",", 45, ",", 46, ",", 37, ",", 45, ",", 29, ",", 63, ",", 37, ",", 46, ",", 37, ",", 45, ",", 46, ",", 46, ",", 45, ",", 45, ",", 37, ",", 46, ",", 47, ",", 35, ",", 46, ",", 47, ",", 45, ",", 37, ",", 44, ",", 46, ",", 46, ",", 44, ",", 37, ",", 49, ",", 45, ",", 36, ",", 43, ",", 45, ",", 41, ",", 44, ",", 44, ",", 37, ",", 58, ",", 37, ",", 43, ",", 46, ",", 46, ",", 44, ",", 38, ",", 46, ",", 46, ",", 45, ",", 37, ",", 44, ",", 45, ",", 49, ",", 35, ",", 45, ",", 38, ",", 48, ",", 44, ",", 36, ",", 54, ",", 46, ",", 37, ",", 43, ",", 38, ",", 48, ",", 47, ",", 43, ",", 45, ",", 47, ",", 36, ",", 45, ",", 29, ",", 55, ",", 46, ",", 45, ",", 45, ",", 45, ",", 38, ",", 45, ",", 45, ",", 48, ",", 36, ",", 46, ",", 45, ",", 47, ",", 37, ",", 43, ",", 45, ",", 20, ",", 55, ",", 55, ",", 45, ",", 37, ",", 46, ",", 47, ",", 43, ",", 47, ",", 36, ",", 48, ",", 44, ",", 45, ",", 37, ",", 46, ",", 44, ",", 48, ",", 37, ",", 46, ",", 37, ",", 54, ",", 37, ",", 46, ",", 44, ",", 37, ",", 54, ",", 37, ",", 45, ",", 46, ",", 37, ",", 47, ",", 43, ",", 46, ",", 36, ",", 37, ",", 56, ",", 46, ",", 36, ",", 47, ",", 45, ",", 44, ",", 37, ",", 47, ",", 45, ",", 38, ",", 45, ",", 45, ",", 28, ",", 63, ",", 45, ",", 36, ",", 37, ",", 55, ",", 38, ",", 46, ",", 47, ",", 44, ",", 45, ",", 36, ",", 47, ",", 37, ",", 43, ",", 48, ",", 47, ",", 36, ",", 45, ",", 45, ",", 47, ",", 45, ",", 37, ",", 46, ",", 45, ",", 40, ",", 43, ",", 45, ",", 46, ",", 46, ",", 44, ",", 37, ",", 48, ",", 46, ",", 37, ",", 43, ",", 46, ",", 46, ",", 37, ",", 44, ",", 47, ",", 48, ",", 37, ",", 42, ",", 45, ",", 37, ",", 54, ",", 39, ",", 46, ",", 48, ",", 34, ",", 37, ",", 55, ",", 44, ",", 38, ",", 44, ",", 46, ",", 47, ",", 37, ",", 45, ",", 46, ",", 45, ",", 47, ",", 36, ",", 29, ",", 65, ",", 34, ",", 47, ",", 44, ",", 46, ",", 46, ",", 43, ",", 40, ",", 46, ",", 37, ",", 45, ",", 45, ",", 45, ",", 37, ",", 46, ",", 46, ",", 27, ",", 64, ",", 37, ",", 46, ",", 46, ",", 37, ",", 44, ",", 44, ",", 46, ",", 37, ",", 48, ",", 43, ",", 38, ",", 46, ",", 48, ",", 43, ",", 47, ",", 36, ",", 45, ",", 47, ",", 45, ",", 37, ",", 46, ",", 45, ",", 44, ",", 46, ",", 38, ",", 47, ",", 43, ",", 38, ",", 47, ",", 45, ",", 44, ",", 46, ",", 28, ",", 57, ",", 44, ",", 37, ",", 45, ",", 48, ",", 43, ",", 46, ",", 37, ",", 46, ",", 46, ",", 45, ",", 38, ",", 27, ",", 63, ",", 36, ",", 46, ",", 38, ",", 45, ",", 53, ",", 38, ",", 47, ",", 45, ",", 44, ",", 45, ",", 37, ",", 38, ",", 54, ",", 38, ",", 46, ",", 46, ",", 38, ",", 42, ",", 47, ",", 46, ",", 44, ",", 36, ",", 46, ",", 48, ",", 36, ",", 44, ",", 46, ",", 47, ",", 35, ",", 46, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 44, ",", 47, ",", 35, ",", 47, ",", 46, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 37, ",", 44, ",", 46, ",", 47, ",", 29, ",", 53, ",", 47, ",", 45, ",", 44, ",", 37, ",", 48, ",", 37, ",", 44, ",", 46, ",", 36, ",", 55, ",", 37, ",", 27, ",", 63, ",", 38, ",", 53, ",", 37, ",", 47, ",", 46, ",", 45, ",", 35, ",", 46, ",", 47, ",", 37, ",", 45, ",", 37, ",", 46, ",", 48, ",", 43, ",", 28, ",", 64, ",", 46, ",", 37, ",", 44, ",", 39, ",", 45, ",", 46, ",", 36, ",", 43, ",", 49, ",", 46, ",", 44, ",", 46, ",", 36, ",", 37, ",", 54, ",", 45, ",", 38, ",", 46, ",", 45, ",", 47, ",", 37, ",", 45, ",", 44, ",", 47, ",", 36, ",", 46, ",", 37, ",", 44, ",", 48, ",", 46, ",", 45, ",", 45, ",", 27, ",", 56, ",", 46, ",", 44, ",", 38, ",", 47, ",", 45, ",", 36, ",", 45, ",", 46, ",", 46, ",", 46, ",", 36, ",", 28, ",", 65, ",", 43, ",", 47, ",", 26, ",", 55, ",", 46, ",", 36, ",", 48, ",", 47, ",", 44, ",", 38, ",", 43, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 46, ",", 36, ",", 45, ",", 38, ",", 53, ",", 38, ",", 46, ",", 36, ",", 54, ",", 38, ",", 46, ",", 44, ",", 38, ",", 43, ",", 49, ",", 46, ",", 37, ",", 44, ",", 46, ",", 35, ",", 55, ",", 37, ",", 47, ",", 45, ",", 39, ",", 45, ",", 45, ",", 44, ",", 39, ",", 44, ",", 45, ",", 47, ",", 27, ",", 54, ",", 47, ",", 45, ",", 45, ",", 46, ",", 36, ",", 48, ",", 36, ",", 46, ",", 45, ",", 47, ",", 45, ",", 17, ",", 63, ",", 48, ",", 37, ",", 45, ",", 46, ",", 45, ",", 39, ",", 44, ",", 43, ",", 48, ",", 38, ",", 47, ",", 26, ",", 54, ",", 45, ",", 46, ",", 27, ",", 63, ",", 48, ",", 36, ",", 45, ",", 47, ",", 45, ",", 46, ",", 35, ",", 46, ",", 48, ",", 37, ",", 44, ",", 46, ",", 37, ",", 46, ",", 45, ",", 44, ",", 46, ",", 38, ",", 46, ",", 45, ",", 46, ",", 37, ",", 46, ",", 44, ",", 36, ",", 56, ",", 37, ",", 45, ",", 47, ",", 36, ",", 45, ",", 47, ",", 28, ",", 55, ",", 44, ",", 45, ",", 47, ",", 35, ",", 50, ",", 43, ",", 45, ",", 37, ",", 47, ",", 46, ",", 26, ",", 36, ",", 64, ",", 46, ",", 37, ",", 37, ",", 53, ",", 48, ",", 44, ",", 36, ",", 47, ",", 47, ",", 44, ",", 36, ",", 47, ",", 46, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 36, ",", 45, ",", 47, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 45, ",", 45, ",", 37, ",", 48, ",", 45, ",", 36, ",", 46, ",", 46, ",", 47, ",", 43, ",", 37, ",", 36, ",", 47, ",", 55, ",", 36, ",", 47, ",", 37, ",", 51, ",", 37, ",", 48, ",", 36, ",", 48, ",", 44, ",", 46, ",", 46, ",", 44, ",", 36, ",", 46, ",", 38, ",", 47, ",", 43, ",", 48, ",", 36, ",", 35, ",", 55, ",", 45, ",", 47, ",", 46, ",", 35, ",", 47, ",", 47, ",", 45, ",", 44, ",", 38, ",", 47, ",", 36, ",", 46, ",", 45, ",", 45, ",", 37, ",", 27, ",", 64, ",", 47, ",", 45, ",", 37, ",", 45, ",", 47, ",", 37, ",", 46, ",", 35, ",", 53, ",", 47, ",", 38, ",", 43, ",", 38, ",", 47, ",", 45, ",", 47, ",", 45, ",", 45, ",", 36, ",", 45, ",", 47, ",", 46, ",", 39, ",", 43, ",", 37, ",", 54, ",", 37, ",", 46, ",", 44, ",", 47, ",", 37, ",", 45, ",", 37, ",", 54, ",", 37, ",", 47, ",", 44, ",", 48, ",", 36, ",", 45, ",", 45, ",", 36, ",", 45, ",", 46, ",", 47, ",", 28, ",", 53, ",", 48, ",", 45, ",", 29, ",", 62, ",", 37, ",", 43, ",", 38, ",", 47, ",", 36, ",", 55, ",", 46, ",", 46, ",", 37, ",", 36, ",", 54, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 45, ",", 37, ",", 43, ",", 47, ",", 46, ",", 36, ",", 48, ",", 35, ",", 55, ",", 37, ",", 44, ",", 47, ",", 46, ",", 44, ",", 38, ",", 45, ",", 46, ",", 37, ",", 46, ",", 45, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 36, ",", 46, ",", 37, ",", 48, ",", 44, ",", 45, ",", 46, ",", 46, ",", 37, ",", 36, ",", 55, ",", 46, ",", 36, ",", 46, ",", 36, ",", 28, ",", 64, ",", 45, ",", 46, ",", 47, ",", 37, ",", 44, ",", 46, ",", 45, ",", 39, ",", 42, ",", 45, ",", 49, ",", 44, ",", 36, ",", 48, ",", 46, ",", 26, ",", 56, ",", 45, ",", 46, ",", 36, ",", 45, ",", 47, ",", 47, ",", 37, ",", 44, ",", 45, ",", 47, ",", 36, ",", 46, ",", 44, ",", 38, ",", 47, ",", 45, ",", 44, ",", 45, ",", 46, ",", 40, ",", 43, ",", 46, ",", 39, ",", 36, ",", 53, ",", 46, ",", 46, ",", 36, ",", 37, ",", 55, ",", 38, ",", 35, ",", 46, ",", 54, ",", 35, ",", 48, ",", 44, ",", 46, ",", 38, ",", 47, ",", 44, ",", 46, ",", 37, ",", 45, ",", 46, ",", 27, ",", 54, ",", 47, ",", 46, ",", 36, ",", 56, ",", 36, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 36, ",", 46, ",", 46, ",", 46, ",", 37, ",", 54, ",", 37, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 36, ",", 44, ",", 38, ",", 55, ",", 45, ",", 29, ",", 54, ",", 46, ",", 44, ",", 38, ",", 45, ",", 47, ",", 47, ",", 35, ",", 45, ",", 47, ",", 45, ",", 43, ",", 39, ",", 46, ",", 46, ",", 45, ",", 37, ",", 47, ",", 46, ",", 36, ",", 44, ",", 35, ",", 58, ",", 44, ",", 37, ",", 46, ",", 46, ",", 45, ",", 36, ",", 46, ",", 47, ",", 44, ",", 36, ",", 49, ",", 27, ",", 63, ",", 43, ",", 39, ",", 46, ",", 47, ",", 35, ",", 46, ",", 45, ",", 47, ",", 36, ",", 43, ",", 48, ",", 26, ",", 55, ",", 48, ",", 45, ",", 27, ",", 56, ",", 44, ",", 47, ",", 45, ",", 37, ",", 44, ",", 47, ",", 47, ",", 36, ",", 47, ",", 42, ",", 48, ",", 44, ",", 38, ",", 46, ",", 45, ",", 38, ",", 45, ",", 46, ",", 45, ",", 37, ",", 45, ",", 47, ",", 47, ",", 36, ",", 45, ",", 45, ",", 47, ",", 44, ",", 37, ",", 45, ",", 46, ",", 38, ",", 36, ",", 54, ",", 46, ",", 36, ",", 53, ",", 38, ",", 45, ",", 40, ",", 45, ",", 45, ",", 36, ",", 45, ",", 47, ",", 19, ",", 72, ",", 37, ",", 46, ",", 36, ",", 46, ",", 54, ",", 37, ",", 45, ",", 45, ",", 38, ",", 46, ",", 46, ",", 36, ",", 47, ",", 45, ",", 45, ",", 46, ",", 46, ",", 35, ",", 48, ",", 43, ",", 38, ",", 47, ",", 45, ",", 46, ",", 35, ",", 47, ",", 45, ",", 46, ",", 37, ",", 46, ",", 46, ",", 44, ",", 37, ",", 46, ",", 46, ",", 45, ",", 36, ",", 47, ",", 46, ",", 44, ",", 46, ",", 26, ",", 57, ",", 38, ",", 44, ",", 46, ",", 47, ",", 46, ",", 28, ",", 44, ",", 55, ",", 45, ",", 37, ",", 46, ",", 45, ",", 48, ",", 35, ",", 43, ",", 49, ",", 45, ",", 44, ",", 37, ",", 29, ",", 65, ",", 37, ",", 43, ",", 45, ",", 47, ",", 37, ",", 45, ",", 45, ",", 47, ",", 37, ",", 44, ",", 45, ",", 48, ",", 36, ",", 45, ",", 47, ",", 26, ",", 58, ",", 44, ",", 47, ",", 43, ",", 38, ",", 46, ",", 45, ",", 47, ",", 45, ",", 28, ",", 53, ",", 46, ",", 48, ",", 35, ",", 45, ",", 46, ",", 38, ",", 45, ",", 45, ",", 45, ",", 37, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 46, ",", 45, ",", 37, ",", 45, ",", 45, ",", 38, ",", 37, ",", 55, ",", 45, ",", 36, ",", 45, ",", 47, ",", 45, ",", 45, ",", 38, ",", 47, ",", 44, ",", 37, ",", 46, ",", 26, ",", 65, ",", 46, ",", 37, ",", 36, ",", 55, ",", 46, ",", 38, ",", 44, ",", 44, ",", 46, ",", 27, ",", 56, ",", 37, ",", 46, ",", 45, ",", 37, ",", 54, ",", 37, ",", 45, ",", 47, ",", 44, ",", 48, ",", 36, ",", 47, ",", 43, ",", 47, ",", 35, ",", 47, ",", 46, ",", 36, ",", 46, ",", 47, ",", 46, ",", 44, ",", 35, ",", 48, ",", 47, ",", 43, ",", 38, ",", 47, ",", 45, ",", 44, ",", 45, ",", 37, ",", 47, ",", 43, ",", 39, ",", 46, ",", 47, ",", 44, ",", 29, ",", 53, ",", 45, ",", 40, ",", 44, ",", 45, ",", 46, ",", 46, ",", 28, ",", 53, ",", 45, ",", 47, ",", 45, ",", 20, ",", 65, ",", 37, ",", 51, ",", 36, ",", 48, ",", 47, ",", 44, ",", 37, ",", 46, ",", 45, ",", 38, ",", 45, ",", 36, ",", 55, ",", 37, ",", 44, ",", 30, ",", 64, ",", 37, ",", 43, ",", 48, ",", 45, ",", 37, ",", 44, ",", 47, ",", 45, ",", 46, ",", 37, ",", 47, ",", 44, ",", 46, ",", 35, ",", 47, ",", 46, ",", 38, ",", 44, ",", 47, ",", 45, ",", 37, ",", 46, ",", 44, ",", 45, ",", 48, ",", 37, ",", 36, ",", 56, ",", 44, ",", 35, ",", 47, ",", 37, ",", 36, ",", 56, ",", 45, ",", 46, ",", 46, ",", 37, ",", 44, ",", 46, ",", 47, ",", 35, ",", 46, ",", 46, ",", 46, ",", 17, ",", 64, ",", 45, ",", 48, ",", 27, ",", 54, ",", 45, ",", 38, ",", 47, ",", 45, ",", 43, ",", 48, ",", 36, ",", 37, ",", 55, ",", 45, ",", 38, ",", 45, ",", 44, ",", 37, ",", 48, ",", 45, ",", 44, ",", 38, ",", 48, ",", 44, ",", 43, ",", 36, ",", 48, ",", 46, ",", 44, ",", 47, ",", 38, ",", 46, ",", 35, ",", 55, ",", 37, ",", 44, ",", 40, ",", 43, ",", 47, ",", 45, ",", 46, ",", 36, ",", 46, ",", 46, ",", 45, ",", 38, ",", 45, ",", 46, ",", 47, ",", 27, ",", 52, ",", 46, ",", 47, ",", 38, ",", 44, ",", 46, ",", 46, ",", 46, ",", 35, ",", 47, ",", 45, ",", 45, ",", 36, ",", 46, ",", 48, ",", 37, ",", 44, ",", 45, ",", 47, ",", 44, ",", 37, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 45, ",", 47, ",", 35, ",", 28, ",", 64, ",", 38, ",", 45, ",", 45, ",", 46, ",", 45, ",", 37, ",", 45, ",", 46, ",", 46, ",", 43, ",", 38, ",", 46, ",", 47, ",", 43, ",", 38, ",", 36, ",", 57, ",", 36, ",", 46, ",", 46, ",", 46, ",", 36, ",", 45, ",", 45, ",", 38, ",", 46, ",", 45, ",", 46, ",", 49, ",", 41, ",", 37, ",", 45, ",", 28, ",", 56, ",", 46, ",", 45, ",", 46, ",", 46, ",", 36, ",", 47, ",", 45, ",", 37, ",", 47, ",", 44, ",", 37, ",", 27, ",", 64, ",", 44, ",", 46, ",", 27, ",", 56, ",", 48, ",", 36, ",", 47, ",", 44, ",", 43, ",", 46, ",", 37, ",", 47, ",", 45, ",", 47, ",", 36, ",", 45, ",", 45, ",", 36, ",", 46, ",", 47, ",", 47, ",", 46, ",", 45, ",", 38, ",", 44, ",", 43, ",", 40, ",", 45, ",", 46, ",", 46, ",", 36, ",", 48, ",", 45, ",", 42, ",", 47, ",", 36, ",", 47, ",", 45, ",", 37, ",", 46, ",", 36, ",", 55, ",", 45, ",", 36, ",", 47, ",", 37, ",", 55, ",", 35, ",", 49, ",", 36, ",", 45, ",", 44, ",", 48, ",", 44, ",", 45, ",", 38, ",", 46, ",", 46, ",", 36, ",", 46, ",", 45, ",", 47, ",", 17, ",", 63, ",", 48, ",", 45, ",", 45, ",", 36, ",", 45, ",", 48, ",", 44, ",", 36, ",", 47, ",", 47, ",", 45, ",", 27, ",", 54, ",", 46, ",", 47, ",", 18, ",", 64, ",", 48, ",", 43, ",", 37, ",", 45, ",", 45, ",", 38, ",", 46, ",", 35, ",", 57, ",", 45, ",", 28, ",", 54, ",", 45, ",", 47, ",", 36, ",", 43, ",", 48, ",", 38, ",", 46, ",", 44, ",", 48, ",", 44, ",", 35, ",", 48, ",", 45, ",", 36, ",", 46, ",", 46, ",", 45, ",", 48, ",", 36, ",", 44, ",", 36, ",", 56, ",", 36, ",", 45, ",", 49, ",", 36, ",", 44, ",", 45, ",", 46, ",", 47, ",", 37, ",", 44, ",", 49, ",", 18, ",", 62, ",", 45, ",", 45, ",", 36, ",", 48, ",", 46, ",", 45, ",", 37, ",", 45, ",", 38, ",", 51, ",", 47, ",", 27, ",", 56, ",", 45, ",", 38, ",", 46, ",", 46, ",", 45, ",", 46, ",", 45, ",", 37, ",", 44, ",", 46, ",", 39, ",", 45, ",", 45, ",", 45, ",", 47, ",", 36, ",", 45, ",", 46, ",", 37, ",", 46, ",", 46, ",", 37, ",", 45, ",", 47, ",", 45, ",", 44, ",", 38, ",", 47, ",", 46, ",", 43, ",", 36, ",", 46, ",", 47, ",", 44, ",", 39, ",", 46, ",", 36, ",", 53, ",", 46, ",", 36, ",", 47, ",", 45, ",", 36, ",", 48, ",", 45, ",", 38, ",", 45, ",", 44, ",", 47, ",", 27, ",", 55, ",", 44, ",", 48, ",", 37, ",", 45, ",", 45, ",", 45, ",", 38, ",", 44, ",", 48, ",", 45, ",", 46, ",", 45, ",", 39, ",", 45, ",", 44, ",", 26, ",", 55, ",", 48, ",", 37, ",", 46, ",", 45, ",", 45, ",", 46, ",", 36, ",", 46, ",", 46, ",", 45, ",", 39, ",", 43, ",", 47, ",", 46, ",", 37, ",", 44, ",", 46, ",", 46, ",", 44, ",", 37, ",", 48, ",", 46, ",", 36, ",", 44, ",", 44, ",", 49, ",", 36, ",", 45, ",", 37, ",", 56, ",", 35, ",", 47, ",", 35, ",", 46, ",", 55, ",", 37, ",", 46, ",", 46, ",", 37, ",", 45, ",", 43, ",", 46, ",", 39, ",", 47, ",", 43, ",", 28, ",", 55, ",", 48, ",", 43, ",", 36, ",", 56, ",", 37, ",", 43, ",", 48, ",", 37, ",", 47, ",", 44, ",", 44, ",", 46, ",", 37, ",", 46, ",", 36, ",", 56, ",", 37, ",", 46, ",", 44, ",", 46, ",", 39, ",", 46, ",", 45, ",", 46, ",", 26, ",", 47, ",", 54, ",", 36, ",", 45, ",", 47, ",", 44, ",", 37, ",", 48, ",", 47, ",", 43, ",", 46, ",", 37, ",", 44, ",", 45, ",", 36, ",", 48, ",", 46, ",", 46, ",", 45, ",", 36, ",", 47, ",", 44, ",", 46, ",", 39, ",", 36, ",", 54, ",", 37, ",", 48, ",", 43, ",", 47, ",", 44, ",", 37, ",", 46, ",", 46, ",", 37, ",", 46, ",", 46, ",", 26, ",", 62, ",", 37, ",", 47, ",", 49, ",", 36, ",", 44, ",", 47, ",", 45, ",", 44, ",", 28, ",", 55, ",", 45, ",", 28, ",", 55, ",", 45, ",", 45, ",", 26, ",", 56, ",", 46, ",", 48, ",", 37, ",", 43, ",", 47, ",", 45, ",", 45, ",", 37, ",", 47, ",", 46, ",", 45, ",", 37, ",", 46, ",", 46, ",", 45, ",", 37, ",", 43, ",", 46, ",", 41, ",", 43, ",", 44, ",", 48, ",", 46, ",", 36, ",", 43, ",", 48, ",", 46, ",", 43, ",", 38, ",", 47, ",", 46, ",", 38, ",", 35, ",", 53, ",", 47, ",", 37, ",", 45, ",", 47, ",", 46, ",", 36, ",", 44, ",", 48, ",", 26, ",", 65, ",", 36, ",", 27, ",", 67, ",", 35, ",", 45, ",", 36, ",", 55, ",", 37, ",", 46, ",", 44, ",", 48, ",", 37, ",", 45, ",", 44, ",", 37, ",", 45, ",", 48, ",", 44, ",", 46, ",", 37, ",", 45, ",", 48, ",", 45, ",", 45, ",", 35, ",", 46, ",", 48, ",", 36, ",", 47, ",", 44, ",", 35, ",", 55, ",", 38, ",", 45, ",", 45, ",", 38, ",", 47, ",", 44, ",", 37, ",", 46, ",", 53, ",", 38, ",", 43, ",", 38, ",", 47, ",", 47, ",", 37, ",", 52, ",", 36, ",", 46, ",", 76, ",", 45, ",", 46, ",", 37, ",", 47, ",", 44, ",", 35, ",", 54, ",", 38, ",", 47, ",", 47, ",", 43, ",", 36, ",", 47, ",", 36, ",", 55, ",", 36, ",", 44, ",", 48, ",", 45, ",", 38, ",", 45, ",", 45, ",", 46, ",", 37, ",", 45, ",", 46, ",", 27, ",", 56, ",", 45, ",", 46, ",", 36, ",", 55, ",", 37, ",", 43, ",", 47, ",", 39, ",", 46, ",", 43, ",", 47, ",", 37, ",", 36, ",", 55, ",", 46, ",", 36, ",", 47, ",", 35, ",", 57, ",", 33, ",", 48, ",", 46, ",", 45 ],
+				"allowdrag" : 0,
 				"saved_attribute_attributes" : 				{
 					"valueof" : 					{
-						"parameter_invisible" : 1,
-						"parameter_mmax" : 1.0,
 						"parameter_shortname" : "umenu[9]",
 						"parameter_type" : 3,
-						"parameter_longname" : "umenu[2]"
+						"parameter_longname" : "umenu[2]",
+						"parameter_invisible" : 1,
+						"parameter_mmax" : 7700.0
 					}
 
 				}
@@ -1097,13 +1299,13 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "t print clear",
-				"fontname" : "Arial",
-				"numinlets" : 1,
-				"id" : "obj-120",
 				"numoutlets" : 2,
-				"patching_rect" : [ 15.75, 92.244286000000102, 70.0, 22.0 ],
+				"id" : "obj-120",
 				"outlettype" : [ "print", "clear" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 15.75, 92.244286000000102, 70.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 1,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1111,14 +1313,14 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "metro 50",
-				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
-				"fontname" : "Arial",
-				"numinlets" : 2,
-				"id" : "obj-939",
 				"numoutlets" : 1,
-				"patching_rect" : [ 390.0, 125.054009000000121, 62.0, 23.0 ],
+				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
+				"id" : "obj-939",
 				"outlettype" : [ "bang" ],
-				"fontsize" : 13.0
+				"patching_rect" : [ 390.0, 125.054009000000121, 62.0, 23.0 ],
+				"fontsize" : 13.0,
+				"numinlets" : 2,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1127,10 +1329,10 @@
 				"maxclass" : "comment",
 				"text" : "Fill the port menu",
 				"linecount" : 2,
-				"numinlets" : 1,
-				"id" : "obj-11",
 				"numoutlets" : 0,
-				"patching_rect" : [ 331.0, 213.8501550000002, 71.0, 34.0 ]
+				"id" : "obj-11",
+				"patching_rect" : [ 331.0, 213.8501550000002, 71.0, 34.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -1139,10 +1341,10 @@
 				"maxclass" : "comment",
 				"text" : "Look for serial string terminated with carriage return and new line ASCII characters (Serial.println in Arduino terms)",
 				"linecount" : 5,
-				"numinlets" : 1,
-				"id" : "obj-10",
 				"numoutlets" : 0,
-				"patching_rect" : [ 103.75, 213.8501550000002, 150.0, 75.0 ]
+				"id" : "obj-10",
+				"patching_rect" : [ 103.75, 213.8501550000002, 150.0, 75.0 ],
+				"numinlets" : 1
 			}
 
 		}
@@ -1150,14 +1352,14 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "fromsymbol",
-				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
-				"fontname" : "Arial",
-				"numinlets" : 1,
-				"id" : "obj-12",
 				"numoutlets" : 1,
-				"patching_rect" : [ 11.75, 331.423272000000168, 73.0, 22.0 ],
+				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
+				"id" : "obj-12",
 				"outlettype" : [ "" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 11.75, 331.423272000000168, 73.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 1,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1165,14 +1367,14 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "itoa",
-				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
-				"fontname" : "Arial",
-				"numinlets" : 3,
-				"id" : "obj-51",
 				"numoutlets" : 1,
-				"patching_rect" : [ 11.75, 306.470849000000101, 40.0, 22.0 ],
+				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
+				"id" : "obj-51",
 				"outlettype" : [ "int" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 11.75, 306.470849000000101, 40.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 3,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1180,14 +1382,14 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "zl group 1000",
-				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
-				"fontname" : "Arial",
-				"numinlets" : 2,
-				"id" : "obj-13",
 				"numoutlets" : 2,
-				"patching_rect" : [ 11.75, 272.470849000000101, 83.0, 22.0 ],
+				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
+				"id" : "obj-13",
 				"outlettype" : [ "", "" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 11.75, 272.470849000000101, 83.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 2,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1195,14 +1397,14 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "sel 13 10",
-				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
-				"fontname" : "Arial",
-				"numinlets" : 3,
-				"id" : "obj-53",
 				"numoutlets" : 3,
-				"patching_rect" : [ 11.75, 232.244286000000102, 59.0, 22.0 ],
+				"color" : [ 0.74902, 0.705882, 0.662745, 1.0 ],
+				"id" : "obj-53",
 				"outlettype" : [ "bang", "bang", "" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 11.75, 232.244286000000102, 59.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 3,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1210,13 +1412,13 @@
 			"box" : 			{
 				"maxclass" : "message",
 				"text" : "baud $1",
-				"fontname" : "Arial",
-				"numinlets" : 2,
-				"id" : "obj-16",
 				"numoutlets" : 1,
-				"patching_rect" : [ 314.0, 125.054009000000121, 59.0, 23.0 ],
+				"id" : "obj-16",
 				"outlettype" : [ "" ],
-				"fontsize" : 13.0
+				"patching_rect" : [ 314.0, 125.054009000000121, 59.0, 23.0 ],
+				"fontsize" : 13.0,
+				"numinlets" : 2,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1224,11 +1426,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "zl.slice 1",
-				"numinlets" : 2,
-				"id" : "obj-17",
 				"numoutlets" : 2,
+				"id" : "obj-17",
+				"outlettype" : [ "", "" ],
 				"patching_rect" : [ 266.5, 196.3501550000002, 57.0, 22.0 ],
-				"outlettype" : [ "", "" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -1236,11 +1438,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "prepend append",
-				"numinlets" : 1,
-				"id" : "obj-18",
 				"numoutlets" : 1,
+				"id" : "obj-18",
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 266.5, 256.8501550000002, 98.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -1248,11 +1450,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "zl.iter 1",
-				"numinlets" : 2,
-				"id" : "obj-19",
 				"numoutlets" : 2,
+				"id" : "obj-19",
+				"outlettype" : [ "", "" ],
 				"patching_rect" : [ 266.5, 224.8501550000002, 49.0, 22.0 ],
-				"outlettype" : [ "", "" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -1260,11 +1462,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "serial a 9600",
-				"numinlets" : 1,
-				"id" : "obj-27",
 				"numoutlets" : 2,
+				"id" : "obj-27",
+				"outlettype" : [ "int", "" ],
 				"patching_rect" : [ 11.75, 190.304009000000121, 79.0, 22.0 ],
-				"outlettype" : [ "int", "" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -1272,13 +1474,13 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "prepend port",
-				"fontname" : "Arial",
-				"numinlets" : 1,
-				"id" : "obj-28",
 				"numoutlets" : 1,
-				"patching_rect" : [ 199.25, 125.054009000000121, 79.0, 22.0 ],
+				"id" : "obj-28",
 				"outlettype" : [ "" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 199.25, 125.054009000000121, 79.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 1,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1286,27 +1488,27 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "t b s",
-				"fontname" : "Arial",
-				"numinlets" : 1,
-				"id" : "obj-30",
 				"numoutlets" : 2,
-				"patching_rect" : [ 162.25, 125.054009000000121, 33.0, 22.0 ],
+				"id" : "obj-30",
 				"outlettype" : [ "bang", "" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 162.25, 125.054009000000121, 33.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 1,
+				"fontname" : "Arial"
 			}
 
 		}
 , 		{
 			"box" : 			{
 				"maxclass" : "message",
-				"text" : "port COM7",
-				"fontname" : "Arial",
-				"numinlets" : 2,
-				"id" : "obj-121",
+				"text" : "port COM8",
 				"numoutlets" : 1,
-				"patching_rect" : [ 89.75, 158.804009000000121, 194.0, 22.0 ],
+				"id" : "obj-121",
 				"outlettype" : [ "" ],
-				"fontsize" : 12.0
+				"patching_rect" : [ 89.75, 158.804009000000121, 194.0, 22.0 ],
+				"fontsize" : 12.0,
+				"numinlets" : 2,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1314,12 +1516,12 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "s portMenu",
-				"fontname" : "Arial",
-				"numinlets" : 1,
-				"id" : "obj-34",
 				"numoutlets" : 0,
+				"id" : "obj-34",
 				"patching_rect" : [ 266.5, 288.3501550000002, 71.0, 22.0 ],
-				"fontsize" : 12.0
+				"fontsize" : 12.0,
+				"numinlets" : 1,
+				"fontname" : "Arial"
 			}
 
 		}
@@ -1327,13 +1529,13 @@
 			"box" : 			{
 				"maxclass" : "number",
 				"presentation_rect" : [ 655.932495000000017, 103.75, 50.0, 22.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-91",
-				"numoutlets" : 2,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 643.297485000000052, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -1341,11 +1543,11 @@
 			"box" : 			{
 				"maxclass" : "ezdac~",
 				"presentation_rect" : [ 613.0, 315.190276999999924, 45.0, 45.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 0,
 				"presentation" : 1,
 				"id" : "obj-69",
-				"numoutlets" : 0,
-				"patching_rect" : [ 597.182495000000017, 324.25, 45.0, 45.0 ]
+				"patching_rect" : [ 597.182495000000017, 324.25, 45.0, 45.0 ],
+				"numinlets" : 2
 			}
 
 		}
@@ -1354,12 +1556,12 @@
 				"maxclass" : "message",
 				"text" : "open",
 				"presentation_rect" : [ 668.932495000000017, 240.25, 35.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-55",
-				"numoutlets" : 1,
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 653.114990000000034, 256.62548800000036, 35.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -1368,19 +1570,19 @@
 				"maxclass" : "newobj",
 				"text" : "sfplay~",
 				"presentation_rect" : [ 651.932495000000017, 270.440276999999924, 47.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-56",
-				"numoutlets" : 2,
-				"patching_rect" : [ 636.114990000000034, 286.815765000000283, 47.0, 22.0 ],
 				"outlettype" : [ "signal", "bang" ],
+				"patching_rect" : [ 636.114990000000034, 286.815765000000283, 47.0, 22.0 ],
+				"numinlets" : 2,
 				"saved_object_attributes" : 				{
 					"basictuning" : 440,
 					"followglobaltempo" : 0,
 					"formantcorrection" : 0,
 					"mode" : "basic",
-					"originallength" : [ 480.021768707483034, "ticks" ],
-					"originaltempo" : 120.000000000000014,
+					"originallength" : [ 2719.325170068027546, "ticks" ],
+					"originaltempo" : 120.0,
 					"pitchcorrection" : 0,
 					"quality" : "basic",
 					"timestretch" : [ 0 ]
@@ -1394,12 +1596,12 @@
 				"maxclass" : "message",
 				"text" : "open",
 				"presentation_rect" : [ 608.932495000000017, 240.75, 35.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-48",
-				"numoutlets" : 1,
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 593.114990000000034, 257.12548800000036, 35.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -1408,18 +1610,18 @@
 				"maxclass" : "newobj",
 				"text" : "sfplay~",
 				"presentation_rect" : [ 592.932495000000017, 270.440276999999924, 47.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-52",
-				"numoutlets" : 2,
-				"patching_rect" : [ 577.114990000000034, 286.815765000000283, 47.0, 22.0 ],
 				"outlettype" : [ "signal", "bang" ],
+				"patching_rect" : [ 577.114990000000034, 286.815765000000283, 47.0, 22.0 ],
+				"numinlets" : 2,
 				"saved_object_attributes" : 				{
 					"basictuning" : 440,
 					"followglobaltempo" : 0,
 					"formantcorrection" : 0,
 					"mode" : "basic",
-					"originallength" : [ 1440.021768707482124, "ticks" ],
+					"originallength" : [ 480.021768707482693, "ticks" ],
 					"originaltempo" : 119.999999999999915,
 					"pitchcorrection" : 0,
 					"quality" : "basic",
@@ -1433,13 +1635,13 @@
 			"box" : 			{
 				"maxclass" : "toggle",
 				"presentation_rect" : [ 651.932495000000017, 215.419464000000005, 21.0, 21.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-29",
-				"numoutlets" : 1,
+				"outlettype" : [ "int" ],
 				"patching_rect" : [ 636.114990000000034, 231.794952000000364, 21.0, 21.0 ],
-				"outlettype" : [ "int" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -1448,12 +1650,12 @@
 				"maxclass" : "message",
 				"text" : "open",
 				"presentation_rect" : [ 554.499999999999773, 240.75, 35.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-2",
-				"numoutlets" : 1,
+				"outlettype" : [ "" ],
 				"patching_rect" : [ 538.68249499999979, 257.12548800000036, 35.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"numinlets" : 2
 			}
 
 		}
@@ -1462,19 +1664,19 @@
 				"maxclass" : "newobj",
 				"text" : "sfplay~",
 				"presentation_rect" : [ 537.5, 270.440276999999924, 47.0, 22.0 ],
-				"numinlets" : 2,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-3",
-				"numoutlets" : 2,
-				"patching_rect" : [ 521.682495000000017, 286.815765000000283, 47.0, 22.0 ],
 				"outlettype" : [ "signal", "bang" ],
+				"patching_rect" : [ 521.682495000000017, 286.815765000000283, 47.0, 22.0 ],
+				"numinlets" : 2,
 				"saved_object_attributes" : 				{
 					"basictuning" : 440,
 					"followglobaltempo" : 0,
 					"formantcorrection" : 0,
 					"mode" : "basic",
-					"originallength" : [ 240.000000000000057, "ticks" ],
-					"originaltempo" : 120.000000000000028,
+					"originallength" : [ 764.538775510204346, "ticks" ],
+					"originaltempo" : 120.000000000000043,
 					"pitchcorrection" : 0,
 					"quality" : "basic",
 					"timestretch" : [ 0 ]
@@ -1487,13 +1689,13 @@
 			"box" : 			{
 				"maxclass" : "toggle",
 				"presentation_rect" : [ 592.932495000000017, 215.419464000000005, 20.0, 20.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-31",
-				"numoutlets" : 1,
+				"outlettype" : [ "int" ],
 				"patching_rect" : [ 577.114990000000034, 231.794952000000364, 20.0, 20.0 ],
-				"outlettype" : [ "int" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -1501,13 +1703,13 @@
 			"box" : 			{
 				"maxclass" : "toggle",
 				"presentation_rect" : [ 537.5, 215.419464000000005, 20.0, 20.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 1,
 				"presentation" : 1,
 				"id" : "obj-4",
-				"numoutlets" : 1,
+				"outlettype" : [ "int" ],
 				"patching_rect" : [ 521.682495000000017, 231.794952000000364, 20.0, 20.0 ],
-				"outlettype" : [ "int" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -1515,13 +1717,13 @@
 			"box" : 			{
 				"maxclass" : "number",
 				"presentation_rect" : [ 595.932495000000017, 103.75, 50.0, 22.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-22",
-				"numoutlets" : 2,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 583.297485000000052, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -1529,13 +1731,13 @@
 			"box" : 			{
 				"maxclass" : "number",
 				"presentation_rect" : [ 534.5, 103.75, 50.0, 22.0 ],
-				"parameter_enable" : 0,
-				"numinlets" : 1,
+				"numoutlets" : 2,
 				"presentation" : 1,
 				"id" : "obj-21",
-				"numoutlets" : 2,
+				"outlettype" : [ "", "bang" ],
 				"patching_rect" : [ 521.864990000000034, 100.75, 50.0, 22.0 ],
-				"outlettype" : [ "", "bang" ]
+				"numinlets" : 1,
+				"parameter_enable" : 0
 			}
 
 		}
@@ -1543,11 +1745,11 @@
 			"box" : 			{
 				"maxclass" : "newobj",
 				"text" : "unpack 0 0 0 0 0 0 0. 0. 0.",
-				"numinlets" : 1,
-				"id" : "obj-20",
 				"numoutlets" : 9,
+				"id" : "obj-20",
+				"outlettype" : [ "int", "int", "int", "int", "int", "int", "float", "float", "float" ],
 				"patching_rect" : [ 709.0, 49.75, 147.0, 22.0 ],
-				"outlettype" : [ "int", "int", "int", "int", "int", "int", "float", "float", "float" ]
+				"numinlets" : 1
 			}
 
 		}
@@ -1556,12 +1758,12 @@
 				"maxclass" : "comment",
 				"text" : "Sampled Loop Player",
 				"presentation_rect" : [ 1076.0, 197.0, 123.0, 20.0 ],
-				"numinlets" : 1,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-62",
 				"numoutlets" : 0,
-				"patching_rect" : [ 1063.476806000000124, 181.77533300000016, 123.0, 20.0 ]
+				"presentation" : 1,
+				"id" : "obj-62",
+				"patching_rect" : [ 426.797485000000052, 652.280719999999974, 123.0, 20.0 ],
+				"background" : 1,
+				"numinlets" : 1
 			}
 
 		}
@@ -1570,13 +1772,13 @@
 				"maxclass" : "newobj",
 				"text" : "scale -1 1 0.5 2",
 				"presentation_rect" : [ 1076.0, 225.0, 91.0, 22.0 ],
-				"numinlets" : 6,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-96",
 				"numoutlets" : 1,
-				"patching_rect" : [ 1063.476806000000124, 209.77533300000016, 91.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"presentation" : 1,
+				"id" : "obj-96",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 426.797485000000052, 680.280719999999974, 91.0, 22.0 ],
+				"background" : 1,
+				"numinlets" : 6
 			}
 
 		}
@@ -1585,13 +1787,13 @@
 				"maxclass" : "newobj",
 				"text" : "sig~",
 				"presentation_rect" : [ 1076.0, 259.396301000000221, 31.0, 22.0 ],
-				"numinlets" : 1,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-73",
 				"numoutlets" : 1,
-				"patching_rect" : [ 1063.476806000000124, 244.171634000000381, 31.0, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"presentation" : 1,
+				"id" : "obj-73",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 426.797485000000052, 714.677021000000195, 31.0, 22.0 ],
+				"background" : 1,
+				"numinlets" : 1
 			}
 
 		}
@@ -1600,13 +1802,13 @@
 				"maxclass" : "message",
 				"text" : "startloop",
 				"presentation_rect" : [ 1118.0, 259.396301000000221, 55.0, 22.0 ],
-				"numinlets" : 2,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-68",
 				"numoutlets" : 1,
-				"patching_rect" : [ 1105.476806000000124, 244.171634000000381, 55.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"presentation" : 1,
+				"id" : "obj-68",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 468.797485000000052, 714.677021000000195, 55.0, 22.0 ],
+				"background" : 1,
+				"numinlets" : 2
 			}
 
 		}
@@ -1615,13 +1817,13 @@
 				"maxclass" : "newobj",
 				"text" : "groove~ groovy",
 				"presentation_rect" : [ 1070.0, 289.815436999999974, 92.0, 22.0 ],
-				"numinlets" : 3,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-14",
 				"numoutlets" : 2,
-				"patching_rect" : [ 1057.476806000000124, 274.590770000000134, 92.0, 22.0 ],
+				"presentation" : 1,
+				"id" : "obj-14",
 				"outlettype" : [ "signal", "signal" ],
+				"patching_rect" : [ 420.797485000000052, 745.096156999999948, 92.0, 22.0 ],
+				"background" : 1,
+				"numinlets" : 3,
 				"saved_object_attributes" : 				{
 					"basictuning" : 440,
 					"followglobaltempo" : 0,
@@ -1630,7 +1832,7 @@
 					"loopstart" : [ 0.0, "ms" ],
 					"mode" : "basic",
 					"originallength" : [ 0.0, "ticks" ],
-					"originaltempo" : 120.000000000000043,
+					"originaltempo" : 120.000000000000028,
 					"phase" : [ 0.0, "ticks" ],
 					"pitchcorrection" : 0,
 					"quality" : "basic",
@@ -1643,15 +1845,15 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "newobj",
-				"text" : "scale -0.5 1 0 0.5",
+				"text" : "scale -0.5 1 0 3",
 				"presentation_rect" : [ 1173.0, 225.0, 101.0, 22.0 ],
-				"numinlets" : 6,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-100",
 				"numoutlets" : 1,
-				"patching_rect" : [ 1160.476806000000124, 209.77533300000016, 101.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"presentation" : 1,
+				"id" : "obj-100",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 523.797485000000052, 680.280719999999974, 91.0, 22.0 ],
+				"background" : 1,
+				"numinlets" : 6
 			}
 
 		}
@@ -1660,13 +1862,13 @@
 				"maxclass" : "newobj",
 				"text" : "buffer~ groovy",
 				"presentation_rect" : [ 1177.0, 289.815436999999974, 85.0, 22.0 ],
-				"numinlets" : 1,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-5",
 				"numoutlets" : 2,
-				"patching_rect" : [ 1164.476806000000124, 274.590770000000134, 85.0, 22.0 ],
-				"outlettype" : [ "float", "bang" ]
+				"presentation" : 1,
+				"id" : "obj-5",
+				"outlettype" : [ "float", "bang" ],
+				"patching_rect" : [ 527.797485000000052, 745.096156999999948, 85.0, 22.0 ],
+				"background" : 1,
+				"numinlets" : 1
 			}
 
 		}
@@ -1675,13 +1877,13 @@
 				"maxclass" : "message",
 				"text" : "loop 1",
 				"presentation_rect" : [ 1177.0, 259.396301000000221, 41.0, 22.0 ],
-				"numinlets" : 2,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-78",
 				"numoutlets" : 1,
-				"patching_rect" : [ 1164.476806000000124, 244.171634000000381, 41.0, 22.0 ],
-				"outlettype" : [ "" ]
+				"presentation" : 1,
+				"id" : "obj-78",
+				"outlettype" : [ "" ],
+				"patching_rect" : [ 527.797485000000052, 714.677021000000195, 41.0, 22.0 ],
+				"background" : 1,
+				"numinlets" : 2
 			}
 
 		}
@@ -1689,12 +1891,12 @@
 			"box" : 			{
 				"maxclass" : "ezdac~",
 				"presentation_rect" : [ 1164.61181600000009, 324.896301000000221, 45.0, 45.0 ],
-				"numinlets" : 2,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-15",
 				"numoutlets" : 0,
-				"patching_rect" : [ 1152.088622000000214, 309.671634000000381, 45.0, 45.0 ]
+				"presentation" : 1,
+				"id" : "obj-15",
+				"patching_rect" : [ 515.409301000000141, 780.177021000000195, 45.0, 45.0 ],
+				"background" : 1,
+				"numinlets" : 2
 			}
 
 		}
@@ -1703,13 +1905,13 @@
 				"maxclass" : "newobj",
 				"text" : "*~",
 				"presentation_rect" : [ 1101.11181600000009, 336.396301000000221, 29.5, 22.0 ],
-				"numinlets" : 2,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-97",
 				"numoutlets" : 1,
-				"patching_rect" : [ 1088.588622000000214, 321.171634000000381, 29.5, 22.0 ],
-				"outlettype" : [ "signal" ]
+				"presentation" : 1,
+				"id" : "obj-97",
+				"outlettype" : [ "signal" ],
+				"patching_rect" : [ 451.909301000000141, 791.677021000000195, 29.5, 22.0 ],
+				"background" : 1,
+				"numinlets" : 2
 			}
 
 		}
@@ -1717,12 +1919,12 @@
 			"box" : 			{
 				"maxclass" : "panel",
 				"presentation_rect" : [ 528.864990000000034, 465.580535999999938, 226.0, 193.0 ],
-				"numinlets" : 1,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-63",
 				"numoutlets" : 0,
-				"patching_rect" : [ 17.614990000000034, 416.5, 226.0, 193.0 ],
+				"presentation" : 1,
+				"id" : "obj-63",
+				"patching_rect" : [ 17.614990000000034, 441.070473000000106, 226.0, 193.0 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.847058823529412, 0.133333333333333, 0.596078431372549, 1.0 ],
@@ -1735,12 +1937,12 @@
 			"box" : 			{
 				"maxclass" : "panel",
 				"presentation_rect" : [ 1056.5, 193.25, 225.0, 183.0 ],
-				"numinlets" : 1,
-				"presentation" : 1,
-				"background" : 1,
-				"id" : "obj-54",
 				"numoutlets" : 0,
-				"patching_rect" : [ 1043.976806000000124, 178.02533300000016, 225.0, 183.0 ],
+				"presentation" : 1,
+				"id" : "obj-54",
+				"patching_rect" : [ 407.297485000000052, 648.530719999999974, 225.0, 183.0 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.180392156862745, 0.717647058823529, 0.823529411764706, 1.0 ],
@@ -1752,11 +1954,11 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "panel",
-				"numinlets" : 1,
-				"background" : 1,
-				"id" : "obj-75",
 				"numoutlets" : 0,
+				"id" : "obj-75",
 				"patching_rect" : [ 511.75, 178.02533300000016, 236.0, 198.540432000000123 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.247058823529412, 0.011764705882353, 0.458823529411765, 1.0 ],
@@ -1768,11 +1970,11 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "panel",
-				"numinlets" : 1,
-				"background" : 1,
-				"id" : "obj-122",
 				"numoutlets" : 0,
-				"patching_rect" : [ 249.0, 416.5, 208.976806000000124, 139.372481999999991 ],
+				"id" : "obj-122",
+				"patching_rect" : [ 249.0, 441.070473000000106, 208.976806000000124, 139.372481999999991 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.850980392156863, 0.168627450980392, 0.941176470588235, 1.0 ],
@@ -1784,11 +1986,11 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "panel",
-				"numinlets" : 1,
-				"background" : 1,
-				"id" : "obj-93",
 				"numoutlets" : 0,
+				"id" : "obj-93",
 				"patching_rect" : [ 745.476806000000124, 178.02533300000016, 296.5, 153.956024000000298 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.698039215686274, 0.333333333333333, 0.054901960784314, 1.0 ],
@@ -1800,11 +2002,11 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "panel",
-				"numinlets" : 1,
-				"background" : 1,
-				"id" : "obj-117",
 				"numoutlets" : 0,
+				"id" : "obj-117",
 				"patching_rect" : [ 515.5, 24.570293500000162, 536.0, 147.92399249999994 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.772549019607843, 0.992156862745098, 0.996078431372549, 1.0 ],
@@ -1816,11 +2018,11 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "panel",
-				"numinlets" : 1,
-				"background" : 1,
-				"id" : "obj-110",
 				"numoutlets" : 0,
+				"id" : "obj-110",
 				"patching_rect" : [ 4.75, 24.570293500000162, 505.0, 340.880016500000238 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.996078431372549, 0.996078431372549, 0.996078431372549, 1.0 ],
@@ -1832,11 +2034,11 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "panel",
-				"numinlets" : 1,
-				"background" : 1,
-				"id" : "obj-172",
 				"numoutlets" : 0,
-				"patching_rect" : [ 17.614990000000034, 615.5, 379.226806000000124, 199.920493999999508 ],
+				"id" : "obj-172",
+				"patching_rect" : [ 17.614990000000034, 640.070473000000106, 379.226806000000124, 199.920493999999508 ],
+				"background" : 1,
+				"numinlets" : 1,
 				"mode" : 1,
 				"angle" : 270.0,
 				"grad1" : [ 0.576470588235294, 0.847058823529412, 0.352941176470588, 1.0 ],
@@ -1848,132 +2050,140 @@
 , 		{
 			"box" : 			{
 				"maxclass" : "panel",
-				"numinlets" : 1,
-				"background" : 1,
-				"id" : "obj-130",
 				"numoutlets" : 0,
-				"patching_rect" : [ 4.75, 368.080535999999938, 465.0, 462.369774000000461 ]
+				"id" : "obj-144",
+				"patching_rect" : [ 464.726806000000124, 416.651009000000045, 317.0, 209.848990999999955 ],
+				"background" : 1,
+				"numinlets" : 1,
+				"mode" : 1,
+				"angle" : 270.0,
+				"grad1" : [ 0.090196078431373, 0.137254901960784, 0.458823529411765, 1.0 ],
+				"grad2" : [ 0.223529411764706, 0.698039215686274, 0.63921568627451, 1.0 ],
+				"proportion" : 0.5
+			}
+
+		}
+, 		{
+			"box" : 			{
+				"maxclass" : "panel",
+				"numoutlets" : 0,
+				"id" : "obj-130",
+				"patching_rect" : [ 4.75, 392.651009000000045, 980.75, 456.369774000000461 ],
+				"background" : 1,
+				"numinlets" : 1
 			}
 
 		}
  ],
 	"lines" : [ 		{
 			"patchline" : 			{
-				"source" : [ "obj-169", 0 ],
-				"destination" : [ "obj-165", 0 ],
-				"midpoints" : [ 307.341796000000159, 672.839957999999569, 258.864990000000034, 672.839957999999569, 258.864990000000034, 720.839957999999569, 271.87554850000015, 720.839957999999569 ]
+				"source" : [ "obj-128", 0 ],
+				"destination" : [ "obj-118", 0 ],
+				"midpoints" : [ 641.5, 502.627518000000009, 641.5, 502.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-168", 0 ],
-				"destination" : [ "obj-163", 0 ],
-				"midpoints" : [ 216.662475000000086, 672.839957999999569, 186.864990000000034, 672.839957999999569, 186.864990000000034, 720.839957999999569, 199.979980000000069, 720.839957999999569 ]
+				"source" : [ "obj-127", 0 ],
+				"destination" : [ "obj-115", 0 ],
+				"midpoints" : [ 490.226806000000124, 502.627518000000009, 490.226806000000124, 502.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-170", 0 ],
-				"destination" : [ "obj-164", 0 ],
-				"midpoints" : [ 127.659301000000141, 672.839957999999569, 117.864990000000034, 672.839957999999569, 117.864990000000034, 720.839957999999569, 133.118163999999979, 720.839957999999569 ]
+				"source" : [ "obj-41", 0 ],
+				"destination" : [ "obj-126", 0 ],
+				"midpoints" : [ 656.0, 604.627518000000009, 622.0, 604.627518000000009, 622.0, 508.627518000000009, 576.976806000000124, 508.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-167", 0 ],
-				"destination" : [ "obj-166", 0 ],
-				"midpoints" : [ 37.047485000000052, 720.839957999999569, 58.729980000000069, 720.839957999999569 ]
+				"source" : [ "obj-23", 0 ],
+				"destination" : [ "obj-126", 0 ],
+				"midpoints" : [ 504.726806000000124, 619.627518000000009, 547.0, 619.627518000000009, 547.0, 511.627518000000009, 562.0, 511.627518000000009, 562.0, 508.627518000000009, 576.976806000000124, 508.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-165", 0 ],
-				"destination" : [ "obj-160", 1 ],
-				"midpoints" : [ 271.87554850000015, 756.839957999999569, 195.864990000000034, 756.839957999999569, 195.864990000000034, 753.839957999999569, 184.662475000000086, 753.839957999999569 ]
+				"source" : [ "obj-81", 0 ],
+				"destination" : [ "obj-41", 0 ],
+				"midpoints" : [ 705.0, 574.627518000000009, 656.0, 574.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-138", 0 ],
-				"destination" : [ "obj-165", 0 ],
-				"midpoints" : [ 271.87554850000015, 720.839957999999569, 271.87554850000015, 720.839957999999569 ]
+				"source" : [ "obj-61", 0 ],
+				"destination" : [ "obj-23", 0 ],
+				"midpoints" : [ 561.476806000000124, 598.627518000000009, 544.0, 598.627518000000009, 544.0, 583.627518000000009, 504.726806000000124, 583.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-163", 0 ],
-				"destination" : [ "obj-160", 1 ],
-				"midpoints" : [ 199.979980000000069, 747.839957999999569, 186.864990000000034, 747.839957999999569, 186.864990000000034, 753.839957999999569, 184.662475000000086, 753.839957999999569 ]
+				"source" : [ "obj-136", 0 ],
+				"destination" : [ "obj-41", 0 ],
+				"midpoints" : [ 656.0, 568.627518000000009, 656.0, 568.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-137", 0 ],
-				"destination" : [ "obj-163", 0 ],
-				"midpoints" : [ 199.979980000000069, 720.839957999999569, 199.979980000000069, 720.839957999999569 ]
+				"source" : [ "obj-131", 0 ],
+				"destination" : [ "obj-23", 0 ],
+				"midpoints" : [ 504.726806000000124, 571.627518000000009, 504.726806000000124, 571.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-164", 0 ],
-				"destination" : [ "obj-160", 0 ],
-				"midpoints" : [ 133.118163999999979, 753.839957999999569, 158.662475000000086, 753.839957999999569 ]
+				"source" : [ "obj-118", 1 ],
+				"destination" : [ "obj-136", 0 ],
+				"midpoints" : [ 656.0, 535.627518000000009, 656.0, 535.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-134", 0 ],
-				"destination" : [ "obj-164", 0 ],
-				"midpoints" : [ 130.368163999999979, 720.839957999999569, 133.118163999999979, 720.839957999999569 ]
+				"source" : [ "obj-115", 1 ],
+				"destination" : [ "obj-131", 0 ],
+				"midpoints" : [ 504.726806000000124, 535.627518000000009, 504.726806000000124, 535.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-166", 0 ],
-				"destination" : [ "obj-160", 0 ],
-				"midpoints" : [ 58.729980000000069, 756.839957999999569, 144.864990000000034, 756.839957999999569, 144.864990000000034, 753.839957999999569, 158.662475000000086, 753.839957999999569 ]
+				"source" : [ "obj-84", 0 ],
+				"destination" : [ "obj-127", 0 ],
+				"midpoints" : [ 490.226806000000124, 469.627518000000009, 490.226806000000124, 469.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-139", 0 ],
-				"destination" : [ "obj-166", 0 ],
-				"midpoints" : [ 58.729980000000069, 720.839957999999569, 58.729980000000069, 720.839957999999569 ]
+				"source" : [ "obj-111", 0 ],
+				"destination" : [ "obj-128", 0 ],
+				"midpoints" : [ 641.5, 469.627518000000009, 641.5, 469.627518000000009 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-20", 8 ],
-				"destination" : [ "obj-116", 0 ],
-				"midpoints" : [ 846.5, 87.0, 999.976806000000124, 87.0 ]
+				"source" : [ "obj-114", 0 ],
+				"destination" : [ "obj-64", 0 ],
+				"midpoints" : [ 899.976806000000124, 231.0, 902.476806000000124, 231.0 ]
 			}
 
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-96", 0 ],
-				"destination" : [ "obj-73", 0 ],
-				"midpoints" : [ 1072.976806000000124, 234.0, 1072.976806000000124, 234.0 ]
-			}
-
-		}
-, 		{
-			"patchline" : 			{
-				"source" : [ "obj-100", 0 ],
-				"destination" : [ "obj-97", 0 ],
-				"midpoints" : [ 1169.976806000000124, 234.0, 1161.0, 234.0, 1161.0, 306.0, 1098.088622000000214, 306.0 ]
+				"source" : [ "obj-108", 0 ],
+				"destination" : [ "obj-114", 0 ],
+				"midpoints" : [ 827.364990000000034, 123.0, 753.0, 123.0, 753.0, 165.0, 899.976806000000124, 165.0 ]
 			}
 
 		}
@@ -1981,7 +2191,15 @@
 			"patchline" : 			{
 				"source" : [ "obj-97", 0 ],
 				"destination" : [ "obj-15", 0 ],
-				"midpoints" : [ 1098.088622000000214, 345.0, 1137.0, 345.0, 1137.0, 306.0, 1161.588622000000214, 306.0 ]
+				"midpoints" : [ 461.409301000000141, 815.505386999999814, 500.320678999999927, 815.505386999999814, 500.320678999999927, 776.505386999999814, 524.909301000000141, 776.505386999999814 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-96", 0 ],
+				"destination" : [ "obj-73", 0 ],
+				"midpoints" : [ 436.297485000000052, 704.505386999999814, 436.297485000000052, 704.505386999999814 ]
 			}
 
 		}
@@ -2005,7 +2223,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-87", 0 ],
 				"destination" : [ "obj-83", 0 ],
-				"midpoints" : [ 394.5, 500.919464000000062, 394.5, 500.919464000000062 ]
+				"midpoints" : [ 394.5, 525.489937000000168, 394.5, 525.489937000000168 ]
 			}
 
 		}
@@ -2029,7 +2247,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-78", 0 ],
 				"destination" : [ "obj-14", 0 ],
-				"midpoints" : [ 1173.976806000000124, 267.0, 1066.976806000000124, 267.0 ]
+				"midpoints" : [ 537.297485000000052, 737.505386999999814, 430.297485000000052, 737.505386999999814 ]
 			}
 
 		}
@@ -2053,7 +2271,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-73", 0 ],
 				"destination" : [ "obj-14", 0 ],
-				"midpoints" : [ 1072.976806000000124, 267.0, 1066.976806000000124, 267.0 ]
+				"midpoints" : [ 436.297485000000052, 737.505386999999814, 430.297485000000052, 737.505386999999814 ]
 			}
 
 		}
@@ -2077,7 +2295,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-68", 0 ],
 				"destination" : [ "obj-14", 0 ],
-				"midpoints" : [ 1114.976806000000124, 267.0, 1066.976806000000124, 267.0 ]
+				"midpoints" : [ 478.297485000000052, 737.505386999999814, 430.297485000000052, 737.505386999999814 ]
 			}
 
 		}
@@ -2085,7 +2303,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-67", 0 ],
 				"destination" : [ "obj-33", 0 ],
-				"midpoints" : [ 152.22680600000001, 468.919464000000062, 211.864990000000034, 468.919464000000062, 211.864990000000034, 498.919464000000062, 149.114990000000034, 498.919464000000062 ]
+				"midpoints" : [ 152.22680600000001, 493.489937000000168, 211.864990000000034, 493.489937000000168, 211.864990000000034, 523.489937000000168, 149.114990000000034, 523.489937000000168 ]
 			}
 
 		}
@@ -2093,7 +2311,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-65", 0 ],
 				"destination" : [ "obj-37", 0 ],
-				"midpoints" : [ 35.614990000000034, 498.919464000000062, 63.614990000000034, 498.919464000000062 ]
+				"midpoints" : [ 35.614990000000034, 523.489937000000168, 63.614990000000034, 523.489937000000168 ]
 			}
 
 		}
@@ -2245,7 +2463,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-38", 0 ],
 				"destination" : [ "obj-82", 0 ],
-				"midpoints" : [ 289.5, 506.919464000000062, 293.5, 506.919464000000062 ]
+				"midpoints" : [ 289.5, 531.489937000000168, 293.5, 531.489937000000168 ]
 			}
 
 		}
@@ -2253,7 +2471,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-37", 0 ],
 				"destination" : [ "obj-24", 0 ],
-				"midpoints" : [ 63.614990000000034, 528.919464000000062, 63.614990000000034, 528.919464000000062 ]
+				"midpoints" : [ 63.614990000000034, 553.489937000000168, 63.614990000000034, 553.489937000000168 ]
 			}
 
 		}
@@ -2269,7 +2487,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-35", 0 ],
 				"destination" : [ "obj-40", 0 ],
-				"midpoints" : [ 82.614990000000034, 600.919464000000062, 136.864990000000034, 600.919464000000062, 136.864990000000034, 534.919464000000062, 161.114990000000034, 534.919464000000062 ]
+				"midpoints" : [ 82.614990000000034, 625.489937000000168, 136.864990000000034, 625.489937000000168, 136.864990000000034, 559.489937000000168, 161.114990000000034, 559.489937000000168 ]
 			}
 
 		}
@@ -2277,7 +2495,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-33", 0 ],
 				"destination" : [ "obj-35", 1 ],
-				"midpoints" : [ 149.114990000000034, 528.919464000000062, 130.864990000000034, 528.919464000000062, 130.864990000000034, 561.919464000000062, 101.614990000000034, 561.919464000000062 ]
+				"midpoints" : [ 149.114990000000034, 553.489937000000168, 130.864990000000034, 553.489937000000168, 130.864990000000034, 586.489937000000168, 101.614990000000034, 586.489937000000168 ]
 			}
 
 		}
@@ -2357,7 +2575,7 @@
 			"patchline" : 			{
 				"source" : [ "obj-24", 0 ],
 				"destination" : [ "obj-35", 0 ],
-				"midpoints" : [ 63.614990000000034, 561.919464000000062, 82.614990000000034, 561.919464000000062 ]
+				"midpoints" : [ 63.614990000000034, 586.489937000000168, 82.614990000000034, 586.489937000000168 ]
 			}
 
 		}
@@ -2406,6 +2624,14 @@
 				"source" : [ "obj-20", 0 ],
 				"destination" : [ "obj-21", 0 ],
 				"midpoints" : [ 718.5, 87.0, 531.364990000000034, 87.0 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-20", 8 ],
+				"destination" : [ "obj-116", 0 ],
+				"midpoints" : [ 846.5, 87.0, 999.976806000000124, 87.0 ]
 			}
 
 		}
@@ -2467,9 +2693,73 @@
 		}
 , 		{
 			"patchline" : 			{
+				"source" : [ "obj-170", 0 ],
+				"destination" : [ "obj-164", 0 ],
+				"midpoints" : [ 127.659301000000141, 697.410430999999676, 117.864990000000034, 697.410430999999676, 117.864990000000034, 745.410430999999676, 133.118163999999979, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
 				"source" : [ "obj-17", 1 ],
 				"destination" : [ "obj-19", 0 ],
 				"midpoints" : [ 314.0, 219.0, 276.0, 219.0 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-169", 0 ],
+				"destination" : [ "obj-165", 0 ],
+				"midpoints" : [ 307.341796000000159, 697.410430999999676, 258.864990000000034, 697.410430999999676, 258.864990000000034, 745.410430999999676, 271.87554850000015, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-168", 0 ],
+				"destination" : [ "obj-163", 0 ],
+				"midpoints" : [ 216.662475000000086, 697.410430999999676, 186.864990000000034, 697.410430999999676, 186.864990000000034, 745.410430999999676, 199.979980000000069, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-167", 0 ],
+				"destination" : [ "obj-166", 0 ],
+				"midpoints" : [ 37.047485000000052, 745.410430999999676, 58.729980000000069, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-166", 0 ],
+				"destination" : [ "obj-160", 0 ],
+				"midpoints" : [ 58.729980000000069, 781.410430999999676, 144.864990000000034, 781.410430999999676, 144.864990000000034, 778.410430999999676, 158.662475000000086, 778.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-165", 0 ],
+				"destination" : [ "obj-160", 1 ],
+				"midpoints" : [ 271.87554850000015, 781.410430999999676, 195.864990000000034, 781.410430999999676, 195.864990000000034, 778.410430999999676, 184.662475000000086, 778.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-164", 0 ],
+				"destination" : [ "obj-160", 0 ],
+				"midpoints" : [ 133.118163999999979, 778.410430999999676, 158.662475000000086, 778.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-163", 0 ],
+				"destination" : [ "obj-160", 1 ],
+				"midpoints" : [ 199.979980000000069, 772.410430999999676, 186.864990000000034, 772.410430999999676, 186.864990000000034, 778.410430999999676, 184.662475000000086, 778.410430999999676 ]
 			}
 
 		}
@@ -2485,7 +2775,46 @@
 			"patchline" : 			{
 				"source" : [ "obj-14", 0 ],
 				"destination" : [ "obj-97", 0 ],
-				"midpoints" : [ 1066.976806000000124, 306.0, 1098.088622000000214, 306.0 ]
+				"midpoints" : [ 430.297485000000052, 776.505386999999814, 461.409301000000141, 776.505386999999814 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-139", 0 ],
+				"destination" : [ "obj-166", 0 ],
+				"midpoints" : [ 58.729980000000069, 745.410430999999676, 58.729980000000069, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-138", 0 ],
+				"destination" : [ "obj-165", 0 ],
+				"midpoints" : [ 271.87554850000015, 745.410430999999676, 271.87554850000015, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-137", 0 ],
+				"destination" : [ "obj-163", 0 ],
+				"midpoints" : [ 199.979980000000069, 745.410430999999676, 199.979980000000069, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-134", 0 ],
+				"destination" : [ "obj-164", 0 ],
+				"midpoints" : [ 130.368163999999979, 745.410430999999676, 133.118163999999979, 745.410430999999676 ]
+			}
+
+		}
+, 		{
+			"patchline" : 			{
+				"source" : [ "obj-133", 0 ],
+				"destination" : [ "obj-14", 0 ]
 			}
 
 		}
@@ -2531,33 +2860,9 @@
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-114", 0 ],
-				"destination" : [ "obj-64", 0 ],
-				"midpoints" : [ 899.976806000000124, 231.0, 902.476806000000124, 231.0 ]
-			}
-
-		}
-, 		{
-			"patchline" : 			{
 				"source" : [ "obj-113", 0 ],
 				"destination" : [ "obj-43", 0 ],
 				"midpoints" : [ 771.476806000000124, 228.0, 759.476806000000124, 228.0 ]
-			}
-
-		}
-, 		{
-			"patchline" : 			{
-				"source" : [ "obj-109", 0 ],
-				"destination" : [ "obj-100", 0 ],
-				"midpoints" : [ 942.976806000000124, 123.0, 981.0, 123.0, 981.0, 165.0, 1188.0, 165.0, 1188.0, 204.0, 1169.976806000000124, 204.0 ]
-			}
-
-		}
-, 		{
-			"patchline" : 			{
-				"source" : [ "obj-108", 0 ],
-				"destination" : [ "obj-114", 0 ],
-				"midpoints" : [ 827.364990000000034, 123.0, 753.0, 123.0, 753.0, 165.0, 899.976806000000124, 165.0 ]
 			}
 
 		}
@@ -2571,9 +2876,9 @@
 		}
 , 		{
 			"patchline" : 			{
-				"source" : [ "obj-104", 0 ],
-				"destination" : [ "obj-96", 0 ],
-				"midpoints" : [ 886.976806000000124, 123.0, 981.0, 123.0, 981.0, 165.0, 1059.0, 165.0, 1059.0, 201.0, 1072.976806000000124, 201.0 ]
+				"source" : [ "obj-100", 0 ],
+				"destination" : [ "obj-97", 0 ],
+				"midpoints" : [ 533.297485000000052, 704.505386999999814, 524.320678999999927, 704.505386999999814, 524.320678999999927, 776.505386999999814, 461.409301000000141, 776.505386999999814 ]
 			}
 
 		}
@@ -2587,13 +2892,19 @@
 		}
  ],
 	"boxgroups" : [ 		{
+			"boxes" : [ "obj-144", "obj-84", "obj-151", "obj-127", "obj-126", "obj-115", "obj-111", "obj-128", "obj-118", "obj-136", "obj-131", "obj-23", "obj-41", "obj-61", "obj-81" ]
+		}
+, 		{
+			"boxes" : [ "obj-93", "obj-47", "obj-72", "obj-36", "obj-58", "obj-1", "obj-59", "obj-43", "obj-64", "obj-125", "obj-113", "obj-114", "obj-103" ]
+		}
+, 		{
+			"boxes" : [ "obj-54", "obj-15", "obj-5", "obj-14", "obj-68", "obj-78", "obj-97", "obj-96", "obj-100", "obj-73", "obj-62" ]
+		}
+, 		{
 			"boxes" : [ "obj-172", "obj-174", "obj-150", "obj-139", "obj-167", "obj-141", "obj-134", "obj-164", "obj-166", "obj-170", "obj-137", "obj-143", "obj-160", "obj-163", "obj-145", "obj-138", "obj-165", "obj-168", "obj-169" ]
 		}
 , 		{
 			"boxes" : [ "obj-110", "obj-6", "obj-112", "obj-120", "obj-45", "obj-121", "obj-7", "obj-30", "obj-27", "obj-10", "obj-28", "obj-53", "obj-13", "obj-34", "obj-19", "obj-18", "obj-17", "obj-51", "obj-44", "obj-25", "obj-16", "obj-11", "obj-12", "obj-939", "obj-9", "obj-8" ]
-		}
-, 		{
-			"boxes" : [ "obj-93", "obj-47", "obj-72", "obj-36", "obj-58", "obj-1", "obj-59", "obj-43", "obj-64", "obj-125", "obj-113", "obj-114", "obj-103" ]
 		}
 , 		{
 			"boxes" : [ "obj-122", "obj-129", "obj-38", "obj-50", "obj-82", "obj-87", "obj-86", "obj-83" ]
@@ -2606,9 +2917,6 @@
 		}
 , 		{
 			"boxes" : [ "obj-63", "obj-65", "obj-74", "obj-32", "obj-37", "obj-33", "obj-26", "obj-67", "obj-40", "obj-24", "obj-35" ]
-		}
-, 		{
-			"boxes" : [ "obj-54", "obj-15", "obj-5", "obj-14", "obj-68", "obj-78", "obj-97", "obj-96", "obj-100", "obj-73", "obj-62" ]
 		}
  ],
 	"appversion" : 	{
