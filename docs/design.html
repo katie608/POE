@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+h2><!DOCTYPE HTML>
 <!--
 	Theory by TEMPLATED
 	templated.co @templatedco
@@ -34,7 +34,6 @@
 		<!-- Three -->
 			<section id="three" class="wrapper">
 				<div class="inner">
-				<h2>Design</h2>
 				<div class="row">
 					<div class="6u 12u$(small)">
 						<div class="image fit">
@@ -53,9 +52,7 @@
 
 
 <!-- What you need -->
-				<header class="align-center">
-					<h3>Materials</h3>
-				</header>
+				<h2>Materials</h2>
 				<h4>Electrical</h4>
 				<ul>
 					<li>Sensors:</li>
@@ -101,21 +98,32 @@
 				</ul>
 
 <!-- Electrical -->
-				<header class="align-center">
-					<h3>Electrical</h3>
-				</header>
-
+				<h2>Electrical</h2>
 
 				<div class="row">
 					<div class="6u 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/e/01.jpg" alt="Pic 01" />
+						</div>
+					</div>
+					<div class="6u$ 12u$(small)">
 						<h4>Overall Design</h4>
 						<p>
 							To make the electrical design, you will need to connect the sensors to the Arduino as shown in this diagram. You will probably find it helpful to go through this part sensor by sensor, and connect them according the the diagrams shown, making sure that each one prints over the Serial port, and using the datasheets to troubleshoot if necessary.
 						</p>
 					</div>
+				</div>
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<h4>Proto-Board Sodering</h4>
+						<p>
+							We found that it was helpful to use protoboard to organize the soldering of some of the components. As you can see in this diagram, we had the wires from the sensors connect to the protoboard, and go through a resistor to ground. This layout kept the glove as compact as possible. We also put the accelerometer and bluetooth module here. The accelerometer and bluetooth module connect through the protoboard by soldering the pins to the protoboard. <a href=”https://www.instructables.com/id/How-to-Prototype-Without-Using-Printed-Circuit-Boa/”>Here</a> is a decent tutorial on how to solder to prototype board.
+						</p>
+					</div>
 					<div class="6u$ 12u$(small)">
 						<div class="image fit">
-							<img src="images/design/e/01.jpg" alt="Pic 01" />
+							<img src="images/design/e/protoboard-diagram.svg" alt="Pic 01" />
 						</div>
 					</div>
 				</div>
@@ -210,169 +218,327 @@
 				</div>
 
 
-				<div class="row">
-					<div class="6u 12u$(small)">
-						<h4>Proto-Board Sodering</h4>
-						<p>
-						</p>
-					</div>
-					<div class="6u$ 12u$(small)">
-						<div class="image fit">
-							<img src="images/design/e/protoboard-diagram.svg" alt="Pic 01" />
-						</div>
-					</div>
-				</div>
+
 
 
 <!-- Software -->
 
-				<header class="align-center">
-					<h3>Software</h3>
-				</header>
+				<h2>Software</h2>
 
 				<h4>Software Summary</h4>
 				<p>
 					Once you have soldered all the electrical components together, you can work on the software. The Arduino code is pretty simple, and works by reading in the sensor values and outputting them over bluetooth. The, those sensor values are read by MAX, which generates the sound.
 				</p>
 
+
+	<!-- Arduino -->
+						<h3>
+							Arduino Code
+							<a href="https://github.com/katie608/POE" class="icon fa-github"><span class="label">Github</span></a>
+						</h3>
+						<p>
+							There are several different versions of the Arduino code for different situations, more specifically, there is code to run each of the two different gloves both with and without bluetooth. The reason for this is to both help with debugging sensors before getting bluetooth working, and to have a backup option if bluetooth does not work at all. Overall the Arduino code is simple. It imports several libraries for the accelerometer and bluetooth, and then reads data from the sensors and outputs that data either over “Serial” (normal Serial port with wires), or “mySerial” (wireless bluetooth). Below, you can see all the versions of our code, as well as links to them on Github.
+						</p>
+
 				<div class="row">
 					<div class="6u 12u$(small)">
 						<h4>
-							Arduino Code
-							<a href="https://github.com/katie608/POE/blob/master/bluetooth/bluetooth.ino" class="icon fa-github"><span class="label">Github</span></a>
+							Right Hand No Bluetooth
+							<a href="https://github.com/katie608/POE/blob/master/rightNoBluetooth/rightNoBluetooth.ino" class="icon fa-github"><span class="label">Github</span></a>
 						</h4>
-						<p>
-							Arduino code
-						</p>
+						<pre><code style="height:200px;overflow-y:scroll;">
+</code></pre>
 					</div>
 					<div class="6u$ 12u$(small)">
-						<pre><code>// prints data over bluetooth
-#include <SoftwareSerial.h>
-// set up bluetooth code
-int rx = 6;
-int tx = 7;
-SoftwareSerial mySerial(rx, tx); // RX, TX
-
-//// wire is the library that allows communication with
-//the accelerometer using I2C
-//#include < Wire.h >
-//
-//// needed for communicating with this particular accelerometer
-//#include "SparkFun_MMA8452Q.h"
-//
-//// create instance of the MMA8452 class for accelerometer
-//MMA8452Q accel;
-
+						<h4>
+							Left Hand No Bluetooth
+							<a href="https://github.com/katie608/POE/blob/master/leftNoBluetooth/leftNoBluetooth.ino" class="icon fa-github"><span class="label">Github</span></a>
+						</h4>
+						<pre><code style="height:200px;overflow-y:scroll;">// Sends data over serial port from left hand
 void setup() {
   Serial.begin(9600);
-  mySerial.begin(9600);
-
-//  // check if accelerometer is connected
-//  if (accel.begin() == false) {
-//    Serial.println("Not Connected.");
-//    while (1);
-//  }
+  Serial.println("Setup Done");
 }
 
 void loop() {
-//  Serial.println("Printing over Serial"   );
-//  mySerial.println("Printing over bluetooth");
-
-
-
-  // button code
-  // button 1
-  mySerial.print(digitalRead(2));
-  mySerial.print(" ");
-  // button 2
-  mySerial.print(digitalRead(3));
-  mySerial.print(" ");
-  // button 3
-  mySerial.print(digitalRead(4));
-  mySerial.print(" ");
-
 
   // code for force sensitive resistor
-  mySerial.print(analogRead(A0));
-  mySerial.print(" ");
-
+  Serial.print(analogRead(A0));
+  Serial.print(" ");
+  Serial.print(analogRead(A1));
+  Serial.print(" ");
+  Serial.print(analogRead(A4));
+  Serial.print(" ");
+  Serial.print(analogRead(A5));
+  Serial.println(" ");
 
   // flex sensor code
-  mySerial.println(analogRead(A1));
-  mySerial.print(" ");
-
-
-//  // accelerometer code
-//  if (accel.available()) {  // Wait for new data from accel
-//    // Acceleration of x, y, and z directions in g units
-//    mySerial.print(accel.getCalculatedX());
-//    mySerial.print(" ");
-//    mySerial.print(accel.getCalculatedY());
-//    mySerial.print(" ");
-//    mySerial.println(accel.getCalculatedZ());
-//  }
+  Serial.print(analogRead(A2));
+  Serial.print(" ");
+  Serial.print(analogRead(A3));
+  Serial.print(" ");
 
 }
 </code></pre>
 					</div>
 				</div>
 
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<h4>
+							Right Hand With Bluetooth
+							<a href="https://github.com/katie608/POE/blob/master/rightHand/rightHand.ino" class="icon fa-github"><span class="label">Github</span></a>
+						</h4>
+						<pre><code style="height:200px;overflow-y:scroll;">
+</code></pre>
+					</div>
+					<div class="6u$ 12u$(small)">
+						<h4>
+							Left Hand With Bluetooth
+							<a href="https://github.com/katie608/POE/blob/master/leftHand/leftHand.ino" class="icon fa-github"><span class="label">Github</span></a>
+						</h4>
+						<pre><code style="height:200px;overflow-y:scroll;">// prints data over bluetooth from left hand
+
+#include <SoftwareSerial.h>
+
+// set up bluetooth code
+int rx = 6;
+int tx = 7;
+SoftwareSerial mySerial(rx, tx); // RX, TX
+
+void setup() {
+  Serial.begin(9600);
+  mySerial.begin(9600);
+
+  Serial.println("Setup Done");
+
+}
+
+void loop() {
+
+  // code for force sensitive resistor
+  mySerial.print(analogRead(A0));
+  mySerial.print(" ");
+  mySerial.print(analogRead(A1));
+  mySerial.print(" ");
+  mySerial.print(analogRead(A5));
+  mySerial.print(" ");
+  mySerial.print(analogRead(A4));
+  mySerial.print(" ");
+
+  // flex sensor code
+  mySerial.print(analogRead(A3));
+  mySerial.print(" ");
+  mySerial.print(analogRead(A2));
+  mySerial.println(" ");
+
+}
+</code></pre>
+					</div>
+				</div>
+
+	<!-- MAX -->
+				<h3>MAX</h3>
+				<p>
+					For our glove, we use Max/MSP for sound generation. Max is a visual programming language that uses objects and messages connected to each other in a signal flow diagram to execute functions. These collections of objects are known as patches, and the full program is known as a patcher. While it still follows the same logic as other programming languages, it is designed for and especially popular in audiovisual projects. (MSP is short for both Max Signal Processing, the audio side of things, and also the creators’ initials; I will hence refer to it as just Max but recommend including MSP in any web searches).
+				</p>
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<p>
+							You first step to using Max is downloading it. As of writing this, we’re using Max 8--anything made in past versions is compatible with new versions, though the interface may appear slightly different. Max has a 30 day free trial, and after that you can purchase monthly, yearly, or permanent licenses with discounts for students. <a href=”https://cycling74.com/downloads”>Download at the Cycling ‘74 website here</a>.
+						</p>
+						<p>
+							Once you download and open Max, you can go the easy way and just copy the text from Github and select “New from Clipboard” from the “File” menu.
+						</p>
+						<p>
+							It should look like this:
+						</p>
+						<p>
+							I have organized and grouped each component into blocks. The dark box has unused parts you can switch out. Feel free to add as you would like!
+						</p>
+					</div>
+					<div class="6u$ 12u$(small)">
+
+						<div class="image fit">
+							<img src="images/design/s/01.png" alt="Pic 01" />
+						</div>
+					</div>
+				</div>
+
 				<div class="row">
 					<div class="6u 12u$(small)">
 						<div class="image fit">
-							<img src="images/design/mech/02.jpg" alt="Pic 01" />
+							<img src="images/design/s/02.png" alt="Pic 01" />
 						</div>
 					</div>
 					<div class="6u$ 12u$(small)">
-						<h4>Max</h4>
 						<p>
-							In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan ac praesent.
+							Just like other types of programming, a lot of this is done with the help of others. The first part of the patcher, which connects Bluetooth, is courtesy of <a href=”https://cycling74.com/forums/%22error-opening-serial-port%22-sending-data-from-arduino-to-max”>Luke Woodbury from the Max forums</a>.
+						</p>
+						<p>
+							Your Arduino can send and receive messages to and from the Serial monitor. Serial data is sent one bit at a time and allows communication between the Arduino and a computer--and from there, the computer and another program on the same machine.
+						</p>
+						<p>
+							Using the serial object in Max, you can access Serial data being sent through an Arduino. I explain more about how this works in the picture here.
+						</p>
+						<p>
+							Your Arduino code should be sending the sensor values as numbers. The unpack object separates the list of values from the Serial monitor into numbers that can be parsed individually. When running, the values will change in real-time. This code is working for our right hand, which has button fingertips.
 						</p>
 					</div>
 				</div>
 
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<p>
+							The “x” buttons are toggles, which are turned on each time they receive a 1 and off when they receive a 0. If directly connected to the number box, they would trigger every single time they received a 1--multiple times a second. The change object helps to only trigger the toggle when there’s a transition from 0 to 1. The toggles then connect to the sfplay~ object, which will play a sound file out of the speaker (ezdac~). When you click the open message, you can select an audio file from your computer that will play every time you turn on the toggle for as long as your patcher is open. This allows you to play 4 different sounds using the buttons (you can play them at the same time as well).
+						</p>
+						<p>
+						</p>
+						<p>
+						</p>
+						<p>
+						</p>
+					</div>
+					<div class="6u$ 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/s/03.png" alt="Pic 01" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/s/04.png" alt="Pic 01" />
+						</div>
+					</div>
+					<div class="6u$ 12u$(small)">
+						<p>
+							The flex sensors play set notes when flexed. The saw~ object plays the frequency specified by the number in the box (If you want to change notes, check out this table). The flexing of the sensor controls the *~ object, which is an amplifier. Our goal is that an unflexed sensor will play no sound, and the more you flex, the higher the volume. As such, the minimum should be 0, and the maximum is 0.5 volume--so not to be obnoxious.
+						</p>
+						<p>
+							This is accomplished using the scale function, which you may need to adjust to suit your individual flex sensor values. The first value is the minimum input, and second is maximum input. Third is minimum output and fourth is maximum output. As such, I expect that past the point where our first flex sensor reads 350 up until 450, it should increase the volume. The second flex sensor actually decreases its value when flexed, which means that the maximum value is a smaller number! Max easily adjusts to this, but it’s good to know you can do that.
+						</p>
+						<p>
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<p>
+							The if statement exists because there’s a chance you’ll get a number lower or higher than your scale value expects. The scale object will still output a value along the same proportion, but it might even send out a negative number! Without the if to filter out values outside of our desired range, the saw wave played constantly and unpredictably. It could be placed before the scale, but we chose to place it after so that it wouldn’t need to be adjusted to different flex sensor values.
+						</p>
+						<p>
+						</p>
+						<p>
+						</p>
+						<p>
+						</p>
+					</div>
+					<div class="6u$ 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/s/05.png" alt="Pic 01" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/s/06.png" alt="Pic 01" />
+						</div>
+					</div>
+					<div class="6u$ 12u$(small)">
+						<p>
+							The accelerometer, in our case, is only implementing the x and y axes in our sample loop player. This instrument uses the groove~ object to play a loopable sample over and over again. Using the Max File Browser (concentric circles on leftmost toolbar) load a file into the Max filepath. Then, click and drag it to the buffer~ object. It will hold the audio file while the patch is open, and the groove~ object will replay it. The scale objects control the speed and volume of the loop, respectively. When the x-values change, the sound will speed up or slow down. When the y-axis changes, it gets louder or quieter.
+						</p>
+						<p>
+							Alternatively, you can connect the accelerometer to the Sine Generator instrument. Just take the number values and draw cords to the scale function.
+						</p>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<p>
+							The cycle~ object generates a sine wave with initial frequency 1000. You can replace it with saw~ for a sawtooth wave, tri~ for a triangle, or rect~ for a pulse. You can also further explore modifying waveforms in Max using available documentation and connect it to the same framework.
+						</p>
+						<p>
+							Similarly to the saw~ function, part of this instrument involves controlling the volume. However, the pitch is also controlled by the x-axis change. While the sine wave (cycle~) is initialized with a frequency of 1000, it will adjust based off of the sensor.
+						</p>
+						<p>
+							For the glove with force sensor fingertips, you should replace the Sample Playback instrument with the Force Sine Player. The force input adjusts the volume and plays set frequencies that you can adjust in the cycle~ object. My scale object starts with no set minimum and maximum as your force sensors will likely have individualized values. Make sure you fix them before you patch!
+						</p>
+					</div>
+					<div class="6u$ 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/s/07.png" alt="Pic 01" />
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="6u 12u$(small)">
+						<div class="image fit">
+							<img src="images/design/s/08.png" alt="Pic 01" />
+						</div>
+					</div>
+					<div class="6u$ 12u$(small)">
+						<p>
+							When it’s time to switch from coding to playing with the program, click the “lock” in the bottom left corner.
+						</p>
+						<p>
+							There’s a lot to mess around with; if you get lost, check out the Cycling ‘74 website and forums for more information. Thanks so much, and happy patching!
+						</p>
+						<p>
+							If you want to hear my thoughts on the how and why of MAX, and my trials and tribulations, check our my <a href="alexMAX.html">reflection</a>.
+						</p>
+					</div>
+				</div>
+
+
+
 				<!-- Mechanical -->
-									<header class="align-center">
-										<h3>Mechanical</h3>
-									</header>
+				<h2>Mechanical</h2>
 
-									<h4>Overall Mechanical Design</h4>
-									<p>
-										Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-									</p>
+					<h4>Overall Mechanical Design</h4>
+					<p>
+						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+					</p>
 
-									<div class="row">
-										<div class="6u 12u$(small)">
-											<h4>Finger Caps</h4>
-											<p>
-												Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.
-											</p>
-										</div>
-										<div class="6u$ 12u$(small)">
-											<div class="image fit">
-												<img src="images/design/mech/01.jpg" alt="Pic 01" />
-											</div>
-										</div>
-									</div>
+					<div class="row">
+						<div class="6u 12u$(small)">
+							<h4>Finger Caps</h4>
+							<p>
+								Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.
+							</p>
+						</div>
+						<div class="6u$ 12u$(small)">
+							<div class="image fit">
+								<img src="images/design/mech/01.jpg" alt="Pic 01" />
+							</div>
+						</div>
+					</div>
 
-									<div class="row">
-										<div class="6u 12u$(small)">
-											<div class="image fit">
-												<img src="images/design/mech/02.jpg" alt="Pic 01" />
-											</div>
-										</div>
-										<div class="6u$ 12u$(small)">
-											<h4>Glove</h4>
-											<p>
-												In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan ac praesent.
-											</p>
-										</div>
-									</div>
+					<div class="row">
+						<div class="6u 12u$(small)">
+							<div class="image fit">
+								<img src="images/design/mech/02.jpg" alt="Pic 01" />
+							</div>
+						</div>
+						<div class="6u$ 12u$(small)">
+							<h4>Glove</h4>
+							<p>
+								In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan ac praesent.
+							</p>
+						</div>
+					</div>
 
 <!-- Integration -->
-				<header class="align-center">
-					<h3>Integration and Final Product</h3>
-				</header>
+				<h2>Integration and Final Product</h2>
 
 				<h4>Integration</h4>
 				<p>
@@ -411,7 +577,7 @@ void loop() {
 <!-- Budget -->
 
 			<header class="align-center">
-				<h3>Bill of Materials</h3>
+				<h2>Bill of Materials</h2>
 			</header>
 
 			<div class="table-wrapper">
