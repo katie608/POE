@@ -1,4 +1,4 @@
-h2><!DOCTYPE HTML>
+<!DOCTYPE HTML>
 <!--
 	Theory by TEMPLATED
 	templated.co @templatedco
@@ -44,7 +44,7 @@ h2><!DOCTYPE HTML>
 
 							<h4>Overview</h4>
 							<p>
-								Our project consists of a glove that has sensors on it. Those sensors send data to an Arduino, which then sends data over bluetooth to a serial port. Then, the data goes into a program called MAX, which generates the sound, which then plays over speakers that are connected to the laptop.
+								Our project consists of a glove that has sensors on it. Those sensors send data to an Arduino, which then sends data over Bluetooth to a serial port. Then, the data goes into a program called Max, which generates the sound, which then plays over speakers that are connected to the laptop.
 							</p>
 
 					</div>
@@ -81,7 +81,7 @@ h2><!DOCTYPE HTML>
 				<h4>Software</h4>
 				<ul>
 					<li>A computer with <a href="https://www.arduino.cc/en/main/software">Arduino</a> installed</li>
-					<li>MAX license (or free trial)</li>
+					<li>Max license (or free trial)</li>
 				</ul>
 				<h4>Mechanical</h4>
 				<ul>
@@ -93,7 +93,7 @@ h2><!DOCTYPE HTML>
 					<li>Sewing needle and thread (we used an upholstery thread because it is more sturdy)</li>
 					<li>2 sided Velcro</li>
 					<li>Superglue</li>
-					<li>¾” 4-40 bolts (x8)</li>
+					<li>¾" 4-40 bolts (x8)</li>
 
 				</ul>
 
@@ -116,9 +116,9 @@ h2><!DOCTYPE HTML>
 
 				<div class="row">
 					<div class="6u 12u$(small)">
-						<h4>Proto-Board Sodering</h4>
+						<h4>Proto-Board Soldering</h4>
 						<p>
-							We found that it was helpful to use protoboard to organize the soldering of some of the components. As you can see in this diagram, we had the wires from the sensors connect to the protoboard, and go through a resistor to ground. This layout kept the glove as compact as possible. We also put the accelerometer and bluetooth module here. The accelerometer and bluetooth module connect through the protoboard by soldering the pins to the protoboard. <a href=”https://www.instructables.com/id/How-to-Prototype-Without-Using-Printed-Circuit-Boa/”>Here</a> is a decent tutorial on how to solder to prototype board.
+							We found that it was helpful to use protoboard to organize the soldering of some of the components. As you can see in this diagram, we had the wires from the sensors connect to the protoboard, and go through a resistor to ground. This layout kept the glove as compact as possible. We also put the accelerometer and Bluetooth module here. The accelerometer and Bluetooth module connect through the protoboard by soldering the pins to the protoboard. <a href="https://www.instructables.com/id/How-to-Prototype-Without-Using-Printed-Circuit-Boa/">Here</a> is a decent tutorial on how to solder to prototype board.
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -137,7 +137,7 @@ h2><!DOCTYPE HTML>
 					<div class="6u$ 12u$(small)">
 						<h4>Flex Sensor</h4>
 						<p>
-							There are 4 flex sensors, and they are located on the pointer finger and ring finger joints of both hands. The flex sensor returns a variable value based on how much it is bent. When the flex sensor returns a value past the threshold that determines that it is “bent,” a note is played. Based on how much it is bent, the volume of the note changes. The flex sensors have 2 pins, and as seen in the diagram, the flex sensors are connected to power, ground, and an analog pin on the arduino. It should be noted that caution should be exercised when soldering to the flex sensor. Due to its sensitivity, we soldered two wires onto the tabs on low heat and soldered any additional connections to those wires rather than directly to the tabs to prevent overheating.
+							There are 4 flex sensors, and they are located on the pointer finger and ring finger joints of both hands. The flex sensor returns a variable value based on how much it is bent. When the flex sensor returns a value past the threshold that determines that it is “bent," a note is played. Based on how much it is bent, the volume of the note changes. The flex sensors have 2 pins, and as seen in the diagram, the flex sensors are connected to power, ground, and an analog pin on the arduino. It should be noted that caution should be exercised when soldering to the flex sensor. Due to its sensitivity, we soldered two wires onto the tabs on low heat and soldered any additional connections to those wires rather than directly to the tabs to prevent overheating.
 							<br><br><a href="https://cdn.sparkfun.com/datasheets/Sensors/ForceFlex/FLEX%20SENSOR%20DATA%20SHEET%202014.pdf">Datasheet</a>
 						</p>
 					</div>
@@ -180,7 +180,7 @@ h2><!DOCTYPE HTML>
 					<div class="6u 12u$(small)">
 						<h4>Accelerometer</h4>
 						<p>
-							The accelerometer is located on the wrist. It works differently than the other sensors because it uses <a href=”https://learn.sparkfun.com/tutorials/i2c/all”>I2C protocol</a>, which is helpful because the accelerometer sends back a measurement of acceleration in 3 separate axes, which would not be possible using analog pins. This was tricky to get working, but we were able to find the library that made it easier.
+							The accelerometer is located on the wrist. It works differently than the other sensors because it uses <a href="https://learn.sparkfun.com/tutorials/i2c/all">I2C protocol</a>, which is helpful because the accelerometer sends back a measurement of acceleration in 3 separate axes, which would not be possible using analog pins. This was tricky to get working, but we were able to find the library that made it easier.
 							<br><br><a href="https://www.velleman.eu/downloads/29/vma208_a4v02.pdf">Datasheet</a>
 							<br><a href="https://learn.sparkfun.com/tutorials/mma8452q-accelerometer-breakout-hookup-guide">Guide that was useful</a>
 						</p>
@@ -202,13 +202,13 @@ h2><!DOCTYPE HTML>
 					<div class="6u$ 12u$(small)">
 						<h4>Bluetooth</h4>
 						<p>
-							To use the bluetooth module, first hook it up to the Arduino according to the diagram. The bluetooth module should have a red light on it that is quickly blinking.
+							To use the Bluetooth module, first hook it up to the Arduino according to the diagram. The Bluetooth module should have a red light on it that is quickly blinking.
 						</p>
 						<p>
-							Now, you need to connect to the bluetooth module with your computer. Go to settings, then click on Bluetooth and other devices, then turn on bluetooth and click on ‘add device.’  The device is named HC-05, and the PIN is 1234. You may need to remove and re-add the device each time it disconnects. You will know the bluetooth module is connected when the LED blinks 2 long blinks.
+							Now, you need to connect to the Bluetooth module with your computer. Go to settings, then click on Bluetooth and other devices, then turn on Bluetooth and click on ‘add device.’  The device is named HC-05, and the PIN is 1234. You may need to remove and re-add the device each time it disconnects. You will know the Bluetooth module is connected when the LED blinks 2 long blinks.
 						</p>
 						<p>
-							Now in order to see the bluetooth, go to Arduino and switch the port to the one that the bluetooth is on. It may take some experimenting to figure out the correct port. Make sure that your sketch includes the bluetooth code, which is the part of the code that initializes and uses mySerial instead of just using Serial. You may have some difficulty getting the accelerometer working with the bluetooth code. If you do, make sure everything is wired correctly. Also, good luck.
+							Now in order to see the Bluetooth, go to Arduino and switch the port to the one that the Bluetooth is on. It may take some experimenting to figure out the correct port. Make sure that your sketch includes the Bluetooth code, which is the part of the code that initializes and uses mySerial instead of just using Serial. You may have some difficulty getting the accelerometer working with the Bluetooth code. If you do, make sure everything is wired correctly. Also, good luck.
 						</p>
 						<p>
 							Once you have found the correct port, if you open the Serial Monitor, the sensor values will be printing out. You can now plug the arduino into a separate computer or power it with a battery, and it should still receive the values.
@@ -227,7 +227,7 @@ h2><!DOCTYPE HTML>
 
 				<h4>Software Summary</h4>
 				<p>
-					Once you have soldered all the electrical components together, you can work on the software. The Arduino code is pretty simple, and works by reading in the sensor values and outputting them over bluetooth. The, those sensor values are read by MAX, which generates the sound.
+					Once you have soldered all the electrical components together, you can work on the software. The Arduino code is pretty simple, and works by reading in the sensor values and outputting them over Bluetooth. Those sensor values are read by Max, which generates the sound.
 				</p>
 
 
@@ -237,7 +237,7 @@ h2><!DOCTYPE HTML>
 							<a href="https://github.com/katie608/POE" class="icon fa-github"><span class="label">Github</span></a>
 						</h3>
 						<p>
-							There are several different versions of the Arduino code for different situations, more specifically, there is code to run each of the two different gloves both with and without bluetooth. The reason for this is to both help with debugging sensors before getting bluetooth working, and to have a backup option if bluetooth does not work at all. Overall the Arduino code is simple. It imports several libraries for the accelerometer and bluetooth, and then reads data from the sensors and outputs that data either over “Serial” (normal Serial port with wires), or “mySerial” (wireless bluetooth). Below, you can see all the versions of our code, as well as links to them on Github.
+							There are several different versions of the Arduino code for different situations, more specifically, there is code to run each of the two different gloves both with and without Bluetooth. The reason for this is to both help with debugging sensors before getting Bluetooth working, and to have a backup option if Bluetooth does not work at all. Overall the Arduino code is simple. It imports several libraries for the accelerometer and Bluetooth, and then reads data from the sensors and outputs that data either over “Serial" (normal Serial port with wires), or “mySerial" (wireless Bluetooth). Below, you can see all the versions of our code, as well as links to them on Github.
 						</p>
 
 				<div class="row">
@@ -298,7 +298,7 @@ void loop() {
 							Left Hand With Bluetooth
 							<a href="https://github.com/katie608/POE/blob/master/leftHand/leftHand.ino" class="icon fa-github"><span class="label">Github</span></a>
 						</h4>
-						<pre><code style="height:200px;overflow-y:scroll;">// prints data over bluetooth from left hand
+						<pre><code style="height:200px;overflow-y:scroll;">// prints data over Bluetooth from left hand
 
 #include <SoftwareSerial.h>
 
@@ -338,8 +338,8 @@ void loop() {
 					</div>
 				</div>
 
-	<!-- MAX -->
-				<h3>MAX</h3>
+	<!-- Max -->
+				<h3>Max</h3>
 				<p>
 					For our glove, we use Max/MSP for sound generation. Max is a visual programming language that uses objects and messages connected to each other in a signal flow diagram to execute functions. These collections of objects are known as patches, and the full program is known as a patcher. While it still follows the same logic as other programming languages, it is designed for and especially popular in audiovisual projects. (MSP is short for both Max Signal Processing, the audio side of things, and also the creators’ initials; I will hence refer to it as just Max but recommend including MSP in any web searches).
 				</p>
@@ -347,13 +347,13 @@ void loop() {
 				<div class="row">
 					<div class="6u 12u$(small)">
 						<p>
-							You first step to using Max is downloading it. As of writing this, we’re using Max 8--anything made in past versions is compatible with new versions, though the interface may appear slightly different. Max has a 30 day free trial, and after that you can purchase monthly, yearly, or permanent licenses with discounts for students. <a href=”https://cycling74.com/downloads”>Download at the Cycling ‘74 website here</a>.
+							You first step to using Max is downloading it. As of writing this, we’re using Max 8--anything made in past versions is compatible with new versions, though the interface may appear slightly different. Max has a 30 day free trial, and after that you can purchase monthly, yearly, or permanent licenses with discounts for students. <a href="https://cycling74.com/downloads">Download at the Cycling ‘74 website here</a>.
 						</p>
 						<p>
-							Once you download and open Max, you can go the easy way and just copy the text from Github and select “New from Clipboard” from the “File” menu.
+							Once you download and open Max, you can go the easy way and just copy the text from Github and select “New from Clipboard" from the “File" menu.
 						</p>
 						<p>
-							It should look like this:
+							It should look like the image on the right.
 						</p>
 						<p>
 							I have organized and grouped each component into blocks. The dark box has unused parts you can switch out. Feel free to add as you would like!
@@ -375,7 +375,7 @@ void loop() {
 					</div>
 					<div class="6u$ 12u$(small)">
 						<p>
-							Just like other types of programming, a lot of this is done with the help of others. The first part of the patcher, which connects Bluetooth, is courtesy of <a href=”https://cycling74.com/forums/%22error-opening-serial-port%22-sending-data-from-arduino-to-max”>Luke Woodbury from the Max forums</a>.
+							Just like other types of programming, a lot of this is done with the help of others. The first part of the patcher, which connects Bluetooth, is courtesy of <a href="https://cycling74.com/forums/%22error-opening-serial-port%22-sending-data-from-arduino-to-max">Luke Woodbury from the Max forums</a>.
 						</p>
 						<p>
 							Your Arduino can send and receive messages to and from the Serial monitor. Serial data is sent one bit at a time and allows communication between the Arduino and a computer--and from there, the computer and another program on the same machine.
@@ -392,7 +392,7 @@ void loop() {
 				<div class="row">
 					<div class="6u 12u$(small)">
 						<p>
-							The “x” buttons are toggles, which are turned on each time they receive a 1 and off when they receive a 0. If directly connected to the number box, they would trigger every single time they received a 1--multiple times a second. The change object helps to only trigger the toggle when there’s a transition from 0 to 1. The toggles then connect to the sfplay~ object, which will play a sound file out of the speaker (ezdac~). When you click the open message, you can select an audio file from your computer that will play every time you turn on the toggle for as long as your patcher is open. This allows you to play 4 different sounds using the buttons (you can play them at the same time as well).
+							In the image below, the “x" buttons are toggles, which are turned on each time they receive a 1 and off when they receive a 0. If directly connected to the number box, they would trigger every single time they received a 1--multiple times a second. The change object helps to only trigger the toggle when there’s a transition from 0 to 1. The toggles then connect to the sfplay~ object, which will play a sound file out of the speaker (ezdac~). When you click the open message, you can select an audio file from your computer that will play every time you turn on the toggle for as long as your patcher is open. This allows you to play 4 different sounds using the buttons (you can play them at the same time as well).
 						</p>
 						<p>
 						</p>
@@ -421,8 +421,6 @@ void loop() {
 						<p>
 							This is accomplished using the scale function, which you may need to adjust to suit your individual flex sensor values. The first value is the minimum input, and second is maximum input. Third is minimum output and fourth is maximum output. As such, I expect that past the point where our first flex sensor reads 350 up until 450, it should increase the volume. The second flex sensor actually decreases its value when flexed, which means that the maximum value is a smaller number! Max easily adjusts to this, but it’s good to know you can do that.
 						</p>
-						<p>
-						</p>
 					</div>
 				</div>
 
@@ -430,12 +428,6 @@ void loop() {
 					<div class="6u 12u$(small)">
 						<p>
 							The if statement exists because there’s a chance you’ll get a number lower or higher than your scale value expects. The scale object will still output a value along the same proportion, but it might even send out a negative number! Without the if to filter out values outside of our desired range, the saw wave played constantly and unpredictably. It could be placed before the scale, but we chose to place it after so that it wouldn’t need to be adjusted to different flex sensor values.
-						</p>
-						<p>
-						</p>
-						<p>
-						</p>
-						<p>
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -464,7 +456,7 @@ void loop() {
 				<div class="row">
 					<div class="6u 12u$(small)">
 						<p>
-							The cycle~ object generates a sine wave with initial frequency 1000. You can replace it with saw~ for a sawtooth wave, tri~ for a triangle, or rect~ for a pulse. You can also further explore modifying waveforms in Max using available documentation and connect it to the same framework.
+							In the image below, the cycle~ object generates a sine wave with initial frequency 1000. You can replace it with saw~ for a sawtooth wave, tri~ for a triangle, or rect~ for a pulse. You can also further explore modifying waveforms in Max using available documentation and connect it to the same framework.
 						</p>
 						<p>
 							Similarly to the saw~ function, part of this instrument involves controlling the volume. However, the pitch is also controlled by the x-axis change. While the sine wave (cycle~) is initialized with a frequency of 1000, it will adjust based off of the sensor.
@@ -488,13 +480,13 @@ void loop() {
 					</div>
 					<div class="6u$ 12u$(small)">
 						<p>
-							When it’s time to switch from coding to playing with the program, click the “lock” in the bottom left corner.
+							When it’s time to switch from coding to playing with the program, click the “lock" in the bottom left corner.
 						</p>
 						<p>
 							There’s a lot to mess around with; if you get lost, check out the Cycling ‘74 website and forums for more information. Thanks so much, and happy patching!
 						</p>
 						<p>
-							If you want to hear my thoughts on the how and why of MAX, and my trials and tribulations, check our my <a href="alexMAX.html">reflection</a>.
+							If you want to hear my thoughts on the how and why of Max, and my trials and tribulations, check our my <a href="alexMax.html">reflection</a>.
 						</p>
 					</div>
 				</div>
@@ -504,16 +496,14 @@ void loop() {
 				<!-- Mechanical -->
 				<h2>Mechanical</h2>
 
-					<h4>Overall Mechanical Design</h4>
-					<p>
-						Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-					</p>
-
+				<h3>3D Printing</h3>
 					<div class="row">
 						<div class="6u 12u$(small)">
-							<h4>Finger Caps</h4>
 							<p>
-								Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.
+								In order to hold the Arduino, buttons, and batteries, we need to 3D print a few casings.  The CAD files for the finger caps (to hold the buttons), and the battery case are attached below as STL files.  We have also attached our SLDPRT files if you would like to modify it according to your needs (you will need Solidworks 2018-19 or later). Open the STL file in your slicer program of choice and print in PLA.  You will need 2 battery cases (one for each glove) and 4 finger caps.
+							</p>
+							<p>
+								OTHER PARAGRAPH GOES HERE ONCE I GET LINK TO FILES
 							</p>
 						</div>
 						<div class="6u$ 12u$(small)">
@@ -526,52 +516,45 @@ void loop() {
 					<div class="row">
 						<div class="6u 12u$(small)">
 							<div class="image fit">
-								<img src="images/design/mech/02.jpg" alt="Pic 01" />
+								<img src="images/design/mech/03.jpg" alt="Pic 01" />
 							</div>
 						</div>
 						<div class="6u$ 12u$(small)">
-							<h4>Glove</h4>
+							<h4>Battery Case</h4>
 							<p>
-								In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan ac praesent.
+								To assemble the battery case, solder a red and black wire to the sharp part of the metal pushpin. It helps if you are able to snip off a bit of the tip. Cover the soldered joint with heatshrink and apply heat.  Thread the wires through the holes of the case so that the flat parts of the push pins are inside the case. Insert 7 coin cell batteries into the case and securely tape shut. Check if the voltage is around 10V with a multimeter. Attach the ends of the wires to the 5.5mm x 2.1mm plug and screw closed so you get a good connection.
 							</p>
 						</div>
 					</div>
 
-<!-- Integration -->
-				<h2>Integration and Final Product</h2>
+					<h3>Assembly</h3>
 
-				<h4>Integration</h4>
-				<p>
-					Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-				</p>
-
-				<div class="row">
-					<div class="6u 12u$(small)">
-						<h4>Specific integration, sewing 3d printed parts to glove?</h4>
-						<p>
-							Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh in adipiscing blandit tempus accumsan.
-						</p>
-					</div>
-					<div class="6u$ 12u$(small)">
-						<div class="image fit">
-							<img src="images/design/e/01.jpg" alt="Pic 01" />
+					<div class="row">
+						<div class="4u 12u$(medium)">
+							<div class="image fit">
+								<img src="images/design/mech/04.jpg" alt="hand with tape sensor" />
+							</div>
+						</div>
+						<div class="4u 12u$(medium)">
+							<p>
+								Once you have all your pieces printed, you can start assembly. Insert the Arduino into the case and line up the wristband pieces with the holes on the back, and screw together using the 4-40 bolts.
+							</p>
+							<p>
+								You will need to sew several components to the base fabric gloves. Sew the 4 finger caps onto all the fingers except the thumb on the right handed glove using the needle and thread. Encase the four flex sensors in electrical tape and sew (through the tape) one sensor on the index finger and thumb (for both the right and left hands).  Using the same method, tape the four force sensors and sew to the other four fingers of the left hand. When sewing, it is important that you do not sew the glove closed, and check to make sure that the sewing does not impede movement of the hand.
+							</p>
+							<p>
+								Superglue the velcro to the wristband, and add a bit to the back of the battery case and the top of the Arduino case. You will also need to superglue the buttons to the channel inside the fingercaps.
+							</p>
+						</div>
+						<div class="4u$ 12u$(medium)">
+							<div class="image fit">
+								<h4>Image of back of wristband goes here</h4>
+								<img src="images/design/mech/05.jpg" alt="back of wristband" />
+							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="row">
-					<div class="6u 12u$(small)">
-						<div class="image fit">
-							<img src="images/design/e/02.jpg" alt="Pic 01" />
-						</div>
-					</div>
-					<div class="6u$ 12u$(small)">
-						<h4>Final Product</h4>
-						<p>
-							In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi accumsan vis mi accumsan ac praesent.
-						</p>
-					</div>
-				</div>
+
 
 
 <!-- Budget -->
@@ -652,17 +635,23 @@ void loop() {
 							<td>3.95</td>
 						</tr>
 						<tr>
-							<td><a href="https://www.amazon.com/HiLetgo-Wireless-Bluetooth-Transceiver-Arduino/dp/B071YJG8DR/ref=as_li_ss_tl?ie=UTF8&qid=1533394818&sr=8-3&keywords=HC-05&linkCode=sl1&tag=howto045-20&linkId=86cdebbcfc701f763369f68487f8bbc9">HiLetgo HC-05 Wireless Bluetooth RF Transceiver Master Slave Integrated Bluetooth Module 6 Pin Wireless Serial Port Communication BT Module for Arduino</a></td>
-							<td>7.99</td>
+							<td><a href="https://www.amazon.com/SAINSMART-Flexible-Printing-Filament-Dimensional/dp/B072JCXS4G/ref=sr_1_4?keywords=sainsmart%2Btpu&qid=1575389012&sr=8-4&th=1">Black TPU</a></td>
+							<td>15.99</td>
 							<td>1</td>
-							<td>7.99</td>
+							<td>15.99</td>
+						</tr>
+						<tr>
+							<td><a href="https://www.digikey.com/product-detail/en/texas-instruments/LM386MX-1-NOPB/LM386MX-1-NOPBCT-ND/3440154">LM386 Chip</a></td>
+							<td>1.05</td>
+							<td>1</td>
+							<td>1.05</td>
 						</tr>
 					</tbody>
 					<tfoot>
 						<tr>
 							<td colspan="2"></td>
 							<td></td>
-							<td>170.85</td>
+							<td>196.29</td>
 						</tr>
 					</tfoot>
 				</table>

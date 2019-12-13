@@ -1779,6 +1779,23 @@
 
 		}
 
+		/* .location-text-bigscreen {
+			display: auto;
+		}
+
+		.location-text-smallscreen {
+			display: none;
+		}
+
+	@media screen and (max-width: 980px) {
+		.location-text-bigscreen {
+			display: none;
+		}
+		.location-text-smallscreen {
+			display: auto;
+		}
+	} */
+
 /* Section/Article */
 
 	section.special, article.special {
