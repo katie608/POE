@@ -118,7 +118,8 @@
 					<div class="6u 12u$(small)">
 						<h4>Proto-Board Soldering</h4>
 						<p>
-							We found that it was helpful to use protoboard to organize the soldering of some of the components. As you can see in this diagram, we had the wires from the sensors connect to the protoboard, and go through a resistor to ground. This layout kept the glove as compact as possible. We also put the accelerometer and Bluetooth module here. The accelerometer and Bluetooth module connect through the protoboard by soldering the pins to the protoboard. <a href="https://www.instructables.com/id/How-to-Prototype-Without-Using-Printed-Circuit-Boa/">Here</a> is a decent tutorial on how to solder to prototype board.
+							We found that it was helpful to use protoboard to organize the soldering of some of the components. As you can see in this diagram, we had the wires from the sensors connect to the protoboard, and go through a resistor to ground. This layout kept the glove as compact as possible. We also put the accelerometer and Bluetooth module here. The accelerometer and Bluetooth module connect through the protoboard by soldering the pins to the protoboard.
+							<a href="https://www.instructables.com/id/How-to-Prototype-Without-Using-Printed-Circuit-Boa/">Here</a> is a decent tutorial on how to solder to prototype board.
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -129,12 +130,12 @@
 				</div>
 
 				<div class="row">
-					<div class="6u 12u$(small)">
+					<div class="6u 12u$(small)" style="width:30%;">
 						<div class="image fit">
 							<img src="images/design/e/flex.png" alt="Pic 01" />
 						</div>
 					</div>
-					<div class="6u$ 12u$(small)">
+					<div class="6u$ 12u$(small)" style="width:70%;">
 						<h4>Flex Sensor</h4>
 						<p>
 							There are 4 flex sensors, and they are located on the pointer finger and ring finger joints of both hands. The flex sensor returns a variable value based on how much it is bent. When the flex sensor returns a value past the threshold that determines that it is “bent," a note is played. Based on how much it is bent, the volume of the note changes. The flex sensors have 2 pins, and as seen in the diagram, the flex sensors are connected to power, ground, and an analog pin on the arduino. It should be noted that caution should be exercised when soldering to the flex sensor. Due to its sensitivity, we soldered two wires onto the tabs on low heat and soldered any additional connections to those wires rather than directly to the tabs to prevent overheating.
@@ -145,14 +146,14 @@
 
 
 				<div class="row">
-					<div class="6u 12u$(small)">
+					<div class="6u 12u$(small)" style="width:70%;">
 						<h4>Force Sensitive Resistor</h4>
 						<p>
 							The force sensitive resistors are located on the fingertips of the left hand. The resistors return a value that varies based on the force applied to the resistor. The amount of pressure applied determines the frequency that is outputted. They have 2 pins, and as seen in the diagram, the force sensitive resistors are connected to power, ground, and an analog pin on the arduino.
 							<br><br><a href="https://cdn.sparkfun.com/assets/8/a/1/2/0/2010-10-26-DataSheet-FSR402-Layout2.pdf">Datasheet</a>
 						</p>
 					</div>
-					<div class="6u$ 12u$(small)">
+					<div class="6u$ 12u$(small)" style="width:30%;">
 						<div class="image fit">
 							<img src="images/design/e/force.png" alt="Pic 01" />
 						</div>
@@ -161,12 +162,12 @@
 
 
 				<div class="row">
-					<div class="6u 12u$(small)">
+					<div class="6u 12u$(small)" style="width:30%;">
 						<div class="image fit">
 							<img src="images/design/e/button.png" alt="Pic 01" />
 						</div>
 					</div>
-					<div class="6u$ 12u$(small)">
+					<div class="6u$ 12u$(small)" style="width:70%;">
 						<h4>Button</h4>
 						<p>
 							The four buttons are located on the fingertips of the right hand. The push buttons send back whether or not they have been pressed, which is good for sounds like drum beats or sounds that are played when the button is on. They have four pins, and as you can see in the diagram, the button is connected to power, ground, and a digital pin on the arduino. The buttons are placed within finger caps, which are further described in mechanical fabrication.
@@ -177,7 +178,7 @@
 
 
 				<div class="row">
-					<div class="6u 12u$(small)">
+					<div class="6u 12u$(small)" style="width:70%;">
 						<h4>Accelerometer</h4>
 						<p>
 							The accelerometer is located on the wrist. It works differently than the other sensors because it uses <a href="https://learn.sparkfun.com/tutorials/i2c/all">I2C protocol</a>, which is helpful because the accelerometer sends back a measurement of acceleration in 3 separate axes, which would not be possible using analog pins. This was tricky to get working, but we were able to find the library that made it easier.
@@ -185,7 +186,7 @@
 							<br><a href="https://learn.sparkfun.com/tutorials/mma8452q-accelerometer-breakout-hookup-guide">Guide that was useful</a>
 						</p>
 					</div>
-					<div class="6u$ 12u$(small)">
+					<div class="6u$ 12u$(small)" style="width:30%;">
 						<div class="image fit">
 							<img src="images/design/e/accelerometer.png" alt="Pic 01" />
 						</div>
@@ -194,12 +195,12 @@
 
 
 				<div class="row">
-					<div class="6u 12u$(small)">
+					<div class="6u 12u$(small)" style="width:30%;">
 						<div class="image fit">
 							<img src="images/design/e/bluetooth.png" alt="Pic 01" />
 						</div>
 					</div>
-					<div class="6u$ 12u$(small)">
+					<div class="6u$ 12u$(small)" style="width:70%;">
 						<h4>Bluetooth</h4>
 						<p>
 							To use the Bluetooth module, first hook it up to the Arduino according to the diagram. The Bluetooth module should have a red light on it that is quickly blinking.
@@ -246,7 +247,29 @@
 							Right Hand No Bluetooth
 							<a href="https://github.com/katie608/POE/blob/master/rightNoBluetooth/rightNoBluetooth.ino" class="icon fa-github"><span class="label">Github</span></a>
 						</h4>
-						<pre><code style="height:200px;overflow-y:scroll;">
+						<pre><code style="height:200px;overflow-y:scroll;">// Sends data over serial port from left hand
+void setup() {
+  Serial.begin(9600);
+  Serial.println("Setup Done");
+}
+
+void loop() {
+  // button
+  Serial.print(digitalRead(2));
+  Serial.print(" ");
+  Serial.print(digitalRead(3));
+  Serial.print(" ");
+  Serial.print(digitalRead(4));
+  Serial.print(" ");
+  Serial.print(digitalRead(5));
+  Serial.print(" ");
+
+  // flex sensor code
+  Serial.print(analogRead(A0));
+  Serial.print(" ");
+  Serial.print(analogRead(A1));
+  Serial.println(" ");
+}
 </code></pre>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -290,7 +313,72 @@ void loop() {
 							Right Hand With Bluetooth
 							<a href="https://github.com/katie608/POE/blob/master/rightHand/rightHand.ino" class="icon fa-github"><span class="label">Github</span></a>
 						</h4>
-						<pre><code style="height:200px;overflow-y:scroll;">
+						<pre><code style="height:200px;overflow-y:scroll;">// prints data over Bluetooth from right hand
+
+#include &lt;SoftwareSerial.h>&gt;
+
+// set up bluetooth code
+int rx = 6;
+int tx = 7;
+SoftwareSerial mySerial(rx, tx); // RX, TX
+
+// wire allows communication with the accelerometer using I2C
+#include &lt;Wire.h&gt;
+
+// needed for communicating with this particular accelerometer
+#include "SparkFun_MMA8452Q.h"
+
+// create instance of the MMA8452 class for accelerometer
+MMA8452Q accel;
+
+void setup() {
+  Serial.begin(9600);
+  Serial.println("test"   );
+  mySerial.begin(9600);
+
+  // check if accelerometer is connected
+  while (accel.init() == 0) {
+    Serial.println("Not Connected");
+    delay(200);
+  }
+
+  Serial.println("Done");
+
+}
+
+void loop() {
+  // accelerometer code
+    // Acceleration of x, y, and z directions in g units
+    float ax = (accel.getCalculatedX());
+    float ay = (accel.getCalculatedY());
+    float az = (accel.getCalculatedZ());
+    mySerial.print(ax);
+    mySerial.print(" ");
+    mySerial.print(ay);
+    mySerial.print(" ");
+    mySerial.println(az);
+
+  // button code
+  // button 1
+  mySerial.print(digitalRead(2));
+  mySerial.print(" ");
+  // button 2
+  mySerial.print(digitalRead(3));
+  mySerial.print(" ");
+  // button 3
+  mySerial.print(digitalRead(4));
+  mySerial.print(" ");
+  // button 4
+  mySerial.print(digitalRead(5));
+  mySerial.print(" ");
+
+  // flex sensor code
+  mySerial.print(analogRead(A0));
+  mySerial.print(" ");
+  mySerial.print(analogRead(A1));
+  mySerial.print(" ");
+
+}
 </code></pre>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -300,7 +388,7 @@ void loop() {
 						</h4>
 						<pre><code style="height:200px;overflow-y:scroll;">// prints data over Bluetooth from left hand
 
-#include <SoftwareSerial.h>
+#include &lt;SoftwareSerial.h>&gt;
 
 // set up bluetooth code
 int rx = 6;
@@ -393,12 +481,6 @@ void loop() {
 					<div class="6u 12u$(small)">
 						<p>
 							In the image below, the “x" buttons are toggles, which are turned on each time they receive a 1 and off when they receive a 0. If directly connected to the number box, they would trigger every single time they received a 1--multiple times a second. The change object helps to only trigger the toggle when there’s a transition from 0 to 1. The toggles then connect to the sfplay~ object, which will play a sound file out of the speaker (ezdac~). When you click the open message, you can select an audio file from your computer that will play every time you turn on the toggle for as long as your patcher is open. This allows you to play 4 different sounds using the buttons (you can play them at the same time as well).
-						</p>
-						<p>
-						</p>
-						<p>
-						</p>
-						<p>
 						</p>
 					</div>
 					<div class="6u$ 12u$(small)">
@@ -498,17 +580,38 @@ void loop() {
 
 				<h3>3D Printing</h3>
 					<div class="row">
-						<div class="6u 12u$(small)">
+						<div class="4u 12u$(medium)">
 							<p>
 								In order to hold the Arduino, buttons, and batteries, we need to 3D print a few casings.  The CAD files for the finger caps (to hold the buttons), and the battery case are attached below as STL files.  We have also attached our SLDPRT files if you would like to modify it according to your needs (you will need Solidworks 2018-19 or later). Open the STL file in your slicer program of choice and print in PLA.  You will need 2 battery cases (one for each glove) and 4 finger caps.
 							</p>
 							<p>
-								OTHER PARAGRAPH GOES HERE ONCE I GET LINK TO FILES
+								You will also need a case to hold the Arduino onto the wrist. We used the following <a href="https://www.thingiverse.com/thing:628929">open source model by ZygmuntW on Thingiverse.</a> You also need to print the wristband pieces (x2)
+								(file found below) in TPU so it will be flexible.
+							</p>
+							<p>
+								<a href="images/design/mech/3d/velcro_wristband.SLDPRT">velcro_wristband.SLDPRT</a>
+								<br>
+								<a href="images/design/mech/3d/velcro_wristband.STL">velcro_wristband.STL</a>
+								<br>
+								<a href="images/design/mech/3d/velcro_wristband.SLDPRT">velcro_wristband.SLDPRT</a>
+								<br>
+								<a href="images/design/mech/3d/velcro_wristband.SLDPRT">velcro_wristband.SLDPRT</a>
+								<br>
+								<a href="images/design/mech/3d/velcro_wristband.SLDPRT">velcro_wristband.SLDPRT</a>
+								<br>
+								<a href="images/design/mech/3d/velcro_wristband.SLDPRT">velcro_wristband.SLDPRT</a>
+								<br>
+
 							</p>
 						</div>
-						<div class="6u$ 12u$(small)">
+						<div class="4u 12u$(medium)">
 							<div class="image fit">
-								<img src="images/design/mech/01.jpg" alt="Pic 01" />
+								<img src="images/design/mech/05.jpg" alt="Pic 01" />
+							</div>
+						</div>
+						<div class="4u 12u$(medium)">
+							<div class="image fit">
+								<img src="images/design/mech/06.jpg" alt="Pic 01" />
 							</div>
 						</div>
 					</div>
@@ -553,6 +656,10 @@ void loop() {
 							</div>
 						</div>
 					</div>
+
+					<p>
+						Finally, plug in all the wires into the Arduino according to the above circuit diagram, and add a bit of tape to the back of the protoboard to hold it on top of the Arduino case.
+					</p>
 
 
 
